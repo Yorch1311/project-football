@@ -1,0 +1,9 @@
+<div class="pagina">
+  <div class="title">
+    <h1>Detalle de torneo</h1>
+    <a [routerLink]="['/football/createTournament', id]">
+      <img class="edit" src="assets/icons8-editar-propiedad-48.svg" alt="Editar">
+    </a>
+  </div>
+  <app-tournament-detail [id]="id"></app-tournament-detail>
+</div>

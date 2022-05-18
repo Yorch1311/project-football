@@ -1,0 +1,84 @@
+.page {
+  max-width: 1304px;
+  width: 100%;
+  //Borrar despues
+  //background-color: #0a90ef;
+  height: 1000px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 24px;
+  //Borrar
+  //background-color: #0a90ef;
+}
+.one {
+  grid-column: 1 / 1;
+}
+.two {
+  grid-column: 2 / 4;
+}
+.three {
+  grid-column: 1 / 4;
+}
+.four {
+  grid-column: 1 / 4;
+}
+
+.basic {
+  padding: 24px;
+  background: #ffffff;
+  box-shadow: 0px 4px 12px rgba(38, 39, 43, 0.25);
+  border-radius: 4px;
+}
+
+//contenedor de las 3 columnas de organizadores
+.orgContainer {
+  display: flex;
+  justify-content: center;
+}
+.admin,
+.arbitro,
+.trainer {
+  display: block;
+  width: 25%;
+  margin: 0px 10px;
+}
+
+//elementos individuales
+h1 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  display: inline;
+
+  /* Dark_Gray */
+  color: rgba(38, 39, 43, 0.75);
+}
+h2 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  color: #0a90ef;
+}
+h3 {
+  /* margin: 20px; */
+  color: rgba(38, 39, 43, 0.5);
+}
+li {
+  margin-left: 30px;
+  margin-bottom: 10px;
+  color: rgba(38, 39, 43, 0.5);
+}
+.boton{
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+
