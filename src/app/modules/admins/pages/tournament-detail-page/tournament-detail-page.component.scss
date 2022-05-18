@@ -2,7 +2,7 @@
   max-width: 1304px;
   width: 100%;
   //Borrar despues
-  //background-color: #0a90ef;
+  background-color: #FFFFFF;
   height: 1000px;
   padding: 8px;
 }
@@ -26,6 +26,15 @@ h1 {
   line-height: 38px;
   display: inline;
 
-  /* Dark_Gray */
   color: rgba(38, 39, 43, 0.75);
 }
+
+.message {
+  background-color: #EC2E2E;
+  opacity: 0.75;
+  text-align: center;
+  color: white;
+  margin-bottom: 24px;
+  box-shadow: 0 0 0 0;
+}
+
