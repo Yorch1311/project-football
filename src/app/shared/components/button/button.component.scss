@@ -1,0 +1,40 @@
+.button{
+  //Button
+  height: 48px;
+  width: 100%;
+  max-width: 160px;
+  border-radius: 8px;
+
+  //Text
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.fill {
+  background-color: #0a90ef;
+  border: 0px;
+
+  //Text
+  color: #ffffff;
+}
+
+.fill:hover,.outline:hover {
+  box-shadow: 0px 4px 4px rgba(10, 144, 239, 0.25);
+}
+
+.outline {
+  background: #ffffff;
+  border: 1px solid #0a90ef;
+  //Text
+  color: #0A90EF;
+}
+
+.disable {
+  opacity: 0.5;
+}
+
+.disable:hover {
+  box-shadow: 0px 0px 0px 0px #0a90ef40;
+}
