@@ -1,80 +1,76 @@
-<div class="page">
-  <div class="grid">
-    <section class="basicInfo basic one">
-      <h2>Informacion base</h2>
+<div class="grid">
+  <section class="basic one">
+    <h2>Informacion base</h2>
 
-      <h3>{{ data.name }}</h3>
-      <h3>Categoría:</h3>
-      <ul>
-        <!-- li ngFor="let item of data.category"-->
-        <li>
-          {{data.category.name}}
-        </li>
-      </ul>
-      <h3>Torneo por {{ data.type.name }}</h3>
-    </section>
+    <h3>{{ data?.name }}</h3>
+    <h3>Categoría:</h3>
+    <ul>
+      <!-- li ngFor="let item of data.category"-->
+      <li>
+        {{data?.category}}
+      </li>
+    </ul>
+    <h3>Torneo por {{ data?.type }}</h3>
+  </section>
 
-    <section class="moreInfo basic two">
-      <h2>Información sobre su realización</h2>
-      <h3>Lugares disponibles:</h3>
-      <ul>
-        <li *ngFor="let item of data.places_detail">
-          {{item.name}}
-        </li>
-      </ul>
+  <section class="basic two">
+    <h2>Información sobre su realización</h2>
+    <h3>Lugares disponibles:</h3>
+    <ul>
+      <li *ngFor="let item of data?.places_detail">
+        {{item.name}}
+      </li>
+    </ul>
 
-      <h3>Periodo de juegos: {{ data.dates }}</h3>
-      <h3>Horario base: {{ data.time }}</h3>
-    </section>
+    <h3>Periodo de juegos: {{ data?.dates }}</h3>
+    <h3>Horario base: {{ data?.time }}</h3>
+  </section>
 
-    <section class="organization basic three">
+  <section class="orgContainer basic three">
 
-      <h2>Organizado por</h2>
-      <div class="organizar">
-        <div class="orgContainer">
-          <div class="admin" *ngIf="data.admin_detail.length > 0">
-            <h3>Administradores</h3>
+    <h2>Organizado por</h2>
 
-            <ul>
-              <li *ngFor="let item of data.admin_detail">
-                {{item.nombre}} {{item.apellido1}}
-              </li>
-            </ul>
-          </div>
-          <div class="arbitro" *ngIf="data.referee_detail.length > 0">
-            <h3>Arbitros</h3>
+        <div class="admin" *ngIf="data?.admin_detail?.length">
+          <h3>Administradores</h3>
 
-            <ul>
-              <li *ngFor="let item of data.referee_detail">
-                {{item.nombre}} {{item.apellido1}}
-              </li>
-            </ul>
-          </div>
-          <div class="trainer" *ngIf="data.coach_detail.length > 0">
-            <h3>Entrenadores</h3>
-
-            <ul>
-              <li *ngFor="let item of data.coach_detail">
-                {{item.nombre}} {{item.apellido1}}
-              </li>
-            </ul>
-          </div>
+          <ul>
+            <li *ngFor="let item of data?.admin_detail">
+              {{item.name}} {{item.apellido1}}
+            </li>
+          </ul>
         </div>
-      </div>
-    </section>
+        <div class="arbitro" *ngIf="data?.referee_detail?.length">
+          <h3>Arbitros</h3>
 
-    <section class="basic four">
-      <h2>Partidos...</h2>
+          <ul>
+            <li *ngFor="let item of data?.referee_detail">
+              {{item.name}} {{item.apellido1}}
+            </li>
+          </ul>
+        </div>
+        <div class="trainer" *ngIf="data?.coach_detail?.length">
+          <h3>Entrenadores</h3>
 
-      <mat-chip-list class="chip-list" aria-label="Fish selection">
-        <app-chip (onClick)="goto($event)" [class]="item.estado" [texto]="item.name" [id]="item.id_branch"
-          *ngFor="let item of data.branch_detail">></app-chip>
-      </mat-chip-list>
+          <ul>
+            <li *ngFor="let item of data?.coach_detail">
+              {{item.name}} {{item.apellido1}}
+            </li>
+          </ul>
+        </div>
 
-      <div class="boton" *ngIf="activeCount > 0">
-        <app-button [clase]="'fill'" [title]="'Iniciar Torneo'" (onClick)="active()"></app-button>
-      </div>
-    </section>
+  </section>
 
-  </div>
+  <section class="basic four">
+    <h2>Partidos...</h2>
+
+    <mat-chip-list class="chip-list" aria-label="Fish selection">
+      <app-chip (onClick)="goto($event)" [class]="item.status" [texto]="item.name_category +' - '+item.name_branch" [id]="item.id_chip"
+        *ngFor="let item of data?.chips">></app-chip>
+    </mat-chip-list>
+
+    <div class="boton" *ngIf="activeCount > 0">
+      <app-button [clase]="'fill'" [title]="'Iniciar Torneo'" (onClick)="active()"></app-button>
+    </div>
+  </section>
+
 </div>
