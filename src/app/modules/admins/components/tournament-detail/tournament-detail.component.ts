@@ -18,14 +18,14 @@ export class TournamentDetailComponent implements OnInit {
   activeCount: number = 0;
   clase: string = "";// clase del boton, le da su diseño
 
-  constructor(private _router: ActivatedRoute, private router: Router) {}
+  constructor(private _router: ActivatedRoute, private router: Router, private service: ServiceService) {}
 
   ngOnInit(): void {
 
     if(this.id != null) {
 
       //Uso del servicio para comunicarse con la API.
-      //this.service.getTournamentData(this.id).subscribe( data => this.data = data );
+      this.service.getTournamentData(this.id).subscribe( data => this.data = data );
 
       /*if (this.data.category.length > 1){
         let cant = this.data.category.length - 1;
@@ -43,8 +43,8 @@ export class TournamentDetailComponent implements OnInit {
   /*
     Redirecciona a la pagina createTree la cual recibe un ID
   */
-  goto($event: number){
-    this.router.navigate(["football/createTree/" + $event]);
+  goto(id: string){
+    this.router.navigate(["football/createTree/" + id]);
   }
 
   /*

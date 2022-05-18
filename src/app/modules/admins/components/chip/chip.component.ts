@@ -7,15 +7,15 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ChipComponent implements OnInit {
 
-  @Output() onClick = new EventEmitter<number>();
+  @Output() onClick = new EventEmitter<string>();
   @Input() texto: string;
   @Input() class: string;
-  @Input() id: number;
+  @Input() id: string;
 
   constructor() {
     this.texto = ""
     this.class = ""
-    this.id = 0
+    this.id = ""
   }
 
   ngOnInit(): void {
