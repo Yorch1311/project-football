@@ -243,13 +243,15 @@ export class TournamentCreateComponent implements OnInit {
 
   CrearTou(){   
     //validaciones
+    /*
     if( (this.name == null) || (this.time == null) || (this.date == null) || (this.categori == null) || (this.branches[0] == null) || (this.typeTournamet == null) || (this.city == null)  || (this.place == null) ||
       (this.adminsid[0] == null) || (this.arbitersid[0] == null) || (this.coachsid[0] == null)
     ){    
       alert("Error faltan datos");
 
     }else{
-
+    
+   
         //obtener id de lugares en arreglo
         console.log(this.place)
         this.placeid.push(this.place);
@@ -278,6 +280,7 @@ export class TournamentCreateComponent implements OnInit {
 
         console.table(datasend);      
 
+        */
         /*
         this.APIcreate.createTournamet(datasend).subscribe(result =>{
             console.log(result);
@@ -287,12 +290,12 @@ export class TournamentCreateComponent implements OnInit {
         //mostrar snavbar
         this._snackBar.open('Torneo creado exitosamente', 'X', {
           horizontalPosition: this.horizontalPosition,
-          verticalPosition: this.verticalPosition,          
+          verticalPosition: this.verticalPosition,                    
         });
 
         //Crear la tupla y regresar al chrisyian
         //this.router.navigate(["football/tournaments"]);
-      }    
+      /*}*/
    }
       
 
