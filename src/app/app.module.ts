@@ -12,6 +12,7 @@ import { TournamentDetailPageComponent } from './modules/admins/pages/tournament
 
 
 import {MatChipsModule} from '@angular/material/chips';
+import {MatCardModule} from '@angular/material/card';
 import { SelectSimpleComponent } from './modules/admins/components/select-simple/select-simple.component';
 
 import {MatSelectModule} from '@angular/material/select';
@@ -21,6 +22,9 @@ import { FormsModule } from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
+
 
 import { SelectMultipleComponent } from './modules/admins/components/select-multiple/select-multiple.component';
 import { InputSimpleComponent } from './modules/admins/components/input-simple/input-simple.component';
@@ -30,6 +34,8 @@ import { GroupShowComponent } from './shared/components/group-show/group-show.co
 import { DialogCancelComponent } from './shared/components/dialog-cancel/dialog-cancel.component';
 import { TournamentCreateComponent } from './modules/admins/pages/tournament-create/tournament-create.component';
 import { TournamentEditComponent } from './modules/admins/pages/tournament-edit/tournament-edit.component';
+import { TournamentCategoriesComponent } from './modules/trainers/pages/tournament-categories/tournament-categories.component';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -47,7 +53,8 @@ import { TournamentEditComponent } from './modules/admins/pages/tournament-edit/
     GroupShowComponent,
     DialogCancelComponent,
     TournamentCreateComponent,
-    TournamentEditComponent,    
+    TournamentEditComponent,
+    TournamentCategoriesComponent,    
   ],
   imports: [
     HttpClientModule,
@@ -62,6 +69,9 @@ import { TournamentEditComponent } from './modules/admins/pages/tournament-edit/
     MatDatepickerModule,
     MatGridListModule,
     MatDialogModule,
+    MatCardModule,
+    MatSnackBarModule,
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

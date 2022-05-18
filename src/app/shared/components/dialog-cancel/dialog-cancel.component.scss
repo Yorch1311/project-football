@@ -9,13 +9,14 @@
     font-family: 'Roboto';
     font-style: normal;
     font-size: 16px;
+
 }
 
 .format-button-continue {
     border: transparent;
     width: 160px !important;
     height: 48px !important;
-    left: 20px;
+    margin-left: 20px !important;
     /* Primary_Blue */
     background: #0A90EF;
     border-radius: 8px;

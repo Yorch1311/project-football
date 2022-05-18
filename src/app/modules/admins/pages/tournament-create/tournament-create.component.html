@@ -9,7 +9,7 @@
 
     </mat-grid-list>
 
-    <mat-grid-list style="width:100%" cols="3" rowHeight="110px" *ngIf="(id === null) || (id !== null && placeSend !== null)">
+    <mat-grid-list style="width:100%" cols="3" rowHeight="100px">
 
         <mat-grid-tile colspan="3">
             <div class="order-name-tournament">
@@ -22,10 +22,9 @@
 
 
     <!--&& id !==null -->
-    <mat-grid-list style="width:100%" cols="3" rowHeight="180px" *ngIf="(id === null) || (id !== null && placeSend !== null)">
+    <mat-grid-list style="width:100%" cols="3" rowHeight="160px" >
 
-        <mat-grid-tile>
-
+        <mat-grid-tile rowHeight="100px">
             <div class="order-categories">
                 <h4 class="size-title-categoriries">Dirigido para</h4>
                 <app-select-simple [nombre]="'Categoria'" [items]="itemsCategory" [valuenum]="categoriSend" (onChange)="onChangeCategori($event)"></app-select-simple>
@@ -102,11 +101,14 @@
 
         <div class="order-auditor-trainers">
             <app-group-show [items]="coachs" (onChange)="DeleteCoach($event)"></app-group-show>
-        </div>
+        </div>        
+    </div>    
+</body>
+
+<div style="width: 100%;"><br></div>
+
+    <div class="button-cancel-continue" >    
+        <button mat-button class="format-button-cancel" (click)="Cancel()"><span class="size-title-cancel">Cancelar</span></button>
+        <button mat-raised-button color="primary" type="button" class="format-button-continue" (click)="CrearTou()"><span class="size-title-continue">Continuar</span></button>
     </div>
 
-</body>
-<div style="margin-left: 70%; margin-top: 30px; display:inline;" *ngIf="(id === null) || (id !== null && placeSend !== null)">
-    <button mat-button class="format-button-cancel" (click)="Cancel()"><span class="size-title-cancel">Cancelar</span></button>
-    <button mat-raised-button color="primary" type="button" class="format-button-continue" (click)="CrearTou()"><span class="size-title-continue">Continuar</span></button>
-</div>

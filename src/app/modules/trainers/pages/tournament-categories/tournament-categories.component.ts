@@ -13,6 +13,7 @@ export class TournamentCategoriesComponent implements OnInit {
   data: TournamentCategories[] | any;
   id: string | null = '';
 
+  texto: string = 'Texto';
   constructor(private router: Router, private url: ActivatedRoute, private service: ServiceService) { }
 
   ngOnInit(): void {
@@ -27,4 +28,5 @@ export class TournamentCategoriesComponent implements OnInit {
   goto(id: string){
     this.router.navigate(['trainer/tournament/'+this.id+'/categories/create-team'])
   }
+
 }

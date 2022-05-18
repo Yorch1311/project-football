@@ -47,7 +47,7 @@
 .order-categories {
     width: 100%; //para el uso de esta wea que inicien a la izquierda
     margin-left: 40px;
-    margin-top: 38px;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
@@ -80,7 +80,7 @@
 .order-place {
     width: 100%; //para el uso de esta wea que inicien a la izquierda
     margin-left: 40px;
-    margin-top: 28px;
+    margin-top: 22px;
     margin-bottom: 10px;
 }
 
@@ -130,7 +130,7 @@
 .order-auditor-show {
     max-width: 33%;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 0px;
     padding: 0;
     margin-bottom: 10px;
     float: left;
@@ -148,7 +148,7 @@
 .order-auditor-referees {
     max-width: 33%;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 0px;
     padding: 0;
     margin-bottom: 10px;
     float: left;
@@ -166,9 +166,9 @@
 .order-auditor-trainers {
     max-width: 33%;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 0px;
     padding: 0;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     float: left;
 }
 
@@ -223,7 +223,7 @@
 //div-3colums
 .div-3colums {
     background-color: aquamarine;
-    width: 100%;
+    width: 100%;        
 }
 
 mat-grid-tile {
@@ -244,4 +244,10 @@ mat-grid-tile {
 .size-input-option-select {
     max-width: 280px !important;
     width: 100%;
+}
+
+.button-cancel-continue{
+    margin-left: 65.5%; 
+    margin-top: 40px !important; 
+    display:inline;
 }
