@@ -7,7 +7,7 @@ const routes: Routes = [
           { path: '' },
           { path: 'create' },
           { path: 'edit/:id' },
-          { path: 'detail/:id' },
+          { path: 'detail/:id/status/:status' },
           { path: 'manage-teams/:id' },
         ],
       },
