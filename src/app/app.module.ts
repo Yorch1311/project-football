@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonComponent } from './shared/components/button/button.component';
 import { TournamentDetailComponent } from './modules/admins/components/tournament-detail/tournament-detail.component';
-import { ChipComponent } from './modules/admins/components/chip/chip.component';
+import { ChipComponent } from './shared/components/chip/chip.component';
 import { TournamentDetailPageComponent } from './modules/admins/pages/tournament-detail-page/tournament-detail-page.component';
 
 
