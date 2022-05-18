@@ -1,0 +1,5 @@
+<mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>{{nombre}}</mat-label>
+    <!--(Onclick)="obtenerdato(dato.value)" -->
+    <input class="size-input-option-select" matInput type="text" placeholder={{ejemplo}} [(ngModel)]="value" #dato  (change)="obtenerdato(dato.value)" >
+</mat-form-field>

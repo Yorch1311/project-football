@@ -1,0 +1,14 @@
+<mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>{{nombre}}</mat-label>     
+    <mat-date-range-input class="size-input-option-select" [rangePicker]="picker">
+        <input matStartDate  type="text" [value]="valstart" placeholder="Fecha Inicio" #start >
+        <input matEndDate   type="text" [value]="valend" placeholder="Fecha Termino"  #end>
+    </mat-date-range-input>          
+    <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker>
+        <mat-date-range-picker-actions>
+            <button mat-button matDateRangePickerCancel>Cancel</button>
+            <button mat-raised-button color="primary" matDateRangePickerApply (click)="obtenerFechas(start.value, end.value)">Apply</button>
+          </mat-date-range-picker-actions>
+    </mat-date-range-picker>        
+</mat-form-field>

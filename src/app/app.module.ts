@@ -11,6 +11,25 @@ import { TournamentDetailPageComponent } from './modules/admins/pages/tournament
 
 
 import {MatChipsModule} from '@angular/material/chips';
+import { SelectSimpleComponent } from './modules/admins/components/select-simple/select-simple.component';
+
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatDialogModule} from '@angular/material/dialog';
+
+import { SelectMultipleComponent } from './modules/admins/components/select-multiple/select-multiple.component';
+import { InputSimpleComponent } from './modules/admins/components/input-simple/input-simple.component';
+import { DateRangeComponent } from './modules/admins/components/date-range/date-range.component';
+import { SelectButtonComponent } from './shared/components/select-button/select-button.component';
+import { GroupShowComponent } from './shared/components/group-show/group-show.component';
+import { DialogCancelComponent } from './shared/components/dialog-cancel/dialog-cancel.component';
+import { TournamentCreateComponent } from './modules/admins/pages/tournament-create/tournament-create.component';
+import { TournamentEditComponent } from './modules/admins/pages/tournament-edit/tournament-edit.component';
+
 
 @NgModule({
   declarations: [
@@ -19,12 +38,28 @@ import {MatChipsModule} from '@angular/material/chips';
     TournamentDetailComponent,
     ChipComponent,
     TournamentDetailPageComponent,
+    SelectSimpleComponent,
+    SelectMultipleComponent,
+    InputSimpleComponent,
+    DateRangeComponent,
+    SelectButtonComponent,
+    GroupShowComponent,
+    DialogCancelComponent,
+    TournamentCreateComponent,
+    TournamentEditComponent,    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatChipsModule
+    MatChipsModule,
+    MatSelectModule,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatDatepickerModule,
+    MatGridListModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

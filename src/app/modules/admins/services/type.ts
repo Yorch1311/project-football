@@ -18,3 +18,25 @@ export interface TournamentDetail {
     time: string;
 
 }
+
+//interface para recepcion de datos
+export interface Item {  
+  id: number;  
+  name: string;  
+}
+
+//interface para crear torneo
+export interface tupla {    
+  id_tournament?: string;
+  name: string;
+  category: number;
+  branch: number[]; 
+  type: number;
+  town: number;
+  places: number[];
+  dates: string;  
+  time: string;
+  administrators: number[];
+  referees: number[];
+  coaches: number[];
+}
