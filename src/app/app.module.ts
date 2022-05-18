@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonComponent } from './shared/components/button/button.component';
 import { TournamentDetailComponent } from './modules/admins/components/tournament-detail/tournament-detail.component';
-import { ChipComponent } from './modules/admins/components/chip/chip.component';
+import { ChipComponent } from './shared/components/chip/chip.component';
 import { TournamentDetailPageComponent } from './modules/admins/pages/tournament-detail-page/tournament-detail-page.component';
 
 
@@ -23,6 +23,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
 
@@ -36,6 +37,9 @@ import { TournamentCreateComponent } from './modules/admins/pages/tournament-cre
 import { TournamentEditComponent } from './modules/admins/pages/tournament-edit/tournament-edit.component';
 import { TournamentCategoriesComponent } from './modules/trainers/pages/tournament-categories/tournament-categories.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { CardComponent } from './shared/components/card/card.component';
+import { TeamListComponent } from './shared/components/team-list/team-list.component';
+import { TournamentCreateTreeComponent } from './modules/admins/pages/tournament-create-tree/tournament-create-tree.component';
 
 
 @NgModule({
@@ -54,7 +58,10 @@ import { MatNativeDateModule } from '@angular/material/core';
     DialogCancelComponent,
     TournamentCreateComponent,
     TournamentEditComponent,
-    TournamentCategoriesComponent,    
+    TournamentCategoriesComponent,
+    TeamListComponent,
+    CardComponent,
+    TournamentCreateTreeComponent
   ],
   imports: [
     HttpClientModule,
@@ -72,6 +79,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatCardModule,
     MatSnackBarModule,
     MatNativeDateModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,6 +6,8 @@
     </a>
   </div>
 
-  <mat-card *ngIf="status == 'done'" class="message">Este torneo ha finalizado</mat-card>
+  <div *ngIf="status == 'done'" class="message">
+    <h2>Este torneo ha finalizado</h2>
+  </div>
   <app-tournament-detail [id]="id"></app-tournament-detail>
 </div>
