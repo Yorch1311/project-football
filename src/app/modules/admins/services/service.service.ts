@@ -2,20 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TournamentDetail } from './type';
+import { tupla } from './type'
 
-interface tupla {
-  name: string;
-  category: number;
-  branch: number[];
-  type: number;
-  town: number;
-  places: number[];
-  dates: string;
-  time: string;
-  administrators: number[];
-  referees: number[];
-  coaches: number[];
-}
 
 @Injectable({
   providedIn: 'root'
@@ -38,7 +26,7 @@ export class ServiceService {
   }
 
   //Función para recibir los detalles del torneo
-  Searchid(id: any): Observable<any> {
+  Searchid(id: any):Observable<any> {
     return this.http.get(`${this.url}searchid/${id}`);
   }
 

@@ -51,21 +51,40 @@ export class TournamentCreateComponent implements OnInit {
 
 
  //para almacenar datos  y mostrarlos en select's
-  itemsCategory: Item[] = [];    
-  itemsbranch: Item[] = [ ];        
-  itemstype: Item[] = [];
-  itemscyty: Item[] = [];  
-  itemsplace: Item[] = [];    
-  itemsAdmin: Item[] = [];   
-  itemsreferee: Item[] = [];              
-  itemsTrainers: Item[] = [];  
-
-
-  //variable donde se compara el id
-  id: string | null;  
+  itemsCategory: Item[] = [
+    {id: 1 , name: "Ejemplo1"},
+    {id: 2 , name: "Ejemplo2"},
+  ];    
+  itemsbranch: Item[] = [ 
+    {id: 1 , name: "Ejemplo1"},
+    {id: 2 , name: "Ejemplo2"},
+  ];        
+  itemstype: Item[] = [
+    {id: 1 , name: "Ejemplo1"},
+    {id: 2 , name: "Ejemplo2"},
+  ];
+  itemscyty: Item[] = [
+    {id: 1 , name: "Ejemplo1"},
+    {id: 2 , name: "Ejemplo2"},
+  ];  
+  itemsplace: Item[] = [
+    {id: 1 , name: "Ejemplo1"},
+    {id: 2 , name: "Ejemplo2"},
+  ];    
+  itemsAdmin: Item[] = [
+    {id: 1 , name: "Ejemplo1"},
+    {id: 2 , name: "Ejemplo2"},
+  ];   
+  itemsreferee: Item[] = [
+    {id: 1 , name: "Ejemplo1"},
+    {id: 2 , name: "Ejemplo2"},
+  ];              
+  itemsTrainers: Item[] = [
+    {id: 1 , name: "Ejemplo1"},
+    {id: 2 , name: "Ejemplo2"},
+  ];  
   
-  constructor(public dialog: MatDialog, private router: Router, private routerAc: ActivatedRoute, private APIcreate: ServiceService, private _snackBar: MatSnackBar) {
-    this.id = this.routerAc.snapshot.paramMap.get("id");
+  constructor(public dialog: MatDialog, private router: Router,  private APIcreate: ServiceService, private _snackBar: MatSnackBar) {    
   }
 
   ngOnInit(): void {

@@ -1,0 +1,73 @@
+//botones de cancelar y continuar
+.format-button-cancel {
+    max-width: 160px;
+    width: 100%;
+    max-height: 48px;
+    height: 100%;
+    /* Common_White */
+    background: #FFFFFF;
+    /* Primary_Blue */
+    border: 1px solid #0A90EF;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.size-title-cancel {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+    /* Primary_Blue */
+    color: #0A90EF;
+}
+
+.format-button-continue {
+    background: #0A90EF;
+    border-radius: 8px;
+    max-width: 160px;
+    width: 100%;
+    max-height: 48px;
+    height: 100%;
+    margin-left: 20px;
+    margin-right: 48px;
+    margin-bottom: 30px;
+}
+
+.size-title-continue {
+    font-weight: 500;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+    /* Common_White */
+    color: #FFFFFF;
+}
+
+//div-3colums
+.div-3colums {
+    background-color: aquamarine;
+    width: 100%;
+}
+
+mat-grid-tile {
+    //background-color: aqua; //------------------------------------------------------------------
+    padding: 0;
+    margin: 0;
+}
+
+//tamaño del field-------------------------------------------------------------
+.example-full-width {
+    max-width: 300px !important;
+    width: 100%;
+    //background-color: red;
+    height: 60px;
+}
+
+//tamño de select inputs-------------------------------------------------------
+.size-input-option-select {
+    max-width: 280px !important;
+    width: 100%;
+}

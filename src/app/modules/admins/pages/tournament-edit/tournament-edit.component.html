@@ -1,1 +1,113 @@
-<p>tournament-edit works!</p>
+<body class="contenedor">
+    <mat-grid-list style="width:100%" cols="3" rowHeight="60px">
+
+        <mat-grid-tile colspan="3">
+            <div class="order-name-title">
+                <h1 class="size-name">Arma Tu Torneo</h1>
+            </div>
+        </mat-grid-tile>
+
+    </mat-grid-list>
+
+    <mat-grid-list style="width:100%" cols="3" rowHeight="110px" *ngIf="(id === null) || (id !== null && placeSend !== null)">
+
+        <mat-grid-tile colspan="3">
+            <div class="order-name-tournament">
+                <h4 class="size-title">Conócelo como...</h4>
+                <app-input-simple [nombre]="'Nombre del Torneo'" [ejemplo]="'Ej.champions'" [value]="nombreSend" (onChange)="onChangeNameTournament($event)"></app-input-simple>
+            </div>
+        </mat-grid-tile>
+
+    </mat-grid-list>
+
+
+    <!--&& id !==null -->
+    <mat-grid-list style="width:100%" cols="3" rowHeight="180px" *ngIf="(id === null) || (id !== null && placeSend !== null)">
+
+        <mat-grid-tile>
+
+            <div class="order-categories">
+                <h4 class="size-title-categoriries">Dirigido para</h4>
+                <app-select-simple [nombre]="'Categoria'" [items]="itemsCategory" [valuenum]="categoriSend" (onChange)="onChangeCategori($event)"></app-select-simple>
+            </div>
+
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <div class="order-branch">
+                <app-select-multiple [nombre]="'Rama'" [items]="itemsbranch" (onChange)="getGenders($event)"></app-select-multiple>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="order-type-tournament">
+                <app-select-simple [nombre]="'Tipo de Torneo'" [items]="itemstype" [valuenum]="typeSend" (onChange)="onChangetypetournament($event)"></app-select-simple>
+            </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <div class="order-place">
+                <h4 class="size-title-place">Realización en</h4>
+                <!---->
+                <app-select-simple [nombre]="'Ciudad'" [items]="itemscyty" [valuenum]="citySend" (onChange)="onChangecity($event)"></app-select-simple>
+                <app-select-simple [nombre]="'Lugares'" [items]="itemsplace" [valuenum]="placeSend" (onChange)="onChangeplace($event)"></app-select-simple>
+            </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <div class="order-date">
+                <!---->
+                <app-date-range [nombre]="'Fechas'" [value]="'hola'" (onChange)="onChangeDate($event)"></app-date-range>
+            </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <div class="order-type-Ttime">
+                <app-input-simple [nombre]="'Horario'" [ejemplo]="'9:20 - 3:30'" [value]="timeSend" (onChange)="onChangeTime($event)"></app-input-simple>
+            </div>
+        </mat-grid-tile>
+        <!---->
+        <mat-grid-tile>
+            <div class="order-auditors">
+                <h4 class="size-title-auditor">Interventores</h4>
+                <app-select-button [nombre]="'Administradores'" [items]="itemsAdmin" (onChange)="onChangeAdmin($event)">"</app-select-button>
+            </div>
+        </mat-grid-tile>
+
+
+        <mat-grid-tile>
+            <div class="order-referees">
+                <app-select-button [nombre]="'Arbitros'" [items]="itemsreferee" (onChange)="onChangeArbiter($event)"></app-select-button>
+            </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <div class="order-trainers">
+                <app-select-button [nombre]="'Entrenadores'" [items]="itemsTrainers" (onChange)="onChangeCoach($event)"></app-select-button>
+            </div>
+        </mat-grid-tile>
+
+    </mat-grid-list>
+
+
+    <!--Mostrar elcciones y opcion delete-->
+    <div class="div-3colums">
+
+        <div class="order-auditor-show">
+            <app-group-show [items]="admins" (onChange)="DeleteAdmin($event)"></app-group-show>
+        </div>
+
+        <div class="order-auditor-referees">
+            <app-group-show [items]="arbiters" (onChange)="DeleteArbiter($event)"></app-group-show>
+        </div>
+
+        <div class="order-auditor-trainers">
+            <app-group-show [items]="coachs" (onChange)="DeleteCoach($event)"></app-group-show>
+        </div>
+    </div>
+
+</body>
+<div style="margin-left: 70%; margin-top: 30px; display:inline;" *ngIf="(id === null) || (id !== null && placeSend !== null)">
+    <button mat-button class="format-button-cancel" (click)="Cancel()"><span class="size-title-cancel">Cancelar</span></button>
+    <button mat-raised-button color="primary" type="button" class="format-button-continue" (click)="CrearTou()"><span class="size-title-continue">Continuar</span></button>
+</div>
+

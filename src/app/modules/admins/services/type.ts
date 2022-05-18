@@ -27,7 +27,7 @@ export interface Item {
 
 //interface para crear torneo
 export interface tupla {    
-  id_tournament?: string;
+  id_tournament?: number | any;
   name: string;
   category: number;
   branch: number[]; 
