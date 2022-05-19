@@ -225,6 +225,7 @@ export class TournamentCreateComponent implements OnInit {
 
   Cancel() {              
     const dialogRef = this.dialog.open(DialogCancelComponent, {
+
       width: '420px',
       height: '200px',                
     });   
