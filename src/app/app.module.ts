@@ -40,6 +40,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { CardComponent } from './shared/components/card/card.component';
 import { TeamListComponent } from './shared/components/team-list/team-list.component';
 import { TournamentCreateTreeComponent } from './modules/admins/pages/tournament-create-tree/tournament-create-tree.component';
+import { CreateTeamComponent } from './modules/trainers/pages/create-team/create-team.component';
+import { TrainerTeamListComponent } from './shared/components/trainer-team-list/trainer-team-list.component';
 
 
 @NgModule({
@@ -61,7 +63,9 @@ import { TournamentCreateTreeComponent } from './modules/admins/pages/tournament
     TournamentCategoriesComponent,
     TeamListComponent,
     CardComponent,
-    TournamentCreateTreeComponent
+    TournamentCreateTreeComponent,
+    CreateTeamComponent,
+    TrainerTeamListComponent
   ],
   imports: [
     HttpClientModule,
