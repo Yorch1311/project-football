@@ -1,7 +1,7 @@
 <div class="pagina">
   <div class="title">
     <h1>Detalle de torneo</h1>
-    <a *ngIf="status == 'in-process'" [routerLink]="['/football/createTournament', id]">
+    <a *ngIf="status == 'in-process'" [routerLink]="['/admin/tournament/edit', id]">
       <img class="edit" src="assets/image/admin/icons8-editar-propiedad-48.svg" alt="Editar">
     </a>
   </div>
@@ -9,5 +9,8 @@
   <div *ngIf="status == 'done'" class="message">
     <h2>Este torneo ha finalizado</h2>
   </div>
-  <app-tournament-detail [id]="id"></app-tournament-detail>
+  <div class="detail">
+    <app-tournament-detail [id]="id" [status]="status"></app-tournament-detail>
+  </div>
+
 </div>

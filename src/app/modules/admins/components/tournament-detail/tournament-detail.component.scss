@@ -5,8 +5,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 24px;
-  //Borrar
-  //background-color: #0a90ef;
 }
 .one {
   grid-column: 1 / 1;
@@ -32,11 +30,8 @@
 .orgContainer {
   display: flex;
   justify-content: center;
-
-  h2{
-    display: inline;
-  }
 }
+
 .column {
   display: block;
   width: 25%;
@@ -72,10 +67,16 @@ li {
   margin-bottom: 10px;
   color: rgba(38, 39, 43, 0.5);
 }
+
 .boton{
   margin-top: 16px;
   display: flex;
   justify-content: center;
+
+  :only-child{
+    max-width: 160px;
+    width: 100%;
+  }
 }
 
 //Smartphones

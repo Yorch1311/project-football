@@ -69,8 +69,8 @@
         [id]="item.id_chip" *ngFor="let item of data?.chips">></app-chip>
     </mat-chip-list>
 
-    <div class="boton" *ngIf="activeCount > 0">
-      <app-button [clase]="'fill'" [title]="'Iniciar Torneo'" (onClick)="active()"></app-button>
+    <div class="boton" *ngIf="status=='in-process' && activeCount>0">
+      <app-button [clase]="'button fill'" [title]="'Iniciar Torneo'" (onClick)="active()"></app-button>
     </div>
   </section>
 

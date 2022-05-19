@@ -80,8 +80,7 @@ export class TournamentDetailComponent implements OnInit {
         }
         this.data.categorias.push("Y más");
       }*/
-
-      //this.activeCount = this.data.chips.filter((c: Chip) => c.estado == "true").length;
+      this.activeCount = this.data.chips.filter((c: { status: string }) => c.status == "true").length;
     }
   }
 
@@ -89,7 +88,7 @@ export class TournamentDetailComponent implements OnInit {
     Redirecciona a la pagina createTree la cual recibe un ID
   */
   goto(id: string){
-    this.router.navigate(["football/createTree/" + id]);
+    this.router.navigate(["admin/tournament/manage-teams/" + id]);
   }
 
   /*
