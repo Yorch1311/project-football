@@ -81,6 +81,12 @@ export class TournamentDetailComponent implements OnInit {
         this.data.categorias.push("Y más");
       }*/
       this.activeCount = this.data.chips.filter((c: { status: string }) => c.status == "true").length;
+
+      if(this.activeCount > 0 && this.status == 'in-process'){
+        this.clase = 'button fill';
+      }else{
+        this.clase = 'button fill disable';
+      }
     }
   }
 
@@ -99,7 +105,7 @@ export class TournamentDetailComponent implements OnInit {
   }
 
   //Funcion para activar el torneo
-  active(){
+  activeTournament(){
     if(this.activeCount > 0){
       alert("Event Triggered!!");
 
