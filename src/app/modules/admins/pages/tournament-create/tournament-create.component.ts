@@ -29,7 +29,7 @@ export class TournamentCreateComponent implements OnInit {
   //daros para llenar y crear torneo
   name: string | null = null;
   categori: number | any;  
-  branches: Item [] = [];  
+  branches: number [] = [];  
   typeTournamet: number | any;
   city: number | any;  
   place: number | any;  
@@ -153,7 +153,7 @@ export class TournamentCreateComponent implements OnInit {
   }
 
   //obtener ramas
-  getGenders(data: Item[]){
+  getGenders(data: number[]){
     this.branches = data;        
     //console.table(data);
     //alert(this.branches);
@@ -230,11 +230,11 @@ export class TournamentCreateComponent implements OnInit {
     });   
     
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-      if ( result == true){
-          //mandar a la pagina del cristian
-          //this.router.navigate(["football/tournaments"]);
-      }      
+      console.log(`Dialog result: ${result}`);      
+        if ( result == true){
+            //mandar a la pagina del cristian
+            //this.router.navigate(["football/tournaments"]);
+        }      
     });              
   }
 
@@ -259,7 +259,7 @@ export class TournamentCreateComponent implements OnInit {
       
         //obtener id de las ramas
         this.branches.forEach(result => {                
-          this.brancheshid.push(result.id);
+          this.brancheshid.push(result);
         });
                           
 
@@ -291,6 +291,8 @@ export class TournamentCreateComponent implements OnInit {
         this._snackBar.open('Torneo creado exitosamente', 'X', {
           horizontalPosition: this.horizontalPosition,
           verticalPosition: this.verticalPosition,                    
+          //panelClass: ['green-snackbar'],          
+          panelClass: ['red-snackbar'],          
         });
 
         //Crear la tupla y regresar al chrisyian

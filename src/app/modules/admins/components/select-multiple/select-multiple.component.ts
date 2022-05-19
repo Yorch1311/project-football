@@ -18,13 +18,13 @@ export class SelectMultipleComponent implements OnInit {
   @Input() items: Item[] = []; 
   
   //se envia 
-  @Output() onChange = new EventEmitter<Item[]>();
+  @Output() onChange = new EventEmitter<number[]>();
 
-  selectedValue: string | any;         
+  selectedValue: number []=  [1,2];         
 
   constructor() { }
   
-  obtenerdato( data: Item[]){
+  obtenerdato( data: number[]){
     //console.log(data);    
     this.onChange.emit(data);
   }
