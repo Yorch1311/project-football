@@ -14,8 +14,8 @@ export class DateRangeComponent implements OnInit {
   //se envia 
   @Output() onChange = new EventEmitter<string>();        
 
-  valstart : string ='';
-  valend:string = '';
+  valstart : Date =  new Date("2022/02/16");
+  valend: Date =  new Date("2022/06/16");
 
   constructor() { }
 

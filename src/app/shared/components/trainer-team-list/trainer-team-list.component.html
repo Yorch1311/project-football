@@ -1,0 +1,7 @@
+<div class="list-container">
+    <div class="team-list-container">
+        <div class="card-position" id="availableTeams" >
+            <app-card *ngFor="let item of availableTeams" [teamName]="item.teamName" cdkDrag></app-card>
+        </div>
+    </div>
+</div>
