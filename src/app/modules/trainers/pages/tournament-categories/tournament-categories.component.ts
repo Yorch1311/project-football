@@ -27,6 +27,12 @@ export class TournamentCategoriesComponent implements OnInit {
         name_category: 'Juvenil 1',
         name_branch: 'Femenil',
         status: 'false'
+      },
+      {
+        id_chip: '2',
+        name_category: 'Juvenil 1',
+        name_branch: 'Femenil',
+        status: 'false'
       }
     ]
   }

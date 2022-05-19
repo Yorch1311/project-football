@@ -52,5 +52,29 @@ h1 {
   }
 }
 
+//Smartphones
+@media screen and (min-width:375px) and (max-width:428px){
+  .pagina{
+    width: calc(100% - 16px);
+  }
+}
 
+//ipad
+@media screen and (max-width:810px){
+  .pagina{
+    width: calc(100% - 16px);
+  }
+}
+
+//desktop
+@media screen and (max-width:1304px){
+  .pagina{
+    width: calc(100% - 16px);
+  }
+  /*
+  .message{
+    width: calc(100% - 16px);
+  }
+  */
+}
 

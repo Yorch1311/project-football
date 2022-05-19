@@ -30,7 +30,7 @@
 
     <h2>Organizado por</h2>
     <div class="orgContainer">
-      <div class="admin" *ngIf="data?.admin_detail?.length">
+      <div class="column" *ngIf="data?.admin_detail?.length">
         <h3>Administradores</h3>
 
         <ul>
@@ -39,7 +39,7 @@
           </li>
         </ul>
       </div>
-      <div class="arbitro" *ngIf="data?.referee_detail?.length">
+      <div class="column" *ngIf="data?.referee_detail?.length">
         <h3>Arbitros</h3>
 
         <ul>
@@ -48,7 +48,7 @@
           </li>
         </ul>
       </div>
-      <div class="trainer" *ngIf="data?.coach_detail?.length">
+      <div class="column" *ngIf="data?.coach_detail?.length">
         <h3>Entrenadores</h3>
 
         <ul>
