@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tournament-table-row',
@@ -14,24 +13,18 @@ export class TournamentTableRowComponent implements OnInit {
   @Input() place: string = "";
   @Input() date: string = "";
   @Input() status: string = "";
-  
+
   @Output() onClick = new EventEmitter();
-  
-  constructor(private router: Router) { }
+
+  constructor() { }
 
   ngOnInit(): void {
   }
 
   handleEvent(){
-    console.log("entro al evento")
     this.onClick.emit({
       id: this.id,
       status: this.status
     });
   }
-
-  tournamentDetail() {
-    this.router.navigate(["admin/detail/" + this.id]);
-  }
-
 }

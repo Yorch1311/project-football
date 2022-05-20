@@ -9,20 +9,26 @@ export class ButtonComponent implements OnInit {
 
   @Output() onClick = new EventEmitter();
   @Input() title: string;
-  @Input() disable: boolean;
   @Input() clase: string;
+  @Input() disable: boolean;
   users = [];
 
   constructor() {
     this.title = "";
-    this.disable = false;
     this.clase = ""
+    this.disable = false;
   }
 
   ngOnInit(): void {
+
+    if(this.disable){
+      this.clase += " disable";
+    }
   }
 
   handleOnClick() {
-    this.onClick.emit();
+    if(!this.disable){
+      this.onClick.emit();
+    }
   }
 }
