@@ -8,6 +8,7 @@ import { tupla } from './type'
 @Injectable({
   providedIn: 'root'
 })
+
 export class ServiceService {
 
   constructor(private http: HttpClient) { }

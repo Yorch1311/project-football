@@ -1,129 +1,210 @@
-.contenedor {
-    max-width: 90%;
+.pagina { 
+    max-width: 1304px;
     width: 100%;
-    margin-left: 6%;
-    margin-right: 4%;
-    margin-top: 40px;
-    height: auto;
-    //background-color: aquamarine;
-}
+    //Borrar despues
+    background-color: #FFFFFF;
+    max-height: 827;
+    height: 100%;
+    margin-top: 80px;
+    padding: 8px;
+    //margin-left: 64px;
+}  
 
-//tile page------------------------------------------------------------------------------
-.order-name-title {
+//--------------------------------------------------------------------------------------------------------------
+  .size-name{       
+    max-width: 250px;
     width: 100%;
-    margin-top: 5px;
-    margin-left: 0px;
-}
+    max-height: 38px;
+    height: 100%;
 
-.size-name {
+    left: 0px;
+    top: 0px;
+
     font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
+    font-style: normal;    
     font-size: 32px;
-    line-height: 38px;
-    /* identical to box height */
-    /* Dark_Gray */
     color: rgba(38, 39, 43, 0.75);
+
+  }
+
+  
+  .wrapper {
+    display: grid;
+    //background-color: blanchedalmond;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows:repeat(5, 125PX);    
+    grid-gap: 10px;
+    
+    grid-auto-rows: minmax(100px, grid-auto-rows);   
+    grid-template-areas:"a a a" 
+                        "b c d" 
+                        "e e e"
+                        "f g h"
+                        "i j k";             
+  }
+
+
+  //------------------------------------------------------------------------------------------------------------------
+    .name-tournament{        
+        grid-area: a;
+    }
+
+    .size-title{      
+        max-width: 180px;
+        max-height: 23px;
+        width: 100%;
+        height: 100%;
+        margin-left: 48px;
+        margin-top: 30px;
+    
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 23px;        
+        color: rgba(38, 39, 43, 0.5);
+    }
+    
+//---------------------------------------------------------------------------------------------------------------------
+
+    .order-category{
+        grid-area: b;
+    }
+
+    .size-title-categoriries{
+        max-width: 150px;
+        width: 100%;
+        max-height: 23px;
+        height: 100%;
+        margin-left: 48px;    
+        margin-top: 20px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 23px;    
+        color: rgba(38, 39, 43, 0.5);
+    }
+
+    .order-input-category{
+        margin-left: 48px;
+    }
+//-----------------------------------------------------------------------------------------------------------------------    
+    .order-branch{
+        grid-area: c;
+    }
+
+    .order-input-branch{
+        margin-left: 20px;
+        margin-top: 59px;
+    }
+
+//-------------------------------------------------------------------------------------------------------------------------
+.order-type{
+    grid-area: d;
 }
 
-//tile tournament------------------------------------------------------------------------
-.order-name-tournament {
-    width: 100%; //para el uso de esta wea que inicien a la izquierda
-    margin-left: 40px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.order-input-tournament{
+    //margin-left: 20px;
+    margin-top: 59px;
+}
+//-------------------------------------------------------------------------------------------------------------------------
+.order-city{
+ grid-area: e;
 }
 
-.size-title {
+.size-title-place{
+    max-width: 150px;
+    max-height: 23px;
+    width: 100%;
+    height: 100%;
+    margin-left: 48px;    
     font-family: 'Roboto';
     font-style: normal;
+    font-weight: 500;
     font-size: 20px;
     line-height: 23px;
-    /* Medium_Gray */
     color: rgba(38, 39, 43, 0.5);
 }
-
-//categories-------------------------------------------------------------------------
-.order-categories {
-    width: 100%; //para el uso de esta wea que inicien a la izquierda
-    margin-left: 40px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  
+.order-input-city{
+    margin-left: 48px;
 }
 
-.size-title-categoriries {
+//-------------------------------------------------------------------------------------------------------------------------
+.order-place{
+    grid-area: f;        
+}
+
+.order-input-place{     
+ margin-top: -25px;
+ margin-left: 48px;
+}
+
+//-------------------------------------------------------------------------------------------------------------------------
+.order-date{
+    grid-area: g;
+}
+
+.order-input-date{
+    margin-top: -25px;
+    margin-left: 20px;
+}
+//------------------------------------------------------------------------------------------------------
+.order-time{
+    grid-area: h;
+}
+
+.order-input-time{
+    margin-top: -25px;
+}
+
+//------------------------------------------------------------------------------------------------------
+
+.order-auditors{
+    grid-area: i;
+}
+
+.order-input-auditors{    
+    margin-left: 45px;
+}
+
+.size-title-auditor{
+    width: 119px;
+    height: 23px;
+    margin-left: 48px;
+    margin-top: -85px;    
     font-family: 'Roboto';
     font-style: normal;
+    font-weight: 500;
     font-size: 20px;
-    line-height: 23px;
-    /* Medium_Gray */
-    color: rgba(38, 39, 43, 0.5);
+    line-height: 23px;            
+    color: rgba(38, 39, 43, 0.5);           
+}
+//------------------------------------------------------------------------------------------------------
+.order-referees{
+    grid-area: j;
 }
 
-//Branch-------------------------------------------------------------------------------
-.order-branch {
-    width: 100%; //para el uso de esta wea que inicien a la izquierda
-    margin-top: 68px;
-    margin-left: 6%;
-    margin-bottom: 10px;
+.order-input-referre{
+    margin-left: 22px;    
+    margin-top: -46px;    
+}
+//------------------------------------------------------------------------------------------------------
+.order-trainers{
+    grid-area: k;
 }
 
-//type tournament-------------------------------------------------------------------------
-.order-type-tournament {
-    width: 100%; //para el uso de esta wea que inicien a la izquierda
-    margin-top: 78px;
-    margin-left: 6%;
-    margin-bottom: 10px;
+.order-input-trainers{
+    margin-top: -46px;    
 }
 
-//place---------------------------------------
-.order-place {
-    width: 100%; //para el uso de esta wea que inicien a la izquierda
-    margin-left: 40px;
-    margin-top: 22px;
-    margin-bottom: 10px;
-}
-
-.size-title-place {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-size: 20px;
-    line-height: 23px;
-    /* Medium_Gray */
-    color: rgba(38, 39, 43, 0.5);
-}
-
-//date-----------------------------------------------
-.order-date {
-    width: 100%; //para el uso de esta wea que inicien a la izquierda
-    margin-top: 126px;
-    margin-left: 6%;
-    margin-bottom: 10px;
-}
-
-//time----------------------------------------------------------
-.order-type-Ttime {
-    width: 100%; //para el uso de esta wea que inicien a la izquierda
-    margin-top: 126px;
-    margin-left: 6%;
-    margin-bottom: 10px;
-}
-
-//Administradores-----------------------------------------------
-.order-auditors {
-    width: 100%; //para el uso de esta wea que inicien a la izquierda
-    margin-left: 40px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-}
-
-.size-title-auditor {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-size: 20px;
-    line-height: 23px;
-    /* Medium_Gray */
-    color: rgba(38, 39, 43, 0.5);
+//------------------------------------------------------------------------------------------------------
+//div-3colums
+.div-3colums {
+    //background-color: aquamarine;
+    margin-top: -100px;
+    width: 100%;        
 }
 
 //div Auditors------------------------------------------------
@@ -136,14 +217,6 @@
     float: left;
 }
 
-//abritos----------------------------------------------------------------------
-.order-referees {
-    width: 100%; //para el uso de esta wea que inicien a la izquierda
-    margin-top: 70px;
-    margin-left: 6%;
-    margin-bottom: 10px;
-}
-
 //div show  referees------------------------------------------------------------
 .order-auditor-referees {
     max-width: 33%;
@@ -154,14 +227,6 @@
     float: left;
 }
 
-//trainers---------------------------------------------------------------------
-.order-trainers {
-    width: 100%; //para el uso de esta wea que inicien a la izquierda
-    margin-top: 70px;
-    margin-left: 6%;
-    margin-bottom: 10px;
-}
-
 //div show trainers  ------------------------------------------------------------
 .order-auditor-trainers {
     max-width: 33%;
@@ -169,85 +234,13 @@
     margin-top: 0px;
     padding: 0;
     margin-bottom: 30px;
+    margin-left: -20px;
     float: left;
 }
+//------------------------------------------------------------------------------------------------------
+    .order-buttons{
+        display: inline-flexbox;
+        margin-left: 65.5%;
+    }
 
-//botones de cancelar y continuar
-.format-button-cancel {
-    max-width: 160px;
-    width: 100%;
-    max-height: 48px;
-    height: 100%;
-    /* Common_White */
-    background: #FFFFFF;
-    /* Primary_Blue */
-    border: 1px solid #0A90EF;
-    box-sizing: border-box;
-    border-radius: 8px;
-}
 
-.size-title-cancel {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    /* identical to box height */
-    /* Primary_Blue */
-    color: #0A90EF;
-}
-
-.format-button-continue {
-    background: #0A90EF;
-    border-radius: 8px;
-    max-width: 160px;
-    width: 100%;
-    max-height: 48px;
-    height: 100%;
-    margin-left: 20px;
-    margin-right: 48px;
-    margin-bottom: 30px;
-}
-
-.size-title-continue {
-    font-weight: 500;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-size: 16px;
-    line-height: 19px;
-    /* identical to box height */
-    /* Common_White */
-    color: #FFFFFF;
-}
-
-//div-3colums
-.div-3colums {
-    background-color: aquamarine;
-    width: 100%;        
-}
-
-mat-grid-tile {
-    //background-color: aqua; //------------------------------------------------------------------
-    padding: 0;
-    margin: 0;
-}
-
-//tamaño del field-------------------------------------------------------------
-.example-full-width {
-    max-width: 300px !important;
-    width: 100%;
-    //background-color: red;
-    height: 60px;
-}
-
-//tamño de select inputs-------------------------------------------------------
-.size-input-option-select {
-    max-width: 280px !important;
-    width: 100%;
-}
-
-.button-cancel-continue{
-    margin-left: 65.5%; 
-    margin-top: 40px !important; 
-    display:inline;
-}

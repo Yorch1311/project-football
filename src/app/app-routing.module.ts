@@ -9,7 +9,7 @@ import { TournamentShowComponent } from './modules/admins/pages/tournament-show/
 import { CreateTeamComponent } from './modules/trainers/pages/create-team/create-team.component';
 import { TournamentCategoriesComponent } from './modules/trainers/pages/tournament-categories/tournament-categories.component';
 
-const routes: Routes = [
+const routes: Routes = [    
   { path: 'admin', children: [
       { path: 'tournament', children: [
           { path: 'show', component: TournamentShowComponent },
