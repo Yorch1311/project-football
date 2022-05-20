@@ -13,16 +13,16 @@ export interface Torneo {
 }
 
 const ELEMENT_DATA: Torneo[] = [
-  {id:'1', name: 'Champions League', type: "Fase de Grupos", category: "Juvenil A", place:"C. Dep.", date : "23-05-2022", status:"Activo"},   
-  {id:"2", name: 'Champions League', type: "Fase de Grupos", category: "Juvenil B", place:"C. Dep.", date : "23-05-2022", status:"Terminado"},
-  {id:"3", name: 'Champions League', type: "Fase de Grupos", category: "Juvenil C", place:"C. Dep.", date : "23-05-2022", status:"Activo"},
-  {id:"4", name: 'Champions League', type: "Fase de Grupos", category: "Juvenil D", place:"C. Dep.", date : "23-05-2022", status:"Terminado"},
-  {id:"5", name: 'Champions League', type: "Fase de Grupos", category: "Juvenil F", place:"C. Dep.", date : "23-05-2022", status:"Activo"},  
-  {id:"6", name: 'Champions League', type: "Fase de Grupos", category: "Juvenil G", place:"C. Dep.", date : "23-05-2022", status:"Activo"},  
-  {id:"7", name: 'Champions League', type: "Fase de Grupos", category: "Juvenil H", place:"C. Dep.", date : "23-05-2022", status:"Activo"},  
-  {id:"8", name: 'Champions League', type: "Fase de Grupos", category: "Juvenil I", place:"C. Dep.", date : "23-05-2022", status:"Activo"},  
-  {id:"9", name: 'Champions League', type: "Fase de Grupos", category: "Juvenil J", place:"C. Dep.", date : "23-05-2022", status:"Terminado"},  
-  {id:"9", name: 'Champions League', type: "Fase de Grupos", category: "Juvenil K", place:"C. Dep.", date : "23-05-2022", status:"Activo"},
+  {id:'1', name: 'Champions League', type: "Fase de Grupos", category: "Juvenil A", place:"C. Dep.", date : "23-05-2022", status:"in-process"},
+  {id:"2", name: 'Champions League', type: "Fase de Grupos", category: "Juvenil B", place:"C. Dep.", date : "23-05-2022", status:"done"},
+  {id:"3", name: 'Champions League', type: "Fase de Grupos", category: "Juvenil C", place:"C. Dep.", date : "23-05-2022", status:"in-process"},
+  {id:"4", name: 'Champions League', type: "Fase de Grupos", category: "Juvenil D", place:"C. Dep.", date : "23-05-2022", status:"done"},
+  {id:"5", name: 'Champions League', type: "Fase de Grupos", category: "Juvenil F", place:"C. Dep.", date : "23-05-2022", status:"in-process"},
+  {id:"6", name: 'Champions League', type: "Fase de Grupos", category: "Juvenil G", place:"C. Dep.", date : "23-05-2022", status:"in-process"},
+  {id:"7", name: 'Champions League', type: "Fase de Grupos", category: "Juvenil H", place:"C. Dep.", date : "23-05-2022", status:"in-process"},
+  {id:"8", name: 'Champions League', type: "Fase de Grupos", category: "Juvenil I", place:"C. Dep.", date : "23-05-2022", status:"in-process"},
+  {id:"9", name: 'Champions League', type: "Fase de Grupos", category: "Juvenil J", place:"C. Dep.", date : "23-05-2022", status:"done"},
+  {id:"9", name: 'Champions League', type: "Fase de Grupos", category: "Juvenil K", place:"C. Dep.", date : "23-05-2022", status:"in-process"},
 ];
 
 @Component({
@@ -43,10 +43,10 @@ export class TournamentShowComponent implements OnInit {
   ];
 
   Filter: Item[] = [
-    { id:1, name: 'Mas Reciente' }, 
+    { id:1, name: 'Mas Reciente' },
     { id:2, name: 'Mas Antiguo' }
   ];
-  
+
   /*
   Element: Tournament[] = [
     {}
@@ -58,8 +58,11 @@ export class TournamentShowComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  tournamentCreate() {  
-    this.router.navigate(["admin/tournament/create/"]);
+  tournamentCreate() {
+    this.router.navigate(["/admin/tournament/create"]);
   }
 
+  tournamentDetail(detail: { id: string, status: string }) {
+    this.router.navigate(["admin/tournament/detail/" + detail.id + "/status/" + detail.status]);
+  }
 }

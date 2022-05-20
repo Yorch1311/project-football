@@ -70,7 +70,7 @@
     </mat-chip-list>
 
     <div class="boton" *ngIf="status=='in-process'">
-      <app-button [clase]="clase" [title]="'Iniciar Torneo'" (onClick)="activeTournament()"></app-button>
+      <app-button [clase]="clase" [disable]="estado" [title]="'Iniciar Torneo'" (onClick)="activeTournament()"></app-button>
     </div>
   </section>
 

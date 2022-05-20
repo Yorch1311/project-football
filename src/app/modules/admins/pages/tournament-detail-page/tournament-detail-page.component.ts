@@ -17,8 +17,6 @@ export class TournamentDetailPageComponent implements OnInit {
   ngOnInit(): void {
     this.id = this._router.snapshot.paramMap.get("id");
     this.status = this._router.snapshot.paramMap.get("status");
-
-    console.log(this.status)
   }
 
 }
