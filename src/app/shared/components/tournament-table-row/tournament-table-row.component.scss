@@ -1,0 +1,70 @@
+td{
+    width: 90%
+}
+
+tr{
+    background: #FFFFFF;
+    border: 1px solid rgba(38, 39, 43, 0.1);
+    box-shadow: 0px 4px 8px rgba(38, 39, 43, 0.05);
+    border-radius: 8px;
+    padding: 28px 48px;
+    display: flex;
+    margin-bottom: 16px;
+    width: 1304px;
+    height: 80px;
+}
+
+.tr-active { 
+    border-left: 8px solid #26272B;
+}
+
+.tr-inactive {
+    border-left: 8px solid #EC2E2E;
+}
+   
+.name-blur{
+    margin-top: 20px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 10px;
+    font-weight: 300px;
+    line-height: 23px;
+    filter:blur(1px);
+}
+
+.blur { 
+    filter: blur(1px);
+}
+.name {
+    margin-top: 20px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 23px;
+}
+
+.p1{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.p2{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.table-row{
+    border-left: 8px solid #26272B;
+}
+
+.td-column{
+    width: 90%;
+    text-align: center;
+}

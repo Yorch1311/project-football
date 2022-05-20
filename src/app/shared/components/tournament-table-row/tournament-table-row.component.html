@@ -1,0 +1,41 @@
+<tr class="tr" [ngClass]="{'tr-active':status==='Activo', 'tr-inactive':status==='Terminado'}" (click)="handleEvent()">
+    <td class="name" [ngClass]="{'blur':status==='Terminado'}"> {{name}} </td>
+  
+    <td class="type" [ngClass]="{'blur':status==='Terminado'}">
+      <div class="td-column">
+        <p class="p1">Tipo</p>
+        <p class="p2">{{type}}</p>
+        </div>
+    </td>
+  
+    <td class="category">
+      <div class="td-column" *ngIf="status==='Activo'">
+        <p class="p1">Categoria</p>
+        <p class="p2">{{category}}</p>
+      </div>
+      <div class="td-column" *ngIf="status==='Terminado'">
+        <app-button [clase]="'button fill'" [title]="'VER'" (onClick)="tournamentDetail()"></app-button>
+          <!--
+              <app-button-continue [value]="'VER'" (click)="tournamentDetail()" > </app-button-continue>
+          -->
+      </div>
+    </td>
+  
+    <td class="place" [ngClass]="{'blur':status==='Terminado'}">
+      <div class="td-column">
+        <p class="p1">Lugar</p>
+        <p class="p2">{{place}}</p>
+      </div>
+    </td>
+  
+    <td class="date" [ngClass]="{'blur':status==='Terminado'}">
+      <div class="td-column">
+        <!--
+          <p class="p1">Fecha</p>
+          <p class="p2">{{date.split('-')[0]}}</p>
+        -->
+        <p class="p1">Fecha</p>
+          <p class="p2">{{date}}</p>
+      </div>
+    </td>
+  </tr>

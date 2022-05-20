@@ -4,12 +4,13 @@ import { AppComponent } from './app.component';
 import { TournamentCreateComponent } from './modules/admins/pages/tournament-create/tournament-create.component';
 import { TournamentDetailPageComponent } from './modules/admins/pages/tournament-detail-page/tournament-detail-page.component';
 import { TournamentEditComponent } from './modules/admins/pages/tournament-edit/tournament-edit.component';
+import { TournamentShowComponent } from './modules/admins/pages/tournament-show/tournament-show.component';
 import { TournamentCategoriesComponent } from './modules/trainers/pages/tournament-categories/tournament-categories.component';
 
 const routes: Routes = [
   { path: 'admin', children: [
       { path: 'tournament', children: [
-          { path: '', component: TournamentDetailPageComponent },
+          { path: '', component: TournamentShowComponent },
           { path: 'create', component: TournamentCreateComponent },
           { path: 'edit/:id', component: TournamentEditComponent },
           { path: 'detail/:id/status/:status', component: TournamentDetailPageComponent },

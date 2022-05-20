@@ -36,6 +36,8 @@ import { TournamentCreateComponent } from './modules/admins/pages/tournament-cre
 import { TournamentEditComponent } from './modules/admins/pages/tournament-edit/tournament-edit.component';
 import { TournamentCategoriesComponent } from './modules/trainers/pages/tournament-categories/tournament-categories.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { TournamentTableRowComponent } from './shared/components/tournament-table-row/tournament-table-row.component';
+import { TournamentShowComponent } from './modules/admins/pages/tournament-show/tournament-show.component';
 
 
 @NgModule({
@@ -54,7 +56,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     DialogCancelComponent,
     TournamentCreateComponent,
     TournamentEditComponent,
-    TournamentCategoriesComponent,    
+    TournamentCategoriesComponent,
+    TournamentTableRowComponent,
+    TournamentShowComponent,    
   ],
   imports: [
     HttpClientModule,

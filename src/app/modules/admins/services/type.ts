@@ -25,6 +25,10 @@ export interface Item {
   name: string;  
 }
 
+export interface Filter {
+  value: string;
+}
+
 //interface para crear torneo
 export interface tupla {    
   id_tournament?: number | any;
@@ -39,4 +43,15 @@ export interface tupla {
   administrators: number[];
   referees: number[];
   coaches: number[];
+}
+
+//interfaz para mostrar tabla torneos
+export interface Tournament {
+  id_tournament: string
+  name: string;
+  type: { name: string };
+  category: { name : string};
+  places_detail: { name : string}[];
+  dates: string;
+  statuses: {name : string};
 }
