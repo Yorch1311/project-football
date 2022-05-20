@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ErrorStateMatcher } from '@angular/material/core';
 import { Router } from '@angular/router';
 import { Filter, Item } from '../../services/type';
 
@@ -34,6 +35,9 @@ export class TournamentShowComponent implements OnInit {
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
+  NameData : String = "";
+  filtro : Number = 0;
+  ordenar : Number = 0;
 
   Order: Item[] = [
     {id:1, name: 'Fase de Grupos' },
@@ -65,4 +69,23 @@ export class TournamentShowComponent implements OnInit {
   tournamentDetail(detail: { id: string, status: string }) {
     this.router.navigate(["admin/tournament/detail/" + detail.id + "/status/" + detail.status]);
   }
+
+
+  onChangeName(data: String){
+    this.NameData = data;
+    console.log(data);
+  }
+
+  onChangeFiltro(id_filtro: Number){
+    this.filtro = id_filtro;
+    console.log(id_filtro);
+    alert(id_filtro);
+  }
+
+  onChangeOrden(id_orden: Number){
+    this.ordenar = id_orden;
+    console.log(id_orden);
+    alert(id_orden);
+  }
+
 }
