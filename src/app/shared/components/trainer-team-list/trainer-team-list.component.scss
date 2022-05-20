@@ -1,0 +1,24 @@
+.list-container{
+    display: flex;
+    gap: 8px;
+}
+
+.card-position{
+    border: 2px dashed #0A90EF; 
+
+    max-width: 100%;
+    width: 320px;
+    height: 720px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 12px;
+    padding: 24px 0px;
+    overflow: auto;
+}
+
+.team-list-container ::-webkit-scrollbar{
+    display: none;
+}

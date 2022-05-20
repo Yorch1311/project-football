@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonComponent } from './shared/components/button/button.component';
 import { TournamentDetailComponent } from './modules/admins/components/tournament-detail/tournament-detail.component';
-import { ChipComponent } from './modules/admins/components/chip/chip.component';
+import { ChipComponent } from './shared/components/chip/chip.component';
 import { TournamentDetailPageComponent } from './modules/admins/pages/tournament-detail-page/tournament-detail-page.component';
 
 
@@ -23,6 +23,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
 
@@ -38,6 +39,12 @@ import { TournamentCategoriesComponent } from './modules/trainers/pages/tourname
 import { MatNativeDateModule } from '@angular/material/core';
 import { TournamentTableRowComponent } from './shared/components/tournament-table-row/tournament-table-row.component';
 import { TournamentShowComponent } from './modules/admins/pages/tournament-show/tournament-show.component';
+import { CardComponent } from './shared/components/card/card.component';
+import { TeamListComponent } from './shared/components/team-list/team-list.component';
+import { TournamentCreateTreeComponent } from './modules/admins/pages/tournament-create-tree/tournament-create-tree.component';
+import { CreateTeamComponent } from './modules/trainers/pages/create-team/create-team.component';
+import { TrainerTeamListComponent } from './shared/components/trainer-team-list/trainer-team-list.component';
+import { DialogSaveComponent } from './shared/components/dialog-save/dialog-save.component';
 
 
 @NgModule({
@@ -59,9 +66,13 @@ import { TournamentShowComponent } from './modules/admins/pages/tournament-show/
     TournamentCategoriesComponent,
     TournamentTableRowComponent,
     TournamentShowComponent,    
+    TeamListComponent,
+    CardComponent,
+    CreateTeamComponent,
+    TrainerTeamListComponent,
+    DialogSaveComponent
   ],
   imports: [
-    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -76,6 +87,7 @@ import { TournamentShowComponent } from './modules/admins/pages/tournament-show/
     MatCardModule,
     MatSnackBarModule,
     MatNativeDateModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

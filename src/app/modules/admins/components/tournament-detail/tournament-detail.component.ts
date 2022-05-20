@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServiceService } from '../../services/service.service';
-import { Chip } from '../../services/type';
 import { TournamentDetail } from '../../services/type';
 
 @Component({
@@ -14,9 +13,53 @@ export class TournamentDetailComponent implements OnInit {
   @Input() id: string | null = "";
   @Input() status: string | null = "";
 
-  data: TournamentDetail | any;
+  data: TournamentDetail | undefined;
   activeCount: number = 0;
-  clase: string = "";// clase del boton, le da su diseño
+  clase: string = '';// clase del boton, le da su diseño
+
+  dataTest: TournamentDetail = {
+    name: 'UASITOS',
+    category: 'Juvenil',
+    type: 'Fase de grupos',
+    places_detail: [
+      { name: 'FIM' },
+      { name: 'Deportiva'}
+    ],
+    admin_detail: [{
+      name: 'Profesor Herman',
+      apellido1: ''
+    }],
+    referee_detail: [{
+      name: 'Profesor Herman',
+      apellido1: ''
+    }],
+    coach_detail: [
+      {
+        name: 'Profesor Herman',
+        apellido1: ''
+      },
+      {
+        name: 'Profesor Francisco',
+        apellido1: ''
+      }
+    ],
+    chips: [
+      {
+        id_chip: '1',
+        name_category: 'Juvenil',
+        name_branch: 'Varonil',
+        status: 'true'
+      },
+      {
+        id_chip: '2',
+        name_category: 'Juvenil',
+        name_branch: 'Femenil',
+        status: 'false'
+      }
+    ],
+    dates: '18/05/2022 - 25/05/022',
+    time: '14:00 - 18:00'
+  };
 
   constructor(private _router: ActivatedRoute, private router: Router, private service: ServiceService) {}
 
@@ -25,7 +68,9 @@ export class TournamentDetailComponent implements OnInit {
     if(this.id != null) {
 
       //Uso del servicio para comunicarse con la API.
-      this.service.getTournamentData(this.id).subscribe( data => this.data = data );
+      //this.service.getTournamentData(this.id).subscribe( data => this.data = data );
+
+      this.data = this.dataTest;
 
       /*if (this.data.category.length > 1){
         let cant = this.data.category.length - 1;
@@ -35,8 +80,13 @@ export class TournamentDetailComponent implements OnInit {
         }
         this.data.categorias.push("Y más");
       }*/
+      this.activeCount = this.data.chips.filter((c: { status: string }) => c.status == "true").length;
 
-      //this.activeCount = this.data.chips.filter((c: Chip) => c.estado == "true").length;
+      if(this.activeCount > 0 && this.status == 'in-process'){
+        this.clase = 'button fill';
+      }else{
+        this.clase = 'button fill disable';
+      }
     }
   }
 
@@ -44,7 +94,7 @@ export class TournamentDetailComponent implements OnInit {
     Redirecciona a la pagina createTree la cual recibe un ID
   */
   goto(id: string){
-    this.router.navigate(["football/createTree/" + id]);
+    this.router.navigate(["admin/tournament/manage-teams/" + id]);
   }
 
   /*
@@ -55,7 +105,7 @@ export class TournamentDetailComponent implements OnInit {
   }
 
   //Funcion para activar el torneo
-  active(){
+  activeTournament(){
     if(this.activeCount > 0){
       alert("Event Triggered!!");
 

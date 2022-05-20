@@ -29,7 +29,7 @@ export class TournamentEditComponent implements OnInit {
    //daros para llenar y crear torneo
    name: string | null = null;
    categori: number | any;  
-   branches: Item [] = [];  
+   branches: number [] = [];  
    typeTournamet: number | any;
    city: number | any;  
    place: number | any;  
@@ -132,7 +132,7 @@ export class TournamentEditComponent implements OnInit {
   }
 
   //obtener ramas
-  getGenders(data: Item[]){
+  getGenders(data: number[]){
     this.branches = data;        
     //console.table(data);
     //alert(this.branches);
@@ -236,7 +236,7 @@ export class TournamentEditComponent implements OnInit {
       
         //obtener id de las ramas
         this.branches.forEach(result => {                
-          this.brancheshid.push(result.id);
+          this.brancheshid.push(result);
         });
                           
         if(this.id != null){         

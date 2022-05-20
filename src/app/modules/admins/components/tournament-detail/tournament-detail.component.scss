@@ -1,17 +1,10 @@
-.page {
-  width: 100%;
-  max-width: 1288px;
-  //Borrar despues
-  //background-color: #0a90ef;
-  height: 1000px;
-}
-
 .grid {
+  width: 100%;
+  max-width: 1304;
+
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 24px;
-  //Borrar
-  //background-color: #0a90ef;
 }
 .one {
   grid-column: 1 / 1;
@@ -38,9 +31,8 @@
   display: flex;
   justify-content: center;
 }
-.admin,
-.arbitro,
-.trainer {
+
+.column {
   display: block;
   width: 25%;
   margin: 0px 10px;
@@ -75,10 +67,49 @@ li {
   margin-bottom: 10px;
   color: rgba(38, 39, 43, 0.5);
 }
+
 .boton{
   margin-top: 16px;
   display: flex;
   justify-content: center;
+
+  :only-child{
+    max-width: 160px;
+    width: 100%;
+  }
 }
 
+//Smartphones
+@media screen and (min-width:375px) and (max-width:428px){
 
+  .one {
+    grid-column: 1 / 4;
+  }
+  .two {
+    grid-column: 1 / 4;
+  }
+  .three {
+    grid-column: 1 / 4;
+  }
+  .four {
+    grid-column: 1 / 4;
+  }
+  .orgContainer {
+    flex-direction: column;
+  }
+}
+//ipad
+@media screen and (max-width:810px){
+  .grid{
+    grid-gap: 12px;
+  }
+  .column{
+    width: 100%;
+  }
+}
+//desktop
+@media screen and (max-width:1304px){
+  .grid{
+    width: calc(100% - 16px);
+  }
+}

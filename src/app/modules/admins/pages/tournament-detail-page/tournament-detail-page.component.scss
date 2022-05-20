@@ -30,11 +30,51 @@ h1 {
 }
 
 .message {
-  background-color: #EC2E2E;
-  opacity: 0.75;
+  max-width: 1304px;
+  width: 100%;
+
+  /* Red_Error */
+  background: #EC2E2E;
   text-align: center;
   color: white;
+
+  opacity: 0.75;
+  border-radius: 4px;
+  padding: 24px 0;//solo arriba y abajo
   margin-bottom: 24px;
-  box-shadow: 0 0 0 0;
+
+  h2{
+    margin: 0;
+    font-size: 20px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 20px;
+  }
+}
+
+//Smartphones
+@media screen and (min-width:375px) and (max-width:428px){
+  .pagina{
+    width: calc(100% - 16px);
+  }
+}
+
+//ipad
+@media screen and (max-width:810px){
+  .pagina{
+    width: calc(100% - 16px);
+  }
+}
+
+//desktop
+@media screen and (max-width:1304px){
+  .pagina{
+    width: calc(100% - 16px);
+  }
+  /*
+  .message{
+    width: calc(100% - 16px);
+  }
+  */
 }
 

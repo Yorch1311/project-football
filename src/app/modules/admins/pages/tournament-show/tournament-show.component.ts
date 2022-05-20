@@ -58,8 +58,8 @@ export class TournamentShowComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  tournamentDetail(id: string) {  
-    this.router.navigate(["admin/tournament/detail/" + id + ""]);
+  tournamentCreate() {  
+    this.router.navigate(["admin/tournament/create/"]);
   }
 
 }

@@ -29,7 +29,7 @@ export class TournamentCreateComponent implements OnInit {
   //daros para llenar y crear torneo
   name: string | null = null;
   categori: number | any;  
-  branches: Item [] = [];  
+  branches: number [] = [];  
   typeTournamet: number | any;
   city: number | any;  
   place: number | any;  
@@ -153,7 +153,7 @@ export class TournamentCreateComponent implements OnInit {
   }
 
   //obtener ramas
-  getGenders(data: Item[]){
+  getGenders(data: number[]){
     this.branches = data;        
     //console.table(data);
     //alert(this.branches);
@@ -225,16 +225,17 @@ export class TournamentCreateComponent implements OnInit {
 
   Cancel() {              
     const dialogRef = this.dialog.open(DialogCancelComponent, {
+
       width: '420px',
       height: '200px',                
     });   
     
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-      if ( result == true){
-          //mandar a la pagina del cristian
-          //this.router.navigate(["football/tournaments"]);
-      }      
+      console.log(`Dialog result: ${result}`);      
+        if ( result == true){
+            //mandar a la pagina del cristian
+            //this.router.navigate(["football/tournaments"]);
+        }      
     });              
   }
 
@@ -243,13 +244,15 @@ export class TournamentCreateComponent implements OnInit {
 
   CrearTou(){   
     //validaciones
+    /*
     if( (this.name == null) || (this.time == null) || (this.date == null) || (this.categori == null) || (this.branches[0] == null) || (this.typeTournamet == null) || (this.city == null)  || (this.place == null) ||
       (this.adminsid[0] == null) || (this.arbitersid[0] == null) || (this.coachsid[0] == null)
     ){    
       alert("Error faltan datos");
 
     }else{
-
+    
+   
         //obtener id de lugares en arreglo
         console.log(this.place)
         this.placeid.push(this.place);
@@ -257,7 +260,7 @@ export class TournamentCreateComponent implements OnInit {
       
         //obtener id de las ramas
         this.branches.forEach(result => {                
-          this.brancheshid.push(result.id);
+          this.brancheshid.push(result);
         });
                           
 
@@ -278,6 +281,7 @@ export class TournamentCreateComponent implements OnInit {
 
         console.table(datasend);      
 
+        */
         /*
         this.APIcreate.createTournamet(datasend).subscribe(result =>{
             console.log(result);
@@ -287,12 +291,14 @@ export class TournamentCreateComponent implements OnInit {
         //mostrar snavbar
         this._snackBar.open('Torneo creado exitosamente', 'X', {
           horizontalPosition: this.horizontalPosition,
-          verticalPosition: this.verticalPosition,          
+          verticalPosition: this.verticalPosition,                    
+          //panelClass: ['green-snackbar'],          
+          panelClass: ['red-snackbar'],          
         });
 
         //Crear la tupla y regresar al chrisyian
         //this.router.navigate(["football/tournaments"]);
-      }    
+      /*}*/
    }
       
 
