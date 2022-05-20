@@ -3,7 +3,7 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import {FormControl,FormGroup} from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ServiceService } from '../../services/service.service';
+//import { ServiceService } from '../../services/service.service';
 import { DialogCancelComponent } from '../../../../shared/components/dialog-cancel/dialog-cancel.component';
 import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { tupla } from '../../services/type'
@@ -59,7 +59,8 @@ export class TournamentEditComponent implements OnInit {
  
    //variable donde se compara el id   
    id: string | null;  
-  constructor(public dialog: MatDialog, private router: Router, private routerAc: ActivatedRoute, private APIcreate: ServiceService, private _snackBar: MatSnackBar) { 
+   //, private APIcreate: ServiceService
+  constructor(public dialog: MatDialog, private router: Router, private routerAc: ActivatedRoute, private _snackBar: MatSnackBar) { 
     this.id = this.routerAc.snapshot.paramMap.get("id");
   }
 
@@ -211,8 +212,8 @@ export class TournamentEditComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
       if ( result == true){
-          //mandar a la pagina del cristian
-          //this.router.navigate(["football/tournaments"]);
+          //mandar a la pagina del jorge
+          this.router.navigate(["admin/tournament/detail/"+this.id+"/status/in-process"]);
       }      
     });              
   }

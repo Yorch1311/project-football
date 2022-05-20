@@ -65,7 +65,7 @@ import { DialogSaveComponent } from './shared/components/dialog-save/dialog-save
     TournamentEditComponent,
     TournamentCategoriesComponent,
     TournamentTableRowComponent,
-    TournamentShowComponent,    
+    TournamentShowComponent,
     TeamListComponent,
     CardComponent,
     CreateTeamComponent,

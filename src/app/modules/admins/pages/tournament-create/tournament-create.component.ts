@@ -1,9 +1,7 @@
-import { NullVisitor } from '@angular/compiler/src/render3/r3_ast';
-import { Component, ElementRef, OnInit } from '@angular/core';
-import {FormControl,FormGroup} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ServiceService } from '../../services/service.service';
+//import { ServiceService } from '../../services/service.service';
 import { DialogCancelComponent } from '../../../../shared/components/dialog-cancel/dialog-cancel.component';
 import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition,} from '@angular/material/snack-bar';
 import { tupla } from '../../services/type'
@@ -82,9 +80,10 @@ export class TournamentCreateComponent implements OnInit {
   itemsTrainers: Item[] = [
     {id: 1 , name: "Ejemplo1"},
     {id: 2 , name: "Ejemplo2"},
-  ];
-
-  constructor(public dialog: MatDialog, private router: Router, /* private APIcreate: ServiceService,*/ private _snackBar: MatSnackBar) {
+  ];  
+  
+  //,  private APIcreate: ServiceService
+  constructor(public dialog: MatDialog, private router: Router, private _snackBar: MatSnackBar) {    
   }
 
   ngOnInit(): void {
@@ -234,7 +233,7 @@ export class TournamentCreateComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
         if ( result == true){
             //mandar a la pagina del cristian
-            //this.router.navigate(["football/tournaments"]);
+            this.router.navigate(["admin/tournament/show"]);
         }
     });
   }
@@ -291,13 +290,13 @@ export class TournamentCreateComponent implements OnInit {
         //mostrar snavbar
         this._snackBar.open('Torneo creado exitosamente', 'X', {
           horizontalPosition: this.horizontalPosition,
-          verticalPosition: this.verticalPosition,
-          //panelClass: ['green-snackbar'],
-          panelClass: ['red-snackbar'],
+          verticalPosition: this.verticalPosition,          
+          panelClass: ['green-snackbar'],
+          //panelClass: ['red-snackbar'],
         });
 
         //Crear la tupla y regresar al chrisyian
-        //this.router.navigate(["football/tournaments"]);
+        this.router.navigate(["admin/tournament/show"]);
       /*}*/
    }
 
