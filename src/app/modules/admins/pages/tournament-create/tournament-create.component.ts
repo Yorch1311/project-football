@@ -233,7 +233,7 @@ export class TournamentCreateComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
         if ( result == true){
             //mandar a la pagina del cristian
-            //this.router.navigate(["football/tournaments"]);
+            this.router.navigate(["admin/tournament/show"]);
         }
     });
   }
@@ -290,13 +290,13 @@ export class TournamentCreateComponent implements OnInit {
         //mostrar snavbar
         this._snackBar.open('Torneo creado exitosamente', 'X', {
           horizontalPosition: this.horizontalPosition,
-          verticalPosition: this.verticalPosition,
-          //panelClass: ['green-snackbar'],
-          panelClass: ['red-snackbar'],
+          verticalPosition: this.verticalPosition,          
+          panelClass: ['green-snackbar'],
+          //panelClass: ['red-snackbar'],
         });
 
         //Crear la tupla y regresar al chrisyian
-        //this.router.navigate(["football/tournaments"]);
+        this.router.navigate(["admin/tournament/show"]);
       /*}*/
    }
 
