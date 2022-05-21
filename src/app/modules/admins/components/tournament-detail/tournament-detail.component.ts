@@ -14,8 +14,8 @@ export class TournamentDetailComponent implements OnInit {
 
   data: TournamentDetail | undefined;
   activeCount: number = 0;
-  clase: string = ''; // clase del boton, le da su diseño
-  estado: boolean = false;// Variable que asigna si el boton esta desactivado
+  clase: string = ''; 
+  estado: boolean = false;
 
   dataTest: TournamentDetail = {
     name: 'UASITOS',
@@ -92,21 +92,15 @@ export class TournamentDetailComponent implements OnInit {
     }
   }
 
-  /*
-    Redirecciona a la pagina createTree la cual recibe un ID
-  */
   goto(id: string) {
     this.router.navigate(['admin/tournament/manage-teams/' + id]);
   }
 
-  /*
-    Redirecciona a la pagina createTournament la cual recibe un ID
-  */
+
   redirect() {
     this.router.navigate(['admin/tournament/edit/' + this.id]);
   }
 
-  //Funcion para activar el torneo
   activeTournament() {
     alert('Event Triggered!!');
 

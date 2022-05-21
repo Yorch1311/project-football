@@ -26,7 +26,6 @@
   border-radius: 4px;
 }
 
-//contenedor de las 3 columnas de organizadores
 .orgContainer {
   display: flex;
   justify-content: center;
@@ -38,7 +37,6 @@
   margin-right: 10px;
 }
 
-//elementos individuales
 h1 {
   font-family: "Roboto";
   font-style: normal;
@@ -47,7 +45,6 @@ h1 {
   line-height: 38px;
   display: inline;
 
-  /* Dark_Gray */
   color: rgba(38, 39, 43, 0.75);
 }
 h2 {
@@ -59,7 +56,6 @@ h2 {
   color: #0a90ef;
 }
 h3 {
-  /* margin: 20px; */
   color: rgba(38, 39, 43, 0.5);
 }
 ul{
