@@ -1,97 +1,50 @@
-<div class="contenedor">
-    <div class="pagina">
-        <h1 class="size-name">Arma Tu Torneo</h1>
-        <div class="wrapper">
-            <div class="name-tournament">
-                <h4 class="size-title">Conócelo como...</h4>
-                <div style="margin-left: 48px; top: 121px;">
-                    <app-input-simple [nombre]="'Nombre del Torneo'" [ejemplo]="'Ej.champions'" [value]="nombreSend" (onChange)="onChangeNameTournament($event)"></app-input-simple>
-                </div>
+<div class="page-container">
+    <h1>Arma tu torneo</h1>
+    <div class="content-container">
+        <div class="grid-container">
+            <div class="first-row-grid">
+                <p>Conócelo como...</p>
+                <app-input-simple [nombre]="'Nombre del Torneo'" [ejemplo]="'Ej.champions'" [value]="nombreSend" (onChange)="onChangeNameTournament($event)"></app-input-simple>
             </div>
 
-            <div class="order-category">
-                <h4 class="size-title-categoriries">Dirigido para</h4>
-                <div class="order-input-category">
+            <div class="two-row-grid">
+                <p>Dirigido para</p>
+                <div class="grid-two-row">
                     <app-select-simple [nombre]="'Categoria'" [items]="itemsCategory" [valuenum]="categoriSend" (onChange)="onChangeCategori($event)"></app-select-simple>
-                </div>
-            </div>
-
-            <div class="order-branch">
-                <div class="order-input-branch">
                     <app-select-multiple [nombre]="'Rama'" [items]="itemsbranch" (onChange)="getGenders($event)"></app-select-multiple>
-                </div>
-            </div>
-
-            <div class="order-type">
-                <div class="order-input-tournament">
                     <app-select-simple [nombre]="'Tipo de Torneo'" [items]="itemstype" [valuenum]="typeSend" (onChange)="onChangetypetournament($event)"></app-select-simple>
                 </div>
             </div>
 
-            <div class="order-city">
-                <h4 class="size-title-place">Realización en</h4>
-                <div class="order-input-city">
-                    <app-select-simple [nombre]="'Ciudad'" [items]="itemscyty" [valuenum]="citySend" (onChange)="onChangecity($event)"></app-select-simple>
-                </div>
-            </div>
-
-            <div class="order-place">
-                <div class="order-input-place">
+            <div class="three-row-grid">
+                <p>Realización en</p>
+                <app-select-simple [nombre]="'Ciudad'" [items]="itemscyty" [valuenum]="citySend" (onChange)="onChangecity($event)"></app-select-simple>
+                <div class="first-child-three-row">
                     <app-select-simple [nombre]="'Lugares'" [items]="itemsplace" [valuenum]="placeSend" (onChange)="onChangeplace($event)"></app-select-simple>
-                </div>
-            </div>
-
-            <div class="order-date">
-                <div class="order-input-date">
                     <app-date-range [nombre]="'Fechas'" [value]="'hola'" (onChange)="onChangeDate($event)"></app-date-range>
-                </div>
-            </div>
-
-            <div class="order-time">
-                <div class="order-input-time">
                     <app-input-simple [nombre]="'Horario'" [ejemplo]="'9:20 - 3:30'" [value]="timeSend" (onChange)="onChangeTime($event)"></app-input-simple>
                 </div>
             </div>
 
-            <div class="order-auditors">
-                <h4 class="size-title-auditor">Interventores</h4>
-                <div class="order-input-auditors">
-                    <app-select-button [nombre]="'Administradores'" [items]="itemsAdmin" (onChange)="onChangeAdmin($event)">"</app-select-button>
+            <div class="four-row-grid">
+                <p>Interventores</p>
+                <div class="four-row">
+                    <div>
+                        <app-select-button [nombre]="'Administradores'" [items]="itemsAdmin" (onChange)="onChangeAdmin($event)">"</app-select-button>
+                        <app-group-show class="group" [items]="admins" (onChange)="DeleteAdmin($event)"></app-group-show>
+                    </div>
+                    <div>
+                        <app-select-button [nombre]="'Arbitros'" [items]="itemsreferee" (onChange)="onChangeArbiter($event)"></app-select-button>
+                        <app-group-show class="group" [items]="arbiters" (onChange)="DeleteArbiter($event)"></app-group-show>
+                    </div>
+                    <div>
+                        <app-select-button [nombre]="'Entrenadores'" [items]="itemsTrainers" (onChange)="onChangeCoach($event)"></app-select-button>
+                        <app-group-show class="group" [items]="coachs" (onChange)="DeleteCoach($event)"></app-group-show>
+                    </div>
                 </div>
             </div>
 
-            <div class="order-referees">
-                <div class="order-input-referre">
-                    <app-select-button [nombre]="'Arbitros'" [items]="itemsreferee" (onChange)="onChangeArbiter($event)"></app-select-button>
-                </div>
-            </div>
 
-            <div class="order-trainers">
-                <div class="order-input-trainers">
-                    <app-select-button [nombre]="'Entrenadores'" [items]="itemsTrainers" (onChange)="onChangeCoach($event)"></app-select-button>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="div-3colums">
-            <div class="order-auditor-show">
-                <app-group-show [items]="admins" (onChange)="DeleteAdmin($event)"></app-group-show>
-            </div>
-
-            <div class="order-auditor-referees">
-                <app-group-show [items]="arbiters" (onChange)="DeleteArbiter($event)"></app-group-show>
-            </div>
-
-            <div class="order-auditor-trainers">
-                <app-group-show [items]="coachs" (onChange)="DeleteCoach($event)"></app-group-show>
-            </div>
-        </div>
-
-        <div class="order-buttons">
-            <app-button [clase]="'button outline'" [title]="'Cancel'" (onClick)="Cancel()"></app-button>
-            <span style="margin-left:12px;"></span>
-            <app-button [clase]="'button fill'" [title]="'Crear'" (onClick)="CrearTou()"></app-button>
 
         </div>
     </div>
