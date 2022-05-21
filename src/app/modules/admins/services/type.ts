@@ -1,13 +1,3 @@
-//Estas son para el componente tournament detail
-/*
-  id-chip
-  id-torneo
-  id-categoria
-  nombre-categoria
-  id-rama
-  nombre rama
-
-*/
 export interface TournamentDetail {
     name: string;
     category: string;
