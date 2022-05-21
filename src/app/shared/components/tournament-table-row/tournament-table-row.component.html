@@ -1,38 +1,35 @@
-<tr class="tr" [ngClass]="{'tr-active':status==='in-process', 'tr-inactive':status==='done'}" (click)="handleEvent()">
-    <td class="name" [ngClass]="{'blur':status==='done'}"> {{name}} </td>
 
-    <td class="type" [ngClass]="{'blur':status==='done'}">
-      <div class="td-column">
-        <p class="p1">Tipo</p>
-        <p class="p2">{{type}}</p>
+  <tr class="tr" [ngClass]="{'tr-active':status==='in-process', 'tr-inactive':status==='done'}" (click)="handleEvent()">
+      <td class="name" [ngClass]="{'blur':status==='done'}"> {{name}} </td>
+
+      <td class="type" [ngClass]="{'blur':status==='done'}">
+        <div class="td-column">
+          <p class="p1">Tipo</p>
+          <p class="p2">{{type}}</p>
+          </div>
+      </td>
+
+      <td class="category">
+        <div class="td-column" *ngIf="status==='in-process'">
+          <p class="p1">Categoria</p>
+          <p class="p2">{{category}}</p>
         </div>
-    </td>
+        <div class="td-column" *ngIf="status==='done'">
+          <app-button [clase]="'button fill'" [title]="'VER'" (onClick)="handleEvent()"></app-button>
+        </div>
+      </td>
 
-    <td class="category">
-      <div class="td-column" *ngIf="status==='in-process'">
-        <p class="p1">Categoria</p>
-        <p class="p2">{{category}}</p>
-      </div>
-      <div class="td-column" *ngIf="status==='done'">
-        <app-button [clase]="'button fill'" [title]="'VER'" (onClick)="handleEvent()"></app-button>
-      </div>
-    </td>
+      <td class="place" [ngClass]="{'blur':status==='done'}">
+        <div class="td-column">
+          <p class="p1">Lugar</p>
+          <p class="p2">{{place}}</p>
+        </div>
+      </td>
 
-    <td class="place" [ngClass]="{'blur':status==='done'}">
-      <div class="td-column">
-        <p class="p1">Lugar</p>
-        <p class="p2">{{place}}</p>
-      </div>
-    </td>
-
-    <td class="date" [ngClass]="{'blur':status==='done'}">
-      <div class="td-column">
-        <!--
+      <td class="date" [ngClass]="{'blur':status==='done'}">
+        <div class="td-column">
           <p class="p1">Fecha</p>
-          <p class="p2">{{date.split('-')[0]}}</p>
-        -->
-        <p class="p1">Fecha</p>
-          <p class="p2">{{date}}</p>
-      </div>
-    </td>
+            <p class="p2">{{date}}</p>
+        </div>
+      </td>
   </tr>
