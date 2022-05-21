@@ -1,9 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-
-interface Item {  
-  id: number;
-  name: string
-}
+import { Item } from '../../services/type';
 
 @Component({
   selector: 'app-select-simple',

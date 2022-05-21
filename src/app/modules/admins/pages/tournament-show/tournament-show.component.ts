@@ -40,15 +40,15 @@ export class TournamentShowComponent implements OnInit {
   ordenar : Number = 0;
 
   Order: Item[] = [
-    {id:1, name: 'Fase de Grupos' },
-    {id:2, name: 'Categoria' },
-    {id:3, name: 'Lugar' },
-    {id:4, name: 'Fecha' },
+    {id:"1", name: 'Fase de Grupos' },
+    {id:"2", name: 'Categoria' },
+    {id:"3", name: 'Lugar' },
+    {id:"4", name: 'Fecha' },
   ];
 
   Filter: Item[] = [
-    { id:1, name: 'Mas Reciente' },
-    { id:2, name: 'Mas Antiguo' }
+    { id:"1", name: 'Mas Reciente' },
+    { id:"2", name: 'Mas Antiguo' }
   ];
 
   /*

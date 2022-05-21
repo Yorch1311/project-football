@@ -28,8 +28,8 @@ export interface TournamentDetail {
 
 //interface para recepcion de datos
 export interface Item {
-  id: number;
-  name: string;
+  id: String;
+  name: String;
 }
 
 export interface Filter {
@@ -47,9 +47,9 @@ export interface tupla {
   places: number[];
   dates: string;
   time: string;
-  administrators: number[];
-  referees: number[];
-  coaches: number[];
+  administrators: String[];
+  referees: String[];
+  coaches: String[];
 }
 
 //interfaz para mostrar tabla torneos

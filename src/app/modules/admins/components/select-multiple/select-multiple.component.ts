@@ -1,10 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-
-
-interface Item{
-  id: number;
-  name: string;
-}
+import { Item } from '../../services/type';
 
 
 @Component({

@@ -1,124 +1,61 @@
-.pagina { 
+.pagina {
     max-width: 1304px;
     width: 100%;
     //Borrar despues
     background-color: #FFFFFF;
     max-height: 827;
     height: 100%;
-    margin-top: 80px;
     padding: 8px;
+    margin-top: 80px;
     margin-left: 64px;
-}  
+}
+
+.contenedor {
+    max-width: 1432px;
+    width: 100%;
+    //Borrar despues
+    background-color: #FFFFFF;
+    max-height: 982;
+    height: 100%;
+    padding: 8px;
+}
 
 //--------------------------------------------------------------------------------------------------------------
-  .size-name{       
+.size-name {
     max-width: 250px;
     width: 100%;
     max-height: 38px;
     height: 100%;
-
     left: 0px;
     top: 0px;
-
     font-family: 'Roboto';
-    font-style: normal;    
+    font-style: normal;
     font-size: 32px;
     color: rgba(38, 39, 43, 0.75);
+}
 
-  }
-
-  
-  .wrapper {
+.wrapper {
     display: grid;
     //background-color: blanchedalmond;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows:repeat(5, 125PX);    
+    grid-template-rows: repeat(5, 125PX);
     grid-gap: 10px;
-    
-    grid-auto-rows: minmax(100px, grid-auto-rows);   
-    grid-template-areas:"a a a" 
-                        "b c d" 
-                        "e e e"
-                        "f g h"
-                        "i j k";             
-  }
-
-
-  //------------------------------------------------------------------------------------------------------------------
-    .name-tournament{        
-        grid-area: a;
-    }
-
-    .size-title{      
-        max-width: 180px;
-        max-height: 23px;
-        width: 100%;
-        height: 100%;
-        margin-left: 48px;
-        margin-top: 30px;
-    
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 23px;        
-        color: rgba(38, 39, 43, 0.5);
-    }
-    
-//---------------------------------------------------------------------------------------------------------------------
-
-    .order-category{
-        grid-area: b;
-    }
-
-    .size-title-categoriries{
-        max-width: 150px;
-        width: 100%;
-        max-height: 23px;
-        height: 100%;
-        margin-left: 48px;    
-        margin-top: 20px;
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 23px;    
-        color: rgba(38, 39, 43, 0.5);
-    }
-
-    .order-input-category{
-        margin-left: 48px;
-    }
-//-----------------------------------------------------------------------------------------------------------------------    
-    .order-branch{
-        grid-area: c;
-    }
-
-    .order-input-branch{
-        margin-left: 20px;
-        margin-top: 59px;
-    }
-
-//-------------------------------------------------------------------------------------------------------------------------
-.order-type{
-    grid-area: d;
+    grid-auto-rows: minmax(100px, grid-auto-rows);
+    grid-template-areas: "a a a" "b c d" "e e e" "f g h" "i j k";
 }
 
-.order-input-tournament{
-    //margin-left: 20px;
-    margin-top: 59px;
-}
-//-------------------------------------------------------------------------------------------------------------------------
-.order-city{
- grid-area: e;
+//------------------------------------------------------------------------------------------------------------------
+.name-tournament {
+    grid-area: a;
 }
 
-.size-title-place{
-    max-width: 150px;
+.size-title {
+    max-width: 180px;
     max-height: 23px;
     width: 100%;
     height: 100%;
-    margin-left: 48px;    
+    margin-left: 48px;
+    margin-top: 30px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
@@ -126,77 +63,142 @@
     line-height: 23px;
     color: rgba(38, 39, 43, 0.5);
 }
-  
-.order-input-city{
+
+//---------------------------------------------------------------------------------------------------------------------
+.order-category {
+    grid-area: b;
+}
+
+.size-title-categoriries {
+    max-width: 150px;
+    width: 100%;
+    max-height: 23px;
+    height: 100%;
     margin-left: 48px;
-}
-
-//-------------------------------------------------------------------------------------------------------------------------
-.order-place{
-    grid-area: f;        
-}
-
-.order-input-place{     
- margin-top: -25px;
- margin-left: 48px;
-}
-
-//-------------------------------------------------------------------------------------------------------------------------
-.order-date{
-    grid-area: g;
-}
-
-.order-input-date{
-    margin-top: -25px;
-    margin-left: 20px;
-}
-//------------------------------------------------------------------------------------------------------
-.order-time{
-    grid-area: h;
-}
-
-.order-input-time{
-    margin-top: -25px;
-}
-
-//------------------------------------------------------------------------------------------------------
-
-.order-auditors{
-    grid-area: i;
-}
-
-.order-input-auditors{    
-    margin-left: 45px;
-}
-
-.size-title-auditor{
-    width: 119px;
-    height: 23px;
-    margin-left: 48px;
-    margin-top: -85px;    
+    margin-top: 20px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
-    line-height: 23px;            
-    color: rgba(38, 39, 43, 0.5);           
+    line-height: 23px;
+    color: rgba(38, 39, 43, 0.5);
 }
+
+.order-input-category {
+    margin-left: 48px;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------    
+.order-branch {
+    grid-area: c;
+}
+
+.order-input-branch {
+    margin-left: 20px;
+    margin-top: 59px;
+}
+
+//-------------------------------------------------------------------------------------------------------------------------
+.order-type {
+    grid-area: d;
+}
+
+.order-input-tournament {
+    //margin-left: 20px;
+    margin-top: 59px;
+}
+
+//-------------------------------------------------------------------------------------------------------------------------
+.order-city {
+    grid-area: e;
+}
+
+.size-title-place {
+    max-width: 150px;
+    max-height: 23px;
+    width: 100%;
+    height: 100%;
+    margin-left: 48px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: rgba(38, 39, 43, 0.5);
+}
+
+.order-input-city {
+    margin-left: 48px;
+}
+
+//-------------------------------------------------------------------------------------------------------------------------
+.order-place {
+    grid-area: f;
+}
+
+.order-input-place {
+    margin-top: -25px;
+    margin-left: 48px;
+}
+
+//-------------------------------------------------------------------------------------------------------------------------
+.order-date {
+    grid-area: g;
+}
+
+.order-input-date {
+    margin-top: -25px;
+    margin-left: 20px;
+}
+
 //------------------------------------------------------------------------------------------------------
-.order-referees{
+.order-time {
+    grid-area: h;
+}
+
+.order-input-time {
+    margin-top: -25px;
+}
+
+//------------------------------------------------------------------------------------------------------
+.order-auditors {
+    grid-area: i;
+}
+
+.order-input-auditors {
+    margin-left: 45px;
+}
+
+.size-title-auditor {
+    width: 119px;
+    height: 23px;
+    margin-left: 48px;
+    margin-top: -85px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: rgba(38, 39, 43, 0.5);
+}
+
+//------------------------------------------------------------------------------------------------------
+.order-referees {
     grid-area: j;
 }
 
-.order-input-referre{
-    margin-left: 22px;    
-    margin-top: -46px;    
+.order-input-referre {
+    margin-left: 22px;
+    margin-top: -46px;
 }
+
 //------------------------------------------------------------------------------------------------------
-.order-trainers{
+.order-trainers {
     grid-area: k;
 }
 
-.order-input-trainers{
-    margin-top: -46px;    
+.order-input-trainers {
+    margin-top: -46px;
 }
 
 //------------------------------------------------------------------------------------------------------
@@ -204,7 +206,7 @@
 .div-3colums {
     //background-color: aquamarine;
     margin-top: -100px;
-    width: 100%;        
+    width: 100%;
 }
 
 //div Auditors------------------------------------------------
@@ -237,10 +239,11 @@
     margin-left: -20px;
     float: left;
 }
+
 //------------------------------------------------------------------------------------------------------
-    .order-buttons{
-        display: inline-flexbox;
-        margin-left: 65.5%;
-    }
-
-
+.order-buttons {
+    justify-content: flex-end;
+    //display: flex;
+    margin-left: 65.5%;
+    gap: 12px;
+}

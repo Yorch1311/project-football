@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-//import { ServiceService } from '../../services/service.service';
+import { ServiceService } from '../../services/service.service';
 import { DialogCancelComponent } from '../../../../shared/components/dialog-cancel/dialog-cancel.component';
 import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition,} from '@angular/material/snack-bar';
 import { tupla } from '../../services/type'
@@ -39,55 +39,35 @@ export class TournamentCreateComponent implements OnInit {
 
   //para buscar
   brancheshid:number[] = [];
-  adminsid:number [] = [];
-  admins: string[] = [];
-  arbitersid :number [] = [];
-  arbiters: string[] = [];
-  coachsid :number[] = [];
-  coachs: string[] = [];
+  adminsid: String [] = [];
+  admins: String [] = [];
+  arbitersid :String [] = [];
+  arbiters: String[] = [];
+  coachsid :String[] = [];
+  coachs: String[] = [];
   placeid: number [] = [];
 
 
  //para almacenar datos  y mostrarlos en select's
-  itemsCategory: Item[] = [
-    {id: 1 , name: "Ejemplo1"},
-    {id: 2 , name: "Ejemplo2"},
-  ];
-  itemsbranch: Item[] = [
-    {id: 1 , name: "Ejemplo1"},
-    {id: 2 , name: "Ejemplo2"},
-  ];
-  itemstype: Item[] = [
-    {id: 1 , name: "Ejemplo1"},
-    {id: 2 , name: "Ejemplo2"},
-  ];
-  itemscyty: Item[] = [
-    {id: 1 , name: "Ejemplo1"},
-    {id: 2 , name: "Ejemplo2"},
-  ];
-  itemsplace: Item[] = [
-    {id: 1 , name: "Ejemplo1"},
-    {id: 2 , name: "Ejemplo2"},
-  ];
-  itemsAdmin: Item[] = [
-    {id: 1 , name: "Ejemplo1"},
-    {id: 2 , name: "Ejemplo2"},
-  ];
-  itemsreferee: Item[] = [
-    {id: 1 , name: "Ejemplo1"},
-    {id: 2 , name: "Ejemplo2"},
-  ];
-  itemsTrainers: Item[] = [
-    {id: 1 , name: "Ejemplo1"},
-    {id: 2 , name: "Ejemplo2"},
-  ];  
+  itemsCategory: Item[] = [];
+  itemsbranch: Item[] = [];
+  itemstype: Item[] = [];
+  itemscyty: Item[] = [];
+  itemsplace: Item[] = [];
+  itemsAdmin: Item[] = [];
+  itemsreferee: Item[] = [];
+  itemsTrainers: Item[] = [];  
   
   //,  private APIcreate: ServiceService
-  constructor(public dialog: MatDialog, private router: Router, private _snackBar: MatSnackBar) {    
+  constructor(public dialog: MatDialog, private router: Router, private APIcreate: ServiceService,  private _snackBar: MatSnackBar) {    
   }
 
   ngOnInit(): void {
     //extraer la info de la base de datos
+    this.APIcreate.ObtenerData().subscribe(datos =>{
+      console.log(datos);
+
+    })
   }
 
    //variable pos para arbiter, coach
@@ -102,9 +82,9 @@ export class TournamentCreateComponent implements OnInit {
   }
 
   //Eliminar Admnis
-  DeleteAdmin(admin:  string){
+  DeleteAdmin(admin:  String){
     this.pos = this.admins.indexOf(admin);
-    this.itemsAdmin.push( {id:this.adminsid[this.pos], name: this.admins[this.pos] });
+    this.itemsAdmin.push( {id: this.adminsid[this.pos], name: this.admins[this.pos] });
     //eliminar el string
     this.admins.splice(this.pos, 1);
     //eliminar el id
@@ -145,6 +125,7 @@ export class TournamentCreateComponent implements OnInit {
     this.coachs.splice(this.pos, 1);
   }
 
+  
   //nombre del torneo
   onChangeNameTournament(data: string){
     this.name = data;

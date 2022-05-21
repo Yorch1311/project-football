@@ -39,12 +39,12 @@ export class TournamentEditComponent implements OnInit {
 
    //para buscar 
    brancheshid:number[] = [];
-   adminsid:number [] = [];
-   admins: string[] = [];  
-   arbitersid :number [] = [];
-   arbiters: string[] = [];    
-   coachsid :number[] = [];
-   coachs: string[] = [];    
+   adminsid:String [] = [];
+   admins: String[] = [];  
+   arbitersid :String [] = [];
+   arbiters: String[] = [];    
+   coachsid : String[] = [];
+   coachs: String[] = [];    
    placeid: number [] = [];
   
   //para almacenar datos  y mostrarlos en select's

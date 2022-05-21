@@ -1,9 +1,5 @@
 import { Component, OnInit, Input,Output, EventEmitter } from '@angular/core';
-
-interface Item {
-  id: number;
-  name: string;  
-}
+import { Item } from '../../../modules/admins/services/type';
 
 @Component({
   selector: 'app-select-button',
