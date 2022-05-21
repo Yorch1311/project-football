@@ -1,7 +1,7 @@
-.table-container{
+/* .table-container{
     height: 50px;
     overflow: auto;
-}
+} */
 
 td{
     text-align: center;
@@ -15,10 +15,14 @@ tr{
     padding: 0px 48px;
 
     display: flex;
-    gap:138px;
+    //gap:138px;
+    justify-content:space-between;
 
     margin-bottom: 16px;
     max-width: 1304px;
+    
+    //96px por el padding y 8px border-left (lo que es rojo o negro) y 1px de border-right
+    width: calc(100% - (96px + 9px));
     height: 80px;
 
     align-items: center;
@@ -70,7 +74,6 @@ tr{
     line-height: 23px;
 }
 
-.table-row{
-    border-left: 8px solid #26272B;
+.boton{
+    align-items: center;
 }
-

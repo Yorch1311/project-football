@@ -83,8 +83,7 @@ li {
 }
 
 //Smartphones
-
-@media screen and (min-width:375px) and (max-width:428px){
+@media screen and (min-width:360px) and (max-width:428px){
 
   .one {
     grid-column: 1 / 4;
@@ -103,11 +102,11 @@ li {
   }
 }
 
-
 //ipad
 @media screen and (min-width:810px) and (max-width:1304px){
   
 }
+
 //desktop
 @media screen and (min-width:1304px){
 

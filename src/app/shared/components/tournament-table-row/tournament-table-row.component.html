@@ -14,7 +14,7 @@
           <p class="p1">Categoria</p>
           <p class="p2">{{category}}</p>
         </div>
-        <div class="td-column" *ngIf="status==='done'">
+        <div class="td-column boton" *ngIf="status==='done'">
           <app-button [clase]="'button fill'" [title]="'VER'" (onClick)="handleEvent()"></app-button>
         </div>
       </td>
