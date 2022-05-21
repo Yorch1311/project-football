@@ -1,6 +1,6 @@
 .grid {
+  max-width: 1304px;
   width: 100%;
-  max-width: 1304;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -34,8 +34,8 @@
 
 .column {
   display: block;
-  width: 25%;
-  margin: 0px 10px;
+  width: calc(100% / 3);
+  margin-right: 10px;
 }
 
 //elementos individuales
@@ -62,8 +62,11 @@ h3 {
   /* margin: 20px; */
   color: rgba(38, 39, 43, 0.5);
 }
+ul{
+  padding-left: 20px;
+}
 li {
-  margin-left: 30px;
+  
   margin-bottom: 10px;
   color: rgba(38, 39, 43, 0.5);
 }
@@ -80,6 +83,7 @@ li {
 }
 
 //Smartphones
+
 @media screen and (min-width:375px) and (max-width:428px){
 
   .one {
@@ -98,18 +102,13 @@ li {
     flex-direction: column;
   }
 }
+
+
 //ipad
-@media screen and (max-width:810px){
-  .grid{
-    grid-gap: 12px;
-  }
-  .column{
-    width: 100%;
-  }
+@media screen and (min-width:810px) and (max-width:1304px){
+  
 }
 //desktop
-@media screen and (max-width:1304px){
-  .grid{
-    width: calc(100% - 16px);
-  }
+@media screen and (min-width:1304px){
+
 }

@@ -38,7 +38,7 @@ export class TournamentCategoriesComponent implements OnInit {
   }
 
   texto: string = '';
-  constructor(private router: Router, private url: ActivatedRoute, private service: ServiceService) { }
+  constructor(private router: Router, private url: ActivatedRoute, /*private service: ServiceService*/) { }
 
   ngOnInit(): void {
     this.id = this.url.snapshot.paramMap.get('id');

@@ -31,14 +31,12 @@
   }
 }
 //ipad
-@media screen and (min-width:810px){
+@media screen and (min-width:810px) and (max-width:1304px){
   .pagina{
     width: calc(100% - 16px);
   }
 }
 //desktop
-@media screen and (max-width:1304px){
-  .pagina{
-    width: calc(100% - 16px);
-  }
+@media screen and (min-width:1304px){
+
 }
