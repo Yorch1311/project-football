@@ -17,8 +17,6 @@ const ELEMENT_DATA: Torneo[] = [
   styleUrls: ['./trainer-tournament-detail-page-component.component.scss']
 })
 
-
-
 export class TrainerTournamentDetailPageComponentComponent implements OnInit {
   dataSource = ELEMENT_DATA;
   constructor() { }

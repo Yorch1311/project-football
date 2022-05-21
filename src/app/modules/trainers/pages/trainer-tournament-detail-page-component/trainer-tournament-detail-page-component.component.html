@@ -1,25 +1,22 @@
-<div class="header-container">
-    <h1>Torneos</h1>
+<div class="page-container">
+    <div class="header-container">
+        <h1>Torneos</h1>
 
-    <div class="select-container">
+        <div class="select-container">
 
-        <app-input-simple [nombre]="'Buscar Torneo'" [ejemplo]="'Champions League'"></app-input-simple>
+            <app-input-simple [nombre]="'Buscar Torneo'" [ejemplo]="'Champions League'"></app-input-simple>
 
-        <div class="select-filter">
-            <app-select-simple [nombre]="'Filtrar Por'"></app-select-simple>
-            <app-select-simple [nombre]="'Ordenar Por'"></app-select-simple>
-        </div>
+            <div class="select-filter">
+                <app-select-simple [nombre]="'Filtrar Por'"></app-select-simple>
+                <app-select-simple [nombre]="'Ordenar Por'"></app-select-simple>
+            </div>
 
-  </div>
+    </div>
+    </div>
+
+    <div class="team-table-container">
+        <app-tournament-table-row class="team-table" *ngFor="let element of dataSource" [id]="element.id" [name]="element.name" [type]="element.type" [category]="element.category" [place]="element.place" [date]="element.date" [status]="element.status"> </app-tournament-table-row>
+    </div>
 </div>
 
-
-<table align="cengter">
-    <tbody>
-      <app-tournament-table-row *ngFor="let element of dataSource" [id]="element.id" [name]="element.name" [type]="element.type" [category]="element.category" [place]="element.place" [date]="element.date" [status]="element.status"> </app-tournament-table-row>
-          <!--
-              <app-tournament-table-row *ngFor="let element of data" [id]="element.id_tournament" [name]="element.name" [type]="element.type.name" [category]="element.category.name" [place]="element.places_detail[0].name" [date]="element.dates" [status]="element.statuses.name" (onClick)="detail($event)"></app-tournament-table-row>
-          -->
-    </tbody>
-  </table>
   
