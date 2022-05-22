@@ -4,11 +4,11 @@ import { ServiceService } from '../../services/service.service';
 import { TournamentCategories } from '../../services/type';
 
 @Component({
-  selector: 'app-tournament-categories-reffee',
-  templateUrl: './tournament-categories-reffee.component.html',
-  styleUrls: ['./tournament-categories-reffee.component.scss']
+  selector: 'app-tournament-categories-referee',
+  templateUrl: './tournament-categories-referee.component.html',
+  styleUrls: ['./tournament-categories-referee.component.scss']
 })
-export class TournamentCategoriesReffeeComponent implements OnInit {
+export class TournamentCategoriesRefereeComponent implements OnInit {
 
   data: TournamentCategories | undefined;
   id: string | null = '';
