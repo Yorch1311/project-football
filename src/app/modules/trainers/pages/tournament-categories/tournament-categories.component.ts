@@ -26,7 +26,7 @@ export class TournamentCategoriesComponent implements OnInit {
   }
 
   goto(id: string){
-    this.router.navigate(['trainer/tournament/'+this.id+'/categories/create-team'])
+    this.router.navigate(['trainer/tournament/'+this.id+'/categories/'+id+'/create-team'])
   }
 
 }

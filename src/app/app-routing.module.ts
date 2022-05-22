@@ -27,7 +27,7 @@ const routes: Routes = [
       { path: 'tournament', children:[
         { path: 'show', component: TrainerTournamentDetailPageComponentComponent },
         { path: ':id/categories', component: TournamentCategoriesComponent },
-        { path: ':id/categories/create-team', component: CreateTeamComponent },
+        { path: ':tournament/categories/:id/create-team', component: CreateTeamComponent },
       ]},
     ],
   },
