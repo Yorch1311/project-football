@@ -19,7 +19,7 @@ export class SelectSimpleComponent implements OnInit {
   constructor() { }
 
   obtenerdato( data: String){
-    console.log(data);    
+    //console.log(data);    
     this.onChange.emit(data);
   }
 

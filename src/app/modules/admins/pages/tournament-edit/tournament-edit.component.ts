@@ -8,6 +8,7 @@ import { DialogCancelComponent } from '../../../../shared/components/dialog-canc
 import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { tupla } from '../../services/type'
 import { Item } from '../../services/type'
+import { date_crate_edit } from '../../services/type'
 
 @Component({
   selector: 'app-tournament-edit',
@@ -34,7 +35,7 @@ export class TournamentEditComponent implements OnInit {
    city: number | any;  
    place: number | any;  
  
-   date: string | null = null;
+   date: date_crate_edit= {init:"", final:""};
    time: String | null = null;
 
    //para buscar 
@@ -183,7 +184,7 @@ export class TournamentEditComponent implements OnInit {
   }
 
   //date  
-  onChangeDate(data: string){    
+  onChangeDate(data: date_crate_edit){    
     this.date = data;    
   }
 
@@ -242,6 +243,7 @@ export class TournamentEditComponent implements OnInit {
                           
         if(this.id != null){         
 
+          /*
           const datasend : tupla = {
             id_tournament: this.id,
             name: this.name,
@@ -258,7 +260,7 @@ export class TournamentEditComponent implements OnInit {
           };        
 
           console.table(datasend);      
-  
+        */
 
         /* updated
         this.APIcreate.createTournamet(datasend).subscribe(result =>{

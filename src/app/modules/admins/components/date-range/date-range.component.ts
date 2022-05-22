@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { date_crate_edit } from '../../services/type';
 
 @Component({
   selector: 'app-date-range',
@@ -9,19 +10,23 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class DateRangeComponent implements OnInit {
   
   @Input() nombre: string = 'sin nombre';
-  @Input() value: string = "";
+  @Input() value: String = "";
+  @Input() valuef: String = "";
 
   //se envia 
-  @Output() onChange = new EventEmitter<string>();        
+  @Output() onChange = new EventEmitter<date_crate_edit>();        
 
-  valstart : Date =  new Date("2022/02/16");
-  valend: Date =  new Date("2022/06/16");
+  valstart : Date =  new Date(this.value+"");
+  valend: Date =  new Date(""+this.valuef);
 
   constructor() { }
 
+  data: date_crate_edit= {init: "", final:""};
+
   obtenerFechas(start:string, end:string){
     //alert(start);  
-    this.onChange.emit(start+"-"+end);   
+    this.data= {init:start, final: end};
+    this.onChange.emit(this.data);   
  }
 
   ngOnInit(): void {

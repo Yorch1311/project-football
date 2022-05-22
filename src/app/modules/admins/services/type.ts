@@ -49,20 +49,25 @@ export interface Filter {
   value: string;
 }
 
+
+export interface date_crate_edit {
+  init: String;
+  final: String;
+}
 //interface para crear torneo
 export interface tupla {
   id_tournament?: String;
   name: String;
-  category: String;
-  branch: String[];
   type: String;
-  town: String;
-  places: String[];
-  dates: string;
-  time: String;
-  administrators: String[];
-  referees: String[];
+  branches: String[];
+  category: String;
+  dates: date_crate_edit;  
+  city: String;
+  places: String[];  
+  hours: String;
+  admins: String[];
   coaches: String[];
+  referees: String[];  
 }
 
 //interfaz para mostrar tabla torneos
