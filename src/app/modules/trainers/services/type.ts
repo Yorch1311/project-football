@@ -1,10 +1,14 @@
-//Estas son para el componente tournament categories
+/*
+Interfaz que sirve para cualquier objeto que solo tenga (o necesites) el id 
+y el nombre
+*/
+export interface Basic{
+  _id: string;
+  name: string;
+}
+
 export interface TournamentCategories {
   name: string;
-  chips: {
-    id_chip: string;
-    name_category: string;
-    name_branch: string;
-    status: string;
-  }[];
+  mixedCategories: Basic[];
+  status: string;
 }

@@ -13,42 +13,15 @@ export class TournamentCategoriesComponent implements OnInit {
   data: TournamentCategories | undefined;
   id: string | null = '';
 
-  chips: TournamentCategories = {
-    name: 'UASITOS',
-    chips: [
-      {
-        id_chip: '1',
-        name_category: 'Juvenil 1',
-        name_branch: 'Varonil',
-        status: 'true'
-      },
-      {
-        id_chip: '2',
-        name_category: 'Juvenil 1',
-        name_branch: 'Femenil',
-        status: 'false'
-      },
-      {
-        id_chip: '2',
-        name_category: 'Juvenil 1',
-        name_branch: 'Femenil',
-        status: 'false'
-      }
-    ]
-  }
-
   texto: string = '';
-  constructor(private router: Router, private url: ActivatedRoute, /*private service: ServiceService*/) { }
+  constructor(private router: Router, private url: ActivatedRoute, private service: ServiceService) { }
 
   ngOnInit(): void {
     this.id = this.url.snapshot.paramMap.get('id');
 
     if(this.id != null){
       //Uso del servicio para comunicarse con la API.
-      //this.service.getTournamentData(this.id).subscribe( data => this.data = data );
-      this.data = this.chips;
-
-      //this.texto = this.data.chips.name_category + ' - ' + this.data.chips[0].name_category;
+      this.service.getTournamentCategories(this.id).subscribe( data => this.data = data );
     }
   }
 
