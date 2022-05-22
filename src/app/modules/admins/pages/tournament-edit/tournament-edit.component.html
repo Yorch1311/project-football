@@ -1,7 +1,7 @@
 <div class="page-container">
     <h1>Arma tu torneo</h1>
     <div class="content-container">
-        <div class="grid-container">
+        <div class="grid-container" *ngIf=' timeSend  !== ""'>
             <div class="first-row-grid">
                 <p class="subtitle">Conócelo como...</p>
                 <app-input-simple [nombre]="'Nombre del Torneo'" [ejemplo]="'Ej.champions'" [value]="nombreSend" (onChange)="onChangeNameTournament($event)"></app-input-simple>
@@ -21,7 +21,7 @@
                 <app-select-simple [nombre]="'Ciudad'" [items]="itemscyty" [valuenum]="citySend" (onChange)="onChangecity($event)"></app-select-simple>
                 <div class="first-child-three-row">
                     <app-select-simple [nombre]="'Lugares'" [items]="itemsplace" [valuenum]="placeSend" (onChange)="onChangeplace($event)"></app-select-simple>
-                    <app-date-range [nombre]="'Fechas'" [value]="'hola'" (onChange)="onChangeDate($event)"></app-date-range>
+                    <app-date-range [nombre]="'Fechas'" [value]="datesend.init" [valuef]="datesend.final" (onChange)="onChangeDate($event)"></app-date-range>
                     <app-input-simple [nombre]="'Horario'" [ejemplo]="'9:20 - 3:30'" [value]="timeSend" (onChange)="onChangeTime($event)"></app-input-simple>
                 </div>
             </div>

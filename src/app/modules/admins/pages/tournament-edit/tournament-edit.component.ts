@@ -8,6 +8,8 @@ import { DialogCancelComponent } from '../../../../shared/components/dialog-canc
 import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { tupla } from '../../services/type'
 import { Item } from '../../services/type'
+import { oficial } from '../../services/type'
+
 import { date_crate_edit } from '../../services/type'
 
 @Component({
@@ -19,7 +21,7 @@ export class TournamentEditComponent implements OnInit {
 
    //datos por si hay id
    nombreSend: string ="";
-   datesend: string ="";
+   datesend: date_crate_edit= {init:"", final:""};
    timeSend: string = "";
    categoriSend: String = "";  
    typeSend: String = "";
@@ -28,15 +30,18 @@ export class TournamentEditComponent implements OnInit {
    branchsSend: String [] = [];
  
    //daros para llenar y crear torneo
-   name: String | null = null;
-   categori: number | any;  
+   name: String = "";
+   categori: String = "";  
    branches: String [] = [];  
-   typeTournamet: number | any;
+   typeTournamet: String = "";
    city: number | any;  
    place: number | any;  
  
-   date: date_crate_edit= {init:"", final:""};
-   time: String | null = null;
+   date: date_crate_edit= {init:"", final:""};   
+   time: String = "";
+   
+
+
 
    //para buscar 
    brancheshid:String[] = [];
@@ -47,6 +52,15 @@ export class TournamentEditComponent implements OnInit {
    coachsid : String[] = [];
    coachs: String[] = [];    
    placeid: String [] = [];
+
+
+   //para recibir datos de la consulta x id 
+   objetoItemArray: Item [] = [];
+   objectItem:Item = {_id:"", name:""};
+   objectOficial: oficial [] = [] ;
+   
+
+
   
   //para almacenar datos  y mostrarlos en select's
    itemsCategory: Item[] = [];    
@@ -65,13 +79,20 @@ export class TournamentEditComponent implements OnInit {
     this.id = this.routerAc.snapshot.paramMap.get("id");
   }
 
+
+
+
+      diaMes: String = "";      
+      year: String = "";
+      status: string = "";
+
   ngOnInit(): void {
     //obtener los datos de la bd
       //extraer la info de la base de datos
       this.APIcreate.ObtenerData().subscribe(datos =>{
-        console.log(datos);
-        this.itemsCategory = datos['categories'];
-        this.itemsbranch = datos['branches'];
+        //console.log(datos);
+        //this.itemsCategory = datos['categories'];
+        //this.itemsbranch = datos['branches'];
         this.itemstype = datos['types'];
         this.itemscyty = datos['cities'];
         this.itemsAdmin = datos['admins'];
@@ -80,12 +101,77 @@ export class TournamentEditComponent implements OnInit {
       })  
 
       //para buscar por id
-        //628578c9e5ee06cd5671b010
-        
+      //6289c2d577b219739d358763        
     //obtener ps datos por id de la bd
-    if(this.id !== null){         
-        //consultar la api por dicho torneo 
+    if(this.id !== null){            
+      this.APIcreate.Searchid(this.id).subscribe(result =>{        
+        //console.log(result);
+        //ontener nombre
+        this.nombreSend = result['name'];
+        this.name = this.nombreSend;
+
+        /*
+        //obtener categoria
+        this.objectItem= result['category'];
+        this.categoriSend = this.objectItem._id;
+        console.log(this.categoriSend);
+        this.onChangeCategori(this.categoriSend);
+        */
+
+        /*
+        //obtrener ramas
+        this.objetoItemArray = result['branches'];        
+        */
+
+        //obtener tipo de torneo 
+        this.objectItem = result['type'];
+        this.typeSend = this.objectItem._id;
+        this.onChangetypetournament(this.typeSend);
+
+        //obtener ciudad
+        this.objectItem = result['city'];
+        this.citySend = this.objectItem._id;
+        this.onChangecity(this.citySend);
+
+        //obtener Fecha
+        this.datesend = result['dates'];
+        this.onChangeDate(this.datesend);
+      
+
+        //obtener place
+        this.objetoItemArray = result['places'];
+        this.placeSend = this.objetoItemArray[0]._id;
+        this.onChangeplace(this.placeSend);
+
+          //obtener dmins, couches and referees
+          this.objectOficial.push(result['officials']);                
+          this.objectOficial[0].admins.forEach( admin => {
+            //console.log(admin);
+            this.onChangeAdmin(admin);
+          });
+  
+          this.objectOficial[0].coaches.forEach( coach => {
+            //console.log(coach);
+            this.onChangeCoach(coach);
+          });
+  
+          this.objectOficial[0].referees.forEach( referee => {
+            //console.log(referee);
+            this.onChangeArbiter(referee);
+          });                        
+
+
+        //obtener status
+          this.status = result['status'];
+          
+        //obtener hours
+        this.timeSend = result['hours'];
+        this.onChangeTime(this.timeSend);      
         
+        
+      })
+              
+
     }else{               
 
        //mostrar snavbar
@@ -189,23 +275,14 @@ export class TournamentEditComponent implements OnInit {
   //obtener ciudad
   onChangecity(data: String){
     this.city = data;        
-    
-    /*
+        
     //limpiamos en caso de que cambie de ciudad
     this.itemsplace.splice(0, this.itemsplace.length);
 
-    //en base al id de la ciudad muestro los datos del los lugares
-    this.itemscitydata.forEach(result =>{
-      //console.log(result.id_town);                  
-      if( parseInt(result.id_town) == this.city){                                  
-        result.places.forEach(dataplace => {          
-          this.itemsplace.push({id: dataplace.id_place,name: dataplace.name});                            
-        }) 
-      }       
-    });            
-  */
-    
-    //console.log(this.itemsplace);
+    this.APIcreate.ObtenerPlaces(this.city).subscribe(places =>{
+      this.itemsplace = places['places'];      
+      //console.table(this.itemsplace);
+    })
 
   }
 
@@ -224,16 +301,7 @@ export class TournamentEditComponent implements OnInit {
     this.time = data;
   }
 
-/*
-  if(this.id != null){         
-    //mandar a la pagina de detallles
 
-    //this.router.navigate(["football/tournament-detail/" + this.id]);      
-  }else{                
-    //mandar a la pagina del cristian
-    //this.router.navigate(["football/tournaments"]);
-  }    
-*/
 
   Cancel() {              
     const dialogRef = this.dialog.open(DialogCancelComponent, {
@@ -245,7 +313,7 @@ export class TournamentEditComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
       if ( result == true){
           //mandar a la pagina del jorge
-          this.router.navigate(["admin/tournament/detail/"+this.id+"/status/in-process"]);
+          this.router.navigate(["admin/tournament/detail/"+this.id+"/status/"+this.status]);
       }      
     });              
   }
@@ -254,13 +322,7 @@ export class TournamentEditComponent implements OnInit {
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
   CrearTou(){   
-    //validaciones
-    if( (this.name == null) || (this.time == null) || (this.date == null) || (this.categori == null) || (this.branches[0] == null) || (this.typeTournamet == null) || (this.city == null)  || (this.place == null) ||
-      (this.adminsid[0] == null) || (this.arbitersid[0] == null) || (this.coachsid[0] == null)
-    ){    
-      alert("Error faltan datos");
-
-    }else{
+    //validaciones                          
 
         //obtener id de lugares en arreglo
         console.log(this.place)
@@ -268,47 +330,61 @@ export class TournamentEditComponent implements OnInit {
 
       
         //obtener id de las ramas
+        /*
         this.branches.forEach(result => {                
           this.brancheshid.push(result);
         });
+        */
                           
         if(this.id != null){         
 
-          /*
-          const datasend : tupla = {
-            id_tournament: this.id,
-            name: this.name,
-            category: this.categori,
-            branch: this.brancheshid,
+          console.log(this.name);
+          
+          //_id: this.id,
+          const datasend : tupla = {            
+            name: this.name,          
             type: this.typeTournamet,
-            town: this.city,
-            places: this.placeid,
-            dates: this.date,    
-            time: this.time,        
-            administrators: this.adminsid,
-            referees: this.arbitersid,
+            //branches: this.branches,
+            //category: this.categori,          
+            dates: this.date,   //del tipo date_crate_edi
+            city: this.city,
+            places: this.placeid,          
+            hours: this.time,
+            admins: this.adminsid,
             coaches: this.coachsid,
-          };        
+            referees: this.arbitersid,          
+          };
 
-          console.table(datasend);      
-        */
+          console.table(datasend);
 
-        /* updated
-        this.APIcreate.createTournamet(datasend).subscribe(result =>{
-            console.log(result);
-        })
-        */
+        
+        this.APIcreate.updateTournament(datasend, this.id).subscribe(result =>{
+            //console.log(result);
+        })        
 
         //mostrar snavbar
         this._snackBar.open('Torneo Editado exitosamente', 'X', {
           horizontalPosition: this.horizontalPosition,
-          verticalPosition: this.verticalPosition,                    
+          verticalPosition: this.verticalPosition, 
+          panelClass: ['green-snackbar'],
+          //panelClass: ['red-snackbar'],                   
         });
 
+        /*
+        if(this.status == ""){
+          this._snackBar.open('Error no se encontro el status', 'X', {
+            horizontalPosition: this.horizontalPosition,
+            verticalPosition: this.verticalPosition, 
+            //panelClass: ['green-snackbar'],
+            panelClass: ['red-snackbar'],                   
+          });
+        }
+        */
+
         //Crear la tupla y regresar al jorge                
-          this.router.navigate(["admin/tournament/detail/" + this.id + "/status/ in-process"]);      
+          this.router.navigate(["admin/tournament/detail/" + this.id + "/status/"+this.status]);      
         }                                      
-      }    
+        
    }
       
 
