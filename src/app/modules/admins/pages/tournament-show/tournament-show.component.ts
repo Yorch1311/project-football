@@ -36,19 +36,19 @@ export class TournamentShowComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
   NameData : String = "";
-  filtro : Number = 0;
-  ordenar : Number = 0;
+  filtro : String = "";
+  ordenar : String = "";
 
   Order: Item[] = [
-    {id:"1", name: 'Fase de Grupos' },
-    {id:"2", name: 'Categoria' },
-    {id:"3", name: 'Lugar' },
-    {id:"4", name: 'Fecha' },
+    {_id:"1", name: 'Fase de Grupos' },
+    {_id:"2", name: 'Categoria' },
+    {_id:"3", name: 'Lugar' },
+    {_id:"4", name: 'Fecha' },
   ];
 
   Filter: Item[] = [
-    { id:"1", name: 'Mas Reciente' },
-    { id:"2", name: 'Mas Antiguo' }
+    { _id:"1", name: 'Mas Reciente' },
+    { _id:"2", name: 'Mas Antiguo' }
   ];
 
   /*
@@ -76,13 +76,13 @@ export class TournamentShowComponent implements OnInit {
     console.log(data);
   }
 
-  onChangeFiltro(id_filtro: Number){
+  onChangeFiltro(id_filtro: String){
     this.filtro = id_filtro;
     console.log(id_filtro);
     alert(id_filtro);
   }
 
-  onChangeOrden(id_orden: Number){
+  onChangeOrden(id_orden: String){
     this.ordenar = id_orden;
     console.log(id_orden);
     alert(id_orden);

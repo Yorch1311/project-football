@@ -10,21 +10,23 @@ export class SelectSimpleComponent implements OnInit {
 
   @Input() nombre: string = 'sin nombre'; 
   @Input() items: Item[] = []; 
-  @Input() valuenum: number = 0;
+  @Input() valuenum: String = '';
 
-  valor: number | undefined;
+  valor: String='';
   //se envia 
-  @Output() onChange = new EventEmitter<number>();    
+  @Output() onChange = new EventEmitter<String>();    
 
   constructor() { }
 
-  obtenerdato( data: number){
-    //console.log(data);        
+  obtenerdato( data: String){
+    console.log(data);    
     this.onChange.emit(data);
   }
 
   ngOnInit(): void {
-    this.valor = this.valuenum;
+    if(this.valuenum !== ""){
+      this.valor = this.valuenum;
+    }    
   }
 
 }

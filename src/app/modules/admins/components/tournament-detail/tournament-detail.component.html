@@ -6,7 +6,7 @@
     <h3>Categoría:</h3>
     <ul>
       <li>
-        {{data?.category}}
+        {{data?.category?.name}}
       </li>
     </ul>
     <h3>Torneo por {{ data?.type }}</h3>
@@ -16,43 +16,43 @@
     <h2>Información sobre su realización</h2>
     <h3>Lugares disponibles:</h3>
     <ul>
-      <li *ngFor="let item of data?.places_detail">
+      <li *ngFor="let item of data?.places">
         {{item.name}}
       </li>
     </ul>
 
-    <h3>Periodo de juegos: {{ data?.dates }}</h3>
-    <h3>Horario base: {{ data?.time }}</h3>
+    <h3>Periodo de juegos: {{ data?.dates?.init }} - {{ data?.dates?.final}}</h3>
+    <h3>Horario base: {{ data?.hours }}</h3>
   </section>
 
   <section class="basic three">
 
     <h2>Organizado por</h2>
     <div class="orgContainer">
-      <div class="column" *ngIf="data?.admin_detail?.length">
+      <div class="column" *ngIf="data?.officials?.admins?.length">
         <h3>Administradores</h3>
 
         <ul>
-          <li *ngFor="let item of data?.admin_detail">
-            {{item.name}} {{item.apellido1}}
+          <li *ngFor="let item of data?.officials?.admins">
+            {{item.name}}
           </li>
         </ul>
       </div>
-      <div class="column" *ngIf="data?.referee_detail?.length">
+      <div class="column" *ngIf="data?.officials?.referees?.length">
         <h3>Arbitros</h3>
 
         <ul>
-          <li *ngFor="let item of data?.referee_detail">
-            {{item.name}} {{item.apellido1}}
+          <li *ngFor="let item of data?.officials?.admins">
+            {{item.name}}
           </li>
         </ul>
       </div>
-      <div class="column" *ngIf="data?.coach_detail?.length">
+      <div class="column" *ngIf="data?.officials?.coaches?.length">
         <h3>Entrenadores</h3>
 
         <ul>
-          <li *ngFor="let item of data?.coach_detail">
-            {{item.name}} {{item.apellido1}}
+          <li *ngFor="let item of data?.officials?.coaches">
+            {{item.name}}
           </li>
         </ul>
       </div>
@@ -64,8 +64,7 @@
     <h2>Partidos...</h2>
 
     <mat-chip-list class="chip-list" aria-label="Fish selection">
-      <app-chip (onClick)="goto($event)" [class]="item.status" [texto]="item.name_category +' - '+item.name_branch"
-        [id]="item.id_chip" *ngFor="let item of data?.chips">></app-chip>
+      <app-chip (onClick)="goto($event)" [class]="'true'" [texto]="item.name" [id]="item._id" *ngFor="let item of data?.mixedCategories">></app-chip>
     </mat-chip-list>
 
     <div class="boton" *ngIf="status=='in-process'">

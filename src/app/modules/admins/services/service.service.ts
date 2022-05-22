@@ -12,11 +12,11 @@ export class ServiceService {
 
   constructor(private http: HttpClient) { }
   
-  url = 'https://c176-177-228-144-56.ngrok.io/admin//tournament/fieldset-data/all';
+  url = 'https://deportivos-football-uas-api.herokuapp.com';
 
   //metodo para obtener datos a mostrar en selects
   ObtenerData(): Observable<any> {
-    return this.http.get(`${this.url}`);
+    return this.http.get(`${this.url}admin/tournament/fieldset-data/all`);
   }
 
 
@@ -32,11 +32,11 @@ export class ServiceService {
   }
 
 
-  /*
+  
   //Función para recibir los detalles del torneo
   getTournamentData(id: any): Observable<TournamentDetail> {
     //return this.http.get<TournamentDetail>(this.url+id);
-    return this.http.get<TournamentDetail>(this.url+id);
+    return this.http.get<TournamentDetail>(this.url+'/admin/tournament/'+ id);
   }
 
   activeTournament(id: any){
@@ -50,5 +50,5 @@ export class ServiceService {
   getTournaments(): Observable<any> {
     return this.http.post<any>(this.url+"getTournaments", {});
   }
-  */
+
 }
