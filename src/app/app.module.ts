@@ -47,6 +47,7 @@ import { CreateTeamComponent } from './modules/trainers/pages/create-team/create
 import { TrainerTeamListComponent } from './shared/components/trainer-team-list/trainer-team-list.component';
 import { DialogSaveComponent } from './shared/components/dialog-save/dialog-save.component';
 import { TrainerTournamentDetailPageComponentComponent } from './modules/trainers/pages/trainer-tournament-detail-page-component/trainer-tournament-detail-page-component.component';
+import { TournamentTreeComponent } from './modules/admins/pages/tournament-tree/tournament-tree.component';
 
 
 @NgModule({
@@ -73,7 +74,8 @@ import { TrainerTournamentDetailPageComponentComponent } from './modules/trainer
     CreateTeamComponent,
     TrainerTeamListComponent,
     DialogSaveComponent,
-    TrainerTournamentDetailPageComponentComponent
+    TrainerTournamentDetailPageComponentComponent,
+    TournamentTreeComponent
   ],
   imports: [
     BrowserModule,
