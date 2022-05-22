@@ -11,12 +11,13 @@ export class SelectMultipleComponent implements OnInit {
 
   @Input() nombre: string = 'sin nombre';
   @Input() items: Item[] = []; 
+  @Input() selectedValue: String []=[];         
+  @Input() enable: String | null = null;
   
   //se envia 
   @Output() onChange = new EventEmitter<String[]>();
 
-  selectedValue: String []=  ["1","2"];         
-
+  
   constructor() { }
   
   obtenerdato( data: String[]){
@@ -24,7 +25,7 @@ export class SelectMultipleComponent implements OnInit {
     this.onChange.emit(data);
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {  
   }
 
 }

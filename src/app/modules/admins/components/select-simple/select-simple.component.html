@@ -1,7 +1,7 @@
 <mat-form-field class="example-full-width" appearance="fill">
     <!--  -->
     <mat-label>{{nombre}}</mat-label>
-    <mat-select class="size-input-option-select" [(value)]="valor" (valueChange)="obtenerdato($event)" name="select">
+    <mat-select class="size-input-option-select" [(value)]="valor" [disabled]="enable" (valueChange)="obtenerdato($event)" name="select">
         <mat-option *ngFor="let item of items;  let index = index" [value]="item._id">
             {{item.name}}
         </mat-option>

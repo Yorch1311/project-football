@@ -11,7 +11,8 @@ export class SelectSimpleComponent implements OnInit {
   @Input() nombre: string = 'sin nombre'; 
   @Input() items: Item[] = []; 
   @Input() valuenum: String = '';
-
+  @Input() enable: String | null = null;
+  
   valor: String='';
   //se envia 
   @Output() onChange = new EventEmitter<String>();    
