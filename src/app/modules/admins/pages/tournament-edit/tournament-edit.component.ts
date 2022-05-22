@@ -356,7 +356,6 @@ export class TournamentEditComponent implements OnInit {
           };
 
           console.table(datasend);
-
         
         this.APIcreate.updateTournament(datasend, this.id).subscribe(result =>{
           //console.log(result);
@@ -368,11 +367,9 @@ export class TournamentEditComponent implements OnInit {
             panelClass: ['green-snackbar'],
             //panelClass: ['red-snackbar'],                   
           });
-
+        
           this.router.navigate(["admin/tournament/detail/" + this.id + "/status/"+this.status]);      
-          
-        })        
-
+        })               
         /*
         if(this.status == ""){
           this._snackBar.open('Error no se encontro el status', 'X', {
@@ -382,11 +379,9 @@ export class TournamentEditComponent implements OnInit {
             panelClass: ['red-snackbar'],                   
           });
         }
-        */             
-                                                
-      }
-   }
-      
+        */
 
-
+        
+        }                                              
+   }      
 }
