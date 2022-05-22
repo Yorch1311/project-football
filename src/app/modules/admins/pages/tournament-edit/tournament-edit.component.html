@@ -10,8 +10,8 @@
             <div class="two-row-grid">
                 <p>Dirigido para</p>
                 <div class="grid-two-row">
-                    <app-select-simple [nombre]="'Categoria'" [items]="itemsCategory" [valuenum]="categoriSend" (onChange)="onChangeCategori($event)"></app-select-simple>
-                    <app-select-multiple [nombre]="'Rama'" [items]="itemsbranch" (onChange)="getGenders($event)"></app-select-multiple>
+                    <app-select-simple [nombre]="'Categoria'" [items]="itemsCategory" [valuenum]="categoriSend" [enable]="'desbilitado'" (onChange)="onChangeCategori($event)"></app-select-simple>
+                    <app-select-multiple [nombre]="'Rama'" [items]="itemsbranch" [selectedValue]="branchsSend" [enable]="'desbilitado'" (onChange)="getGenders($event)"></app-select-multiple>
                     <app-select-simple [nombre]="'Tipo de Torneo'" [items]="itemstype" [valuenum]="typeSend" (onChange)="onChangetypetournament($event)"></app-select-simple>
                 </div>
             </div>

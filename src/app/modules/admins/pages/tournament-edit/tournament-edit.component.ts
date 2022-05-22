@@ -91,8 +91,8 @@ export class TournamentEditComponent implements OnInit {
       //extraer la info de la base de datos
       this.APIcreate.ObtenerData().subscribe(datos =>{
         //console.log(datos);
-        //this.itemsCategory = datos['categories'];
-        //this.itemsbranch = datos['branches'];
+        this.itemsCategory = datos['categories'];
+        this.itemsbranch = datos['branches'];
         this.itemstype = datos['types'];
         this.itemscyty = datos['cities'];
         this.itemsAdmin = datos['admins'];
@@ -103,6 +103,7 @@ export class TournamentEditComponent implements OnInit {
       //para buscar por id
       //6289c2d577b219739d358763        
     //obtener ps datos por id de la bd
+
     if(this.id !== null){            
       this.APIcreate.Searchid(this.id).subscribe(result =>{        
         //console.log(result);
@@ -110,19 +111,22 @@ export class TournamentEditComponent implements OnInit {
         this.nombreSend = result['name'];
         this.name = this.nombreSend;
 
-        /*
+        
         //obtener categoria
         this.objectItem= result['category'];
         this.categoriSend = this.objectItem._id;
         console.log(this.categoriSend);
-        this.onChangeCategori(this.categoriSend);
-        */
+        //this.onChangeCategori(this.categoriSend);        
 
-        /*
         //obtrener ramas
-        this.objetoItemArray = result['branches'];        
-        */
-
+        this.objetoItemArray = result['branches'];            
+        //
+        this.objetoItemArray.forEach( brabches => {
+          //console.log(admin);
+          this.branchsSend.push(brabches._id);
+          //this.onChangeAdmin(admin);
+        });
+                   
         //obtener tipo de torneo 
         this.objectItem = result['type'];
         this.typeSend = this.objectItem._id;
@@ -202,7 +206,7 @@ export class TournamentEditComponent implements OnInit {
 
   //Eliminar Admnis
   DeleteAdmin(admin:  String){        
-    this.pos = this.admins.indexOf(admin);    
+    this.pos = this.admins.indexOf(admin);              
     this.itemsAdmin.push( {_id:this.adminsid[this.pos], name: this.admins[this.pos] });
     //eliminar el string
     this.admins.splice(this.pos, 1);    
@@ -321,9 +325,9 @@ export class TournamentEditComponent implements OnInit {
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
-
+ 
   CrearTou(){   
-    
+
     if( (this.name == null) || (this.time == null) || (this.date == null) || (this.typeTournamet == null) || (this.city == null)  || (this.place == null) ||
       (this.adminsid[0] == null) || (this.arbitersid[0] == null) || (this.coachsid[0] == null)
     ){

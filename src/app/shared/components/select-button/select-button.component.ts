@@ -1,5 +1,6 @@
 import { Component, OnInit, Input,Output, EventEmitter } from '@angular/core';
 import { Item } from '../../../modules/admins/services/type';
+import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-select-button',
@@ -15,14 +16,27 @@ export class SelectButtonComponent implements OnInit {
   //se envia 
   @Output() onChange = new EventEmitter<Item>();
 
-  constructor() { }
+  constructor(private _snackBar: MatSnackBar  ) { }
 
+
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+ 
   Getitem(valac: Item){   
 
     if(!valac){
-      alert("Error no selecciono ningun ninguna opcion");    
+
+      this._snackBar.open('Error no selecciona una opcion', '', {
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,         
+        //panelClass: ['green-snackbar'],
+        panelClass: ['red-snackbar'],
+        duration: 3000,                   
+      });
+
     }else{
       this.onChange.emit(valac);   
+      this.selectedValue = 0;
     }    
       //console.log(valac);      
   }
