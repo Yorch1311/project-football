@@ -6,6 +6,7 @@ import { DialogCancelComponent } from '../../../../shared/components/dialog-canc
 import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition,} from '@angular/material/snack-bar';
 import { tupla } from '../../services/type'
 import { Item } from '../../services/type'
+import { date_crate_edit } from '../../services/type'
 
 @Component({
   selector: 'app-tournament-create',
@@ -32,20 +33,20 @@ export class TournamentCreateComponent implements OnInit {
   city: number | any;
   place: number | any;
 
-  date: string | null = null;
+  date: date_crate_edit= {init:"", final:""};
   time: String | null = null;
 
 
 
   //para buscar
-  brancheshid:number[] = [];
+  brancheshid:String[] = [];
   adminsid: String [] = [];  
   admins: String [] = [];
   arbitersid :String [] = [];
   arbiters: String[] = [];
   coachsid :String[] = [];
   coachs: String[] = [];
-  placeid: number [] = [];
+  placeid: String [] = [];
 
 
  //para almacenar datos  y mostrarlos en select's
@@ -69,9 +70,10 @@ export class TournamentCreateComponent implements OnInit {
       this.itemsCategory = datos['categories'];
       this.itemsbranch = datos['branches'];
       this.itemstype = datos['types'];
-
-      console.table(this.itemstype);
-
+      this.itemscyty = datos['cities'];
+      this.itemsAdmin = datos['admins'];
+      this.itemsreferee = datos['referees'];
+      this.itemsTrainers = datos['coaches'];      
     })
   }
 
@@ -162,34 +164,27 @@ export class TournamentCreateComponent implements OnInit {
   //obtener ciudad
   onChangecity(data: String){
     this.city = data;
-
-    /*
+    
     //limpiamos en caso de que cambie de ciudad
     this.itemsplace.splice(0, this.itemsplace.length);
 
-    //en base al id de la ciudad muestro los datos del los lugares
-    this.itemscitydata.forEach(result =>{
-      //console.log(result.id_town);
-      if( parseInt(result.id_town) == this.city){
-        result.places.forEach(dataplace => {
-          this.itemsplace.push({id: dataplace.id_place,name: dataplace.name});
-        })
-      }
-    });
-  */
-
-    //console.log(this.itemsplace);
+    this.APIcreate.ObtenerPlaces(this.city).subscribe(places =>{
+      this.itemsplace = places['places'];      
+      console.table(this.itemsplace);
+    })
 
   }
 
   //obtener lugar
   onChangeplace(data: String){
+    //console.log(data);
     this.place = data;
+
   }
 
   //date
-  onChangeDate(data: string){
-    this.date = data;
+  onChangeDate(data: date_crate_edit){
+    this.date = data
   }
 
   //horario
@@ -228,8 +223,7 @@ export class TournamentCreateComponent implements OnInit {
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
   CrearTou(){
-    //validaciones
-    /*
+    
     if( (this.name == null) || (this.time == null) || (this.date == null) || (this.categori == null) || (this.branches[0] == null) || (this.typeTournamet == null) || (this.city == null)  || (this.place == null) ||
       (this.adminsid[0] == null) || (this.arbitersid[0] == null) || (this.coachsid[0] == null)
     ){
@@ -246,32 +240,32 @@ export class TournamentCreateComponent implements OnInit {
         //obtener id de las ramas
         this.branches.forEach(result => {
           this.brancheshid.push(result);
-        });
-
+        });        
 
         const datasend : tupla = {
-          name: this.name,
-          category: this.categori,
-          branch: this.brancheshid,
+          name: this.name,          
           type: this.typeTournamet,
-          town: this.city,
-          places: this.placeid,
-          dates: this.date,
-          time: this.time,
-          administrators: this.adminsid,
-          referees: this.arbitersid,
+          branches: this.brancheshid,
+          category: this.categori,          
+          dates: this.date,   //del tipo date_crate_edi
+          city: this.city,
+          places: this.placeid,          
+          hours: this.time,
+          admins: this.adminsid,
           coaches: this.coachsid,
+          referees: this.arbitersid,          
         };
 
 
-        console.table(datasend);
+        console.log(datasend)
+        //console.table(datasend);
 
-        */
-        /*
+      
+        
         this.APIcreate.createTournamet(datasend).subscribe(result =>{
             console.log(result);
-        })
-        */
+
+        })        
 
         //mostrar snavbar
         this._snackBar.open('Torneo creado exitosamente', 'X', {
@@ -283,7 +277,7 @@ export class TournamentCreateComponent implements OnInit {
 
         //Crear la tupla y regresar al chrisyian
         this.router.navigate(["admin/tournament/show"]);
-      /*}*/
+      }
    }
 
 
