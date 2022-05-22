@@ -286,6 +286,7 @@ export class TournamentEditComponent implements OnInit {
 
   }
 
+
   //obtener lugar
   onChangeplace(data: String){
     this.place = data;
@@ -302,8 +303,8 @@ export class TournamentEditComponent implements OnInit {
   }
 
 
-
-  Cancel() {              
+  Cancel() {      
+            
     const dialogRef = this.dialog.open(DialogCancelComponent, {
       width: '420px',
       height: '200px',                
@@ -322,66 +323,67 @@ export class TournamentEditComponent implements OnInit {
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
   CrearTou(){   
-    //validaciones                          
-
-        //obtener id de lugares en arreglo
-        console.log(this.place)
-        this.placeid.push(this.place);
-
+    
+    if( (this.name == null) || (this.time == null) || (this.date == null) || (this.typeTournamet == null) || (this.city == null)  || (this.place == null) ||
+      (this.adminsid[0] == null) || (this.arbitersid[0] == null) || (this.coachsid[0] == null)
+    ){
       
-        //obtener id de las ramas
-        /*
-        this.branches.forEach(result => {                
-          this.brancheshid.push(result);
-        });
-        */
-                          
-        if(this.id != null){         
+      this._snackBar.open('Error faltan datos', 'X', {
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,          
+        //panelClass: ['green-snackbar'],
+        panelClass: ['red-snackbar'],
+      });      
 
-          console.log(this.name);
-          
-          //_id: this.id,
-          const datasend : tupla = {            
-            name: this.name,          
-            type: this.typeTournamet,
-            //branches: this.branches,
-            //category: this.categori,          
-            dates: this.date,   //del tipo date_crate_edi
-            city: this.city,
-            places: this.placeid,          
-            hours: this.time,
-            admins: this.adminsid,
-            coaches: this.coachsid,
-            referees: this.arbitersid,          
-          };
+    }else{
 
-          console.table(datasend);
-        
-        this.APIcreate.updateTournament(datasend, this.id).subscribe(result =>{
-          //console.log(result);
-
-          //mostrar snavbar
-          this._snackBar.open('Torneo Editado exitosamente', 'X', {
-            horizontalPosition: this.horizontalPosition,
-            verticalPosition: this.verticalPosition, 
-            panelClass: ['green-snackbar'],
-            //panelClass: ['red-snackbar'],                   
-          });
-        
-          this.router.navigate(["admin/tournament/detail/" + this.id + "/status/"+this.status]);      
-        })               
-        /*
-        if(this.status == ""){
-          this._snackBar.open('Error no se encontro el status', 'X', {
-            horizontalPosition: this.horizontalPosition,
-            verticalPosition: this.verticalPosition, 
-            //panelClass: ['green-snackbar'],
-            panelClass: ['red-snackbar'],                   
-          });
-        }
-        */
-
-        
-        }                                              
+              //obtener id de lugares en arreglo
+              console.log(this.place)
+              this.placeid.push(this.place);            
+                                
+              if(this.id != null){         
+      
+                console.log(this.name);
+                
+                //_id: this.id,
+                const datasend : tupla = {            
+                  name: this.name,          
+                  type: this.typeTournamet,      
+                  dates: this.date,   //del tipo date_crate_edi
+                  city: this.city,
+                  places: this.placeid,          
+                  hours: this.time,
+                  admins: this.adminsid,
+                  coaches: this.coachsid,
+                  referees: this.arbitersid,          
+                };
+      
+                console.table(datasend);
+              
+                this.APIcreate.updateTournament(datasend, this.id).subscribe(result =>{
+                //console.log(result);
+      
+                //mostrar snavbar
+                this._snackBar.open('Torneo Editado exitosamente', 'X', {
+                  horizontalPosition: this.horizontalPosition,
+                  verticalPosition: this.verticalPosition, 
+                  panelClass: ['green-snackbar'],
+                  //panelClass: ['red-snackbar'],                   
+                });
+              
+                this.router.navigate(["admin/tournament/detail/" + this.id + "/status/"+this.status]);      
+              })               
+              /*
+              if(this.status == ""){
+                this._snackBar.open('Error no se encontro el status', 'X', {
+                  horizontalPosition: this.horizontalPosition,
+                  verticalPosition: this.verticalPosition, 
+                  //panelClass: ['green-snackbar'],
+                  panelClass: ['red-snackbar'],                   
+                });
+              }
+              */                    
+              }                                                    
+    }
    }      
 }
