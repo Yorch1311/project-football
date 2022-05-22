@@ -254,23 +254,20 @@ export class TournamentCreateComponent implements OnInit {
        // console.log(datasend)
         //console.table(datasend);
 
-      
-        
-        this.APIcreate.createTournamet(datasend).subscribe(result =>{
-            //console.log(result);
+        this.APIcreate.createTournament(datasend).subscribe(result =>{
+          //console.log(result);
+          //mostrar snavbar
+          this._snackBar.open('Torneo creado exitosamente', 'X', {
+            horizontalPosition: this.horizontalPosition,
+            verticalPosition: this.verticalPosition,          
+            panelClass: ['green-snackbar'],
+            //panelClass: ['red-snackbar'],
+          });
+
+          //Crear la tupla y regresar al chrisyian
+          this.router.navigate(["admin/tournament/show"]);
         })        
-        
 
-        //mostrar snavbar
-        this._snackBar.open('Torneo creado exitosamente', 'X', {
-          horizontalPosition: this.horizontalPosition,
-          verticalPosition: this.verticalPosition,          
-          panelClass: ['green-snackbar'],
-          //panelClass: ['red-snackbar'],
-        });
-
-        //Crear la tupla y regresar al chrisyian
-        this.router.navigate(["admin/tournament/show"]);
       }
    }
 

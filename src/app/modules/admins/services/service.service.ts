@@ -27,7 +27,7 @@ export class ServiceService {
   }
 
   //metodo para introducir un nuevo torneo
-  createTournamet(dato: tupla):Observable<any>{
+  createTournament(dato: tupla):Observable<any>{
     //console.log(dato);
     return this.http.post(`${this.url}/admin/tournament`,dato);    
   }
