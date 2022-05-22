@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { Router } from '@angular/router';
 import { Filter, Item } from '../../services/type';
+import { ServiceService } from '../../services/service.service';
 
 export interface Torneo {
   id: string;
@@ -33,6 +34,7 @@ const ELEMENT_DATA: Torneo[] = [
 })
 export class TournamentShowComponent implements OnInit {
 
+  
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
   NameData : String = "";
@@ -57,9 +59,16 @@ export class TournamentShowComponent implements OnInit {
   ];
 */
 
-  constructor( private router: Router) { }
+  constructor( private router: Router, private APIcreate: ServiceService) { 
+
+
+  }
 
   ngOnInit(): void {
+    
+    this.APIcreate.getTournaments().subscribe(result => {
+      console.log(result);
+    })
   }
 
   tournamentCreate() {
@@ -68,12 +77,6 @@ export class TournamentShowComponent implements OnInit {
 
   tournamentDetail(detail: { id: string, status: string }) {
     this.router.navigate(["admin/tournament/detail/" + detail.id + "/status/" + detail.status]);
-  }
-
-
-  onChangeName(data: String){
-    this.NameData = data;
-    console.log(data);
   }
 
   onChangeFiltro(id_filtro: Number){
@@ -86,6 +89,11 @@ export class TournamentShowComponent implements OnInit {
     this.ordenar = id_orden;
     console.log(id_orden);
     alert(id_orden);
+  }
+
+  onKeyUpFilter(data: string){
+    this.NameData = data;
+    console.log(data);
   }
 
 }

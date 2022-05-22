@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { TournamentDetail } from './type';
+import { Tournament, TournamentDetail } from './type';
 import { tupla } from './type'
 
 
@@ -13,7 +13,7 @@ export class ServiceService {
 
   constructor(private http: HttpClient) { }
 
-  url = 'https://api-deportivo-uas.herokuapp.com/api/tournament/';
+  url = 'https://c176-177-228-144-56.ngrok.io/admin/tournaments/';
 
   //metodo para obtener datos a mostrar en selects
   ObtenerData(): Observable<any> {
@@ -48,4 +48,7 @@ export class ServiceService {
   /*getTournaments(): Observable<Tournament> {
     return this.http.post<Tournament>(this.url+"getTournaments", {});
   }*/
+  getTournaments(): Observable<Tournament> {
+    return this.http.post<Tournament>(this.url, {});
+  }
 }
