@@ -26,7 +26,7 @@ export class TournamentCategoriesRefereeComponent implements OnInit {
   }
 
   goto(id: string){
-    this.router.navigate(['trainer/tournament/'+this.id+'/categories/'+id+'/create-team'])
+    this.router.navigate(['referee/tournament/'+this.id+'/rivals/'])
   }
 
 }

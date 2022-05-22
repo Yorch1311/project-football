@@ -7,8 +7,8 @@ import { TournamentEditComponent } from './modules/admins/pages/tournament-edit/
 import { TournamentShowComponent } from './modules/admins/pages/tournament-show/tournament-show.component';
 import { TournamentTreeComponent } from './modules/admins/pages/tournament-tree/tournament-tree.component';
 import { MatchHistoryComponent } from './modules/referees/pages/match-history/match-history.component';
+import { RefereeTournamentDetailComponent } from './modules/referees/pages/referee-tournament-detail/referee-tournament-detail.component';
 import { TournamentCategoriesRefereeComponent } from './modules/referees/pages/tournament-categories-referee/tournament-categories-referee.component';
-import { TournamentRivalsComponent } from './modules/referees/pages/tournament-rivals/tournament-rivals.component';
 import { CreateTeamComponent } from './modules/trainers/pages/create-team/create-team.component';
 import { TournamentCategoriesComponent } from './modules/trainers/pages/tournament-categories/tournament-categories.component';
 import { TrainerTournamentDetailPageComponentComponent } from './modules/trainers/pages/trainer-tournament-detail-page-component/trainer-tournament-detail-page-component.component';
@@ -35,9 +35,9 @@ const routes: Routes = [
   },
   { path: 'referee', children: [
     { path: 'tournament', children:[
-      { path: 'show', component: TournamentRivalsComponent },
+      { path: 'show', component: RefereeTournamentDetailComponent },
       { path: ':id/categories', component: TournamentCategoriesRefereeComponent },
-      { path: 'rivals', component: MatchHistoryComponent },
+      { path: ':id/rivals', component: MatchHistoryComponent },
     ]},
   ],
 }

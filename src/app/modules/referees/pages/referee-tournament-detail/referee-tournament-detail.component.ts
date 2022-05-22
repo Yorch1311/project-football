@@ -5,12 +5,12 @@ import { Filter, Item, Tournament } from '../../services/type';
 import { ServiceService } from '../../services/service.service';
 
 @Component({
-  selector: 'app-trainer-tournament-detail-page-component',
-  templateUrl: './trainer-tournament-detail-page-component.component.html',
-  styleUrls: ['./trainer-tournament-detail-page-component.component.scss']
+  selector: 'app-referee-tournament-detail',
+  templateUrl: './referee-tournament-detail.component.html',
+  styleUrls: ['./referee-tournament-detail.component.scss']
 })
+export class RefereeTournamentDetailComponent implements OnInit {
 
-export class TrainerTournamentDetailPageComponentComponent implements OnInit {
   NameData : String = "";
   filtro : String = "";
   ordenar : String = "";
@@ -45,9 +45,8 @@ export class TrainerTournamentDetailPageComponentComponent implements OnInit {
   }
 
   tournamentDetail(detail: { id: string, status: string }) {
-    this.router.navigate(["trainer/tournament/" + detail.id + "/categories"]);
+    this.router.navigate(["referee/tournament/" + detail.id + "/categories"]);
   }
-
 
   onChangeName(data: String){
     this.NameData = data;
@@ -92,5 +91,4 @@ export class TrainerTournamentDetailPageComponentComponent implements OnInit {
       this.data = result;
     })*/
   }
-
 }

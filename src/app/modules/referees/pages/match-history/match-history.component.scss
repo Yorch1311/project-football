@@ -50,9 +50,30 @@
 }
 
 .rivals{
-    width: 688px;
+    
     display: flex;
     align-items: center;
     gap: 51px;
     padding-bottom: 40px;
+}
+
+@media screen and (min-width: 360px) and (max-width:428px) {
+    .rivals{
+        width: 100%;
+        flex-direction: column;
+        padding-bottom: 60px;
+        gap: 10px;
+    }
+
+    .rivals > p{
+        margin:0px;
+    }
+
+    .header-container, .match-container{
+        width: 100%;
+    }
+
+    .page-container{
+        width: calc(100% - 16px);
+    }
 }
