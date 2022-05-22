@@ -3,7 +3,7 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import {FormControl,FormGroup} from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-//import { ServiceService } from '../../services/service.service';
+import { ServiceService } from '../../services/service.service';
 import { DialogCancelComponent } from '../../../../shared/components/dialog-cancel/dialog-cancel.component';
 import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { tupla } from '../../services/type'
@@ -60,16 +60,47 @@ export class TournamentEditComponent implements OnInit {
  
    //variable donde se compara el id   
    id: string | null;  
-   //, private APIcreate: ServiceService
-  constructor(public dialog: MatDialog, private router: Router, private routerAc: ActivatedRoute, private _snackBar: MatSnackBar) { 
+   //
+  constructor(public dialog: MatDialog, private router: Router, private APIcreate: ServiceService, private routerAc: ActivatedRoute, private _snackBar: MatSnackBar) { 
     this.id = this.routerAc.snapshot.paramMap.get("id");
   }
 
   ngOnInit(): void {
     //obtener los datos de la bd
+      //extraer la info de la base de datos
+      this.APIcreate.ObtenerData().subscribe(datos =>{
+        console.log(datos);
+        this.itemsCategory = datos['categories'];
+        this.itemsbranch = datos['branches'];
+        this.itemstype = datos['types'];
+        this.itemscyty = datos['cities'];
+        this.itemsAdmin = datos['admins'];
+        this.itemsreferee = datos['referees'];
+        this.itemsTrainers = datos['coaches'];      
+      })  
 
-
+      //para buscar por id
+        //628578c9e5ee06cd5671b010
+        
     //obtener ps datos por id de la bd
+    if(this.id !== null){         
+        //consultar la api por dicho torneo 
+        
+    }else{               
+
+       //mostrar snavbar
+       this._snackBar.open('Error no se encontro id', 'X', {
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,                    
+        //panelClass: ['green-snackbar'],
+        panelClass: ['red-snackbar'],
+      });
+      
+        this.router.navigate(["admin/tournament/detail/" + this.id + "/status/ in-process"]);    
+      //mandar a la pagina del cristian
+      //this.router.navigate(["football/tournaments"]);
+
+    }    
   }
 
   //variable pos para arbiter, coach    

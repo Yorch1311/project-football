@@ -51,7 +51,7 @@ export class ServiceService {
   }
 
   //Obtener todos los torneos
-  getTournaments(): Observable<Tournament> {
-    return this.http.post<Tournament>(this.url, {});
+  getTournaments(): Observable<Tournament[]> {
+    return this.http.post<Tournament[]>(this.url + "/admin/tournaments", {});
   }
 }

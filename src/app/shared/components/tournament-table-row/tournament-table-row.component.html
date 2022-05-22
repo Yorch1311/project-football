@@ -1,5 +1,5 @@
 
-  <tr class="tr" [ngClass]="{'tr-active':status==='in-process', 'tr-inactive':status==='done'}" (click)="handleEvent()">
+  <tr class="tr" [ngClass]="{'tr-active':status==='in-progress' || 'active', 'tr-inactive':status==='done'}" (click)="handleEvent()">
       <td class="name" [ngClass]="{'blur':status==='done'}"> {{name}} </td>
 
       <td class="type" [ngClass]="{'blur':status==='done'}">
@@ -10,7 +10,7 @@
       </td>
 
       <td class="category">
-        <div class="td-column" *ngIf="status==='in-process'">
+        <div class="td-column" *ngIf="status==='in-progress' || 'active'">
           <p class="p1">Categoria</p>
           <p class="p2">{{category}}</p>
         </div>
@@ -28,7 +28,7 @@
 
       <td class="date" [ngClass]="{'blur':status==='done'}">
         <div class="td-column">
-          <p class="p1">Fecha</p>
+          <p class="p1">Fecha Inicio</p>
             <p class="p2">{{date}}</p>
         </div>
       </td>
