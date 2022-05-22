@@ -20,6 +20,8 @@ export class ServiceService {
     return this.http.get(`${this.url}/admin/tournament/fieldset-data/all`);
   }
 
+
+
   ObtenerPlaces(id_city: String):Observable<any>{
     return this.http.get(`${this.url}/admin/tournament/fieldset-data/places/${id_city}`);
   }
@@ -51,10 +53,24 @@ export class ServiceService {
   }
 
   //Obtener todos los torneos
-  /*getTournaments(): Observable<Tournament> {
-    return this.http.post<Tournament>(this.url+"getTournaments", {});
-  }*/
   getTournaments(): Observable<Tournament[]> {
     return this.http.post<Tournament[]>(this.url + "/admin/tournaments", {});
   }
+
+  //Obtener Filtro de torneos por Tipos
+  filterTournamentsByType(id : String): Observable<Tournament[]> { 
+    return this.http.post<Tournament[]>(this.url + "/admin/tournaments", {"_id":id});
+  }
+
+  //Obter Filtro de Torneos por Fecha
+  orderTournamentsByDate(order : String): Observable<Tournament[]> { 
+    return this.http.post<Tournament[]>(this.url + "/admin/tournaments", {"order":order});
+  }
+
+  //Buscar torneo por nombre
+  searchTournament( name : String): Observable<Tournament[]> { 
+    return this.http.post<Tournament[]>(this.url + "/admin/tournaments", {"name":name});
+  }
+
+
 }
