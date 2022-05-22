@@ -1,18 +1,20 @@
-
   <tr class="tr" [ngClass]="{'tr-active':status==='in-progress' || 'active', 'tr-inactive':status==='done'}" (click)="handleEvent()">
-      <td class="name" [ngClass]="{'blur':status==='done'}"> {{name}} </td>
+      
+      <td class="name td-column-name" [ngClass]="{'blur':status==='done'}"> 
+        <p id="name" matTooltip="{{name}}">{{name}}</p>
+      </td>
 
       <td class="type" [ngClass]="{'blur':status==='done'}">
         <div class="td-column">
           <p class="p1">Tipo</p>
-          <p class="p2">{{type}}</p>
-          </div>
+          <p class="p2" matTooltip="{{type}}">{{type}}</p>
+        </div>
       </td>
 
       <td class="category">
         <div class="td-column" *ngIf="status==='in-progress' || 'active'">
           <p class="p1">Categoria</p>
-          <p class="p2">{{category}}</p>
+          <p class="p2" matTooltip="{{category}}">{{category}}</p>
         </div>
         <div class="td-column boton" *ngIf="status==='done'">
           <app-button [clase]="'button fill'" [title]="'VER'" (onClick)="handleEvent()"></app-button>
@@ -22,14 +24,14 @@
       <td class="place" [ngClass]="{'blur':status==='done'}">
         <div class="td-column">
           <p class="p1">Lugar</p>
-          <p class="p2">{{place}}</p>
+          <p class="p2" matTooltip="{{place}}">{{place}}</p>
         </div>
       </td>
 
       <td class="date" [ngClass]="{'blur':status==='done'}">
         <div class="td-column">
           <p class="p1">Fecha Inicio</p>
-            <p class="p2">{{date}}</p>
+          <p class="p2" matTooltip="{{date}}">{{date}}</p>
         </div>
       </td>
   </tr>
