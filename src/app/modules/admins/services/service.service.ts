@@ -12,11 +12,11 @@ export class ServiceService {
 
   constructor(private http: HttpClient) { }
   
-  url = 'https://c176-177-228-144-56.ngrok.io/admin//tournament/fieldset-data/all';
+  url = 'https://deportivos-football-uas-api.herokuapp.com/';
 
   //metodo para obtener datos a mostrar en selects
   ObtenerData(): Observable<any> {
-    return this.http.get(`${this.url}`);
+    return this.http.get(`${this.url}admin/tournament/fieldset-data/all`);
   }
 
 

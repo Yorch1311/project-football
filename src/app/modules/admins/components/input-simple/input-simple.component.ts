@@ -9,13 +9,13 @@ export class InputSimpleComponent implements OnInit {
 
   @Input() nombre: string = 'sin nombre';
   @Input() ejemplo: string = 'sin nombre';  
-  @Input() value: string = '';
+  @Input() value: String = '';
   //se envia 
-  @Output() onChange = new EventEmitter<string>();     
+  @Output() onChange = new EventEmitter<String>();     
 
   constructor() { }
 
-  obtenerdato( data: string){         
+  obtenerdato( data: String){         
     console.log(data); 
     this.onChange.emit(data);        
   }

@@ -1,6 +1,7 @@
 <div class="page-container">
     <h1>Arma tu torneo</h1>
     <div class="content-container">
+
         <div class="grid-container">
             <div class="first-row-grid">
                 <p>Conócelo como...</p>
@@ -43,9 +44,15 @@
                     </div>
                 </div>
             </div>
-
-
-
         </div>
+
+        <div class="order-buttons">
+            <div class="control-buttons">
+                <app-button [clase]="'button outline'"  [title]="'Cancel'" (onClick)="Cancel()"></app-button>                   
+                    <span style="margin-left: 11px;"></span>                                                                    
+                <app-button  [clase]="'button fill'"    [title]="'Crear'" (onClick)="CrearTou()"></app-button>
+            </div>                    
+        </div>                     
+        
     </div>
 </div>
