@@ -11,13 +11,18 @@ export class InputSimpleComponent implements OnInit {
   @Input() ejemplo: string = 'sin nombre';  
   @Input() value: String = '';
   //se envia 
-  @Output() onChange = new EventEmitter<String>();     
+  @Output() onChange = new EventEmitter<string>(); 
+  @Output() KeyUp = new EventEmitter<string>();    
 
   constructor() { }
 
-  obtenerdato( data: String){         
-    console.log(data); 
+  obtenerdato( data: string){         
+    //console.log(data); 
     this.onChange.emit(data);        
+  }
+
+  ObtenerTextoPress(data: string){
+    this.KeyUp.emit(data);
   }
 
   ngOnInit(): void {
