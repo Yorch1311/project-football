@@ -1,5 +1,10 @@
 .page-container{
-    padding: 32px 64px;
+
+    max-width: 1304px;
+    margin: 0 auto;
+
+    padding: 32px 0px;
+    
 }
 
 h1{
@@ -28,11 +33,57 @@ h1{
 
 .team-detail{
     padding: 40px 48px;
-    
-    display: grid;
 }
 
-.team-detail > p{
-    color: rgba(38, 39, 43, 0.5);
+
+p{
+    font-size: 20px;
     font-weight: 500;
+}
+
+.subtitle > p{
+    color: rgba(38, 39, 43, 0.5);
+}
+
+.two-row{
+    grid-column: 1 / 3;
+    padding: 44px 0px;
+}
+
+.first-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.two-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 24px;
+}
+
+.three-row{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 24px;
+}
+
+.add-player{
+    display: flex;
+    grid-column: 2 / 2;
+}
+
+#add-player{
+    font-weight: 500;
+    font-size: 16px;
+    color: #0A90EF;
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+}
+
+.group-show{
+    padding: 44px 0px;
 }

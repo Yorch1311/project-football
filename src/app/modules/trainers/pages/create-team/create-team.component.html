@@ -6,10 +6,52 @@
     <div class="body-tournament-data">
         <app-trainer-team-list></app-trainer-team-list>
         <div class="team-detail-container">
-            <p>Informacion base del equipo</p>
             <div class="team-detail">
-                <app-input-simple [nombre]="'Nombre del equipo'"></app-input-simple>
-                <input type="image" src="../../../../../assets/image/trainer/imageTeam.png">
+
+                <div class="first-row">
+                    <div class="subtitle">
+                        <p>Informacion base del equipo</p>
+                    </div>
+                    <div class="first-grid">
+                        <app-input-simple [nombre]="'Nombre del equipo'"></app-input-simple>
+                        <input type="image" src="../../../../../assets/image/trainer/imageTeam.png">
+                    </div>
+                </div>
+
+
+                
+                <div class="two-row">
+                    <div class="subtitle">
+                        <p>Únete y anota goles con el nuevo equipo estrella del torneo</p>
+                    </div>
+                    <div class="two-grid">
+                        <app-input-simple [nombre]="'Nombre del equipo'"></app-input-simple>
+                        <app-input-simple [nombre]="'INE'"></app-input-simple>
+                        <app-input-simple [nombre]="'Campo'"></app-input-simple>
+                    </div>
+                       
+                </div>
+
+                <div class="three-row">
+                    <div class="add-player">
+                        <p id="add-player">Agregar jugador</p>
+                        <img src="../../../../assets/image/admin/IconAdd.jpeg" alt="x"/>  
+
+                    </div>
+                </div>
+                
+                <div class="group-show">
+                    <app-group-show class="group" ></app-group-show>
+                    <app-group-show class="group" ></app-group-show>    
+                    <app-group-show class="group" ></app-group-show>
+                </div>
+                
+                
+
+                <div class="button-container">
+                    <div><app-button [clase]="'button fill'" [title]="'Registrar'"></app-button></div>
+                </div>
+                 
             </div>
         </div>
     </div>

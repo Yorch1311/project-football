@@ -42,12 +42,12 @@ import { TournamentTableRowComponent } from './shared/components/tournament-tabl
 import { TournamentShowComponent } from './modules/admins/pages/tournament-show/tournament-show.component';
 import { CardComponent } from './shared/components/card/card.component';
 import { TeamListComponent } from './shared/components/team-list/team-list.component';
-import { TournamentCreateTreeComponent } from './modules/admins/pages/tournament-create-tree/tournament-create-tree.component';
 import { CreateTeamComponent } from './modules/trainers/pages/create-team/create-team.component';
 import { TrainerTeamListComponent } from './shared/components/trainer-team-list/trainer-team-list.component';
 import { DialogSaveComponent } from './shared/components/dialog-save/dialog-save.component';
 import { TrainerTournamentDetailPageComponentComponent } from './modules/trainers/pages/trainer-tournament-detail-page-component/trainer-tournament-detail-page-component.component';
 import { TournamentTreeComponent } from './modules/admins/pages/tournament-tree/tournament-tree.component';
+import { TournamentRivalsComponent } from './modules/referees/pages/tournament-rivals/tournament-rivals.component';
 
 
 @NgModule({
@@ -75,7 +75,8 @@ import { TournamentTreeComponent } from './modules/admins/pages/tournament-tree/
     TrainerTeamListComponent,
     DialogSaveComponent,
     TrainerTournamentDetailPageComponentComponent,
-    TournamentTreeComponent
+    TournamentTreeComponent,
+    TournamentRivalsComponent
   ],
   imports: [
     BrowserModule,
