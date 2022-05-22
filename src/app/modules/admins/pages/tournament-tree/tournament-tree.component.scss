@@ -1,0 +1,35 @@
+.page-container{
+    padding: 32px 64px;
+}
+
+h2{
+    color: #26272B;
+    opacity: 0.75;
+    
+}
+
+p{
+    color: #26272BBF;
+}
+
+
+.page-content-container{
+    display: flex;
+    gap: 40px;
+}
+
+.save{
+    width: 148px;
+    height: 48px;
+    
+    font-size: 16px;
+    background-color: #0A90EF;    
+    color: white;    
+
+    border-radius: 8px ;
+    border: none;
+
+    cursor: pointer;
+    
+}
+

@@ -14,9 +14,9 @@ export class TournamentDetailComponent implements OnInit {
 
   data: TournamentDetail | undefined;
   activeCount: number = 0;
-  clase: string = ''; // clase del boton, le da su diseño
-  estado: boolean = false;// Variable que asigna si el boton esta desactivado
-
+  clase: string = ''; 
+  estado: boolean = false;
+/*
   dataTest: TournamentDetail = {
     name: 'UASITOS',
     category: 'Juvenil',
@@ -60,30 +60,23 @@ export class TournamentDetailComponent implements OnInit {
     ],
     dates: '18/05/2022 - 25/05/022',
     time: '14:00 - 18:00',
-  };
+  };*/
 
-  constructor(private router: Router /*private service: ServiceService*/) {}
+  constructor(private router: Router, private service: ServiceService) {}
 
   ngOnInit(): void {
     if (this.id != null) {
       //Uso del servicio para comunicarse con la API.
-      //this.service.getTournamentData(this.id).subscribe( data => this.data = data );
+      this.service.getTournamentData(this.id).subscribe( data => this.data = data );
 
-      this.data = this.dataTest;
-
-      /*if (this.data.category.length > 1){
-        let cant = this.data.category.length - 1;
-
-        for(let i=0; i<cant; i++){
-          this.data.category.pop();
-        }
-        this.data.categorias.push("Y más");
-      }*/
-      this.activeCount = this.data.chips.filter(
+      //this.data = this.dataTest;
+      
+     /* this.activeCount = this.data?.mixedCategories.filter(
         (c: { status: string }) => c.status == 'true'
-      ).length;
+      ).length;*/
 
-      if (this.activeCount > 0 && this.status == 'in-process') {
+      //if (this.activeCount > 0 && this.status == 'in-process') {
+      if (this.status == 'in-process') {
         this.clase = 'button fill';
       } else {
         this.clase = 'button fill';
@@ -92,21 +85,15 @@ export class TournamentDetailComponent implements OnInit {
     }
   }
 
-  /*
-    Redirecciona a la pagina createTree la cual recibe un ID
-  */
   goto(id: string) {
     this.router.navigate(['admin/tournament/manage-teams/' + id]);
   }
 
-  /*
-    Redirecciona a la pagina createTournament la cual recibe un ID
-  */
+
   redirect() {
     this.router.navigate(['admin/tournament/edit/' + this.id]);
   }
 
-  //Funcion para activar el torneo
   activeTournament() {
     alert('Event Triggered!!');
 

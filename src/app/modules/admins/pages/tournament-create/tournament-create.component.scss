@@ -1,246 +1,70 @@
-.pagina { 
-    max-width: 1304px;
-    width: 100%;
-    //Borrar despues
-    background-color: #FFFFFF;
-    max-height: 827;
-    height: 100%;
-    margin-top: 80px;
-    padding: 8px;
-    margin-left: 64px;
-}  
-
-//--------------------------------------------------------------------------------------------------------------
-  .size-name{       
-    max-width: 250px;
-    width: 100%;
-    max-height: 38px;
-    height: 100%;
-
-    left: 0px;
-    top: 0px;
-
-    font-family: 'Roboto';
-    font-style: normal;    
-    font-size: 32px;
+h1 {
+    font-weight: 700;
     color: rgba(38, 39, 43, 0.75);
-
-  }
-
-  
-  .wrapper {
-    display: grid;
-    //background-color: blanchedalmond;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows:repeat(5, 125PX);    
-    grid-gap: 10px;
-    
-    grid-auto-rows: minmax(100px, grid-auto-rows);   
-    grid-template-areas:"a a a" 
-                        "b c d" 
-                        "e e e"
-                        "f g h"
-                        "i j k";             
-  }
-
-
-  //------------------------------------------------------------------------------------------------------------------
-    .name-tournament{        
-        grid-area: a;
-    }
-
-    .size-title{      
-        max-width: 180px;
-        max-height: 23px;
-        width: 100%;
-        height: 100%;
-        margin-left: 48px;
-        margin-top: 30px;
-    
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 23px;        
-        color: rgba(38, 39, 43, 0.5);
-    }
-    
-//---------------------------------------------------------------------------------------------------------------------
-
-    .order-category{
-        grid-area: b;
-    }
-
-    .size-title-categoriries{
-        max-width: 150px;
-        width: 100%;
-        max-height: 23px;
-        height: 100%;
-        margin-left: 48px;    
-        margin-top: 20px;
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 23px;    
-        color: rgba(38, 39, 43, 0.5);
-    }
-
-    .order-input-category{
-        margin-left: 48px;
-    }
-//-----------------------------------------------------------------------------------------------------------------------    
-    .order-branch{
-        grid-area: c;
-    }
-
-    .order-input-branch{
-        margin-left: 20px;
-        margin-top: 59px;
-    }
-
-//-------------------------------------------------------------------------------------------------------------------------
-.order-type{
-    grid-area: d;
 }
 
-.order-input-tournament{
-    //margin-left: 20px;
-    margin-top: 59px;
-}
-//-------------------------------------------------------------------------------------------------------------------------
-.order-city{
- grid-area: e;
-}
-
-.size-title-place{
-    max-width: 150px;
-    max-height: 23px;
-    width: 100%;
-    height: 100%;
-    margin-left: 48px;    
-    font-family: 'Roboto';
-    font-style: normal;
+p, .subtitle{
     font-weight: 500;
     font-size: 20px;
-    line-height: 23px;
     color: rgba(38, 39, 43, 0.5);
 }
-  
-.order-input-city{
-    margin-left: 48px;
+
+.page-container {
+    max-width: 1304px;
+    margin:0 auto;
+    padding: 60px 64px;
 }
 
-//-------------------------------------------------------------------------------------------------------------------------
-.order-place{
-    grid-area: f;        
+.content-container {
+    padding: 0px 48px;
 }
 
-.order-input-place{     
- margin-top: -25px;
- margin-left: 48px;
+.grid-container {
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 124px;
 }
 
-//-------------------------------------------------------------------------------------------------------------------------
-.order-date{
-    grid-area: g;
+.first-child-three-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 124px;
 }
 
-.order-input-date{
-    margin-top: -25px;
-    margin-left: 20px;
-}
-//------------------------------------------------------------------------------------------------------
-.order-time{
-    grid-area: h;
+.grid-two-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 124px;
 }
 
-.order-input-time{
-    margin-top: -25px;
+.four-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 124px;
 }
 
-//------------------------------------------------------------------------------------------------------
-
-.order-auditors{
-    grid-area: i;
+.first-row-grid {
+    grid-column: 1 / 4;
 }
 
-.order-input-auditors{    
-    margin-left: 45px;
+.two-row-grid {
+    grid-column: 1 / 4;
 }
 
-.size-title-auditor{
-    width: 119px;
-    height: 23px;
-    margin-left: 48px;
-    margin-top: -85px;    
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 23px;            
-    color: rgba(38, 39, 43, 0.5);           
-}
-//------------------------------------------------------------------------------------------------------
-.order-referees{
-    grid-area: j;
+.three-row-grid {
+    grid-column: 1 / 4;
 }
 
-.order-input-referre{
-    margin-left: 22px;    
-    margin-top: -46px;    
-}
-//------------------------------------------------------------------------------------------------------
-.order-trainers{
-    grid-area: k;
+.four-row-grid {
+    grid-column: 1 / 4;
 }
 
-.order-input-trainers{
-    margin-top: -46px;    
+.button-container{
+    display: flex;
+    gap: 12px;
 }
 
-//------------------------------------------------------------------------------------------------------
-//div-3colums
-.div-3colums {
-    //background-color: aquamarine;
-    margin-top: -100px;
-    width: 100%;        
+.button-container:only-child{
+    justify-content: end;
 }
-
-//div Auditors------------------------------------------------
-.order-auditor-show {
-    max-width: 33%;
-    width: 100%;
-    margin-top: 0px;
-    padding: 0;
-    margin-bottom: 10px;
-    float: left;
-}
-
-//div show  referees------------------------------------------------------------
-.order-auditor-referees {
-    max-width: 33%;
-    width: 100%;
-    margin-top: 0px;
-    padding: 0;
-    margin-bottom: 10px;
-    float: left;
-}
-
-//div show trainers  ------------------------------------------------------------
-.order-auditor-trainers {
-    max-width: 33%;
-    width: 100%;
-    margin-top: 0px;
-    padding: 0;
-    margin-bottom: 30px;
-    margin-left: -20px;
-    float: left;
-}
-//------------------------------------------------------------------------------------------------------
-    .order-buttons{
-        display: inline-flexbox;
-        margin-left: 65.5%;
-    }
-
-

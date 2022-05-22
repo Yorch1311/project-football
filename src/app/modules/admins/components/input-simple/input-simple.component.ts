@@ -9,7 +9,7 @@ export class InputSimpleComponent implements OnInit {
 
   @Input() nombre: string = 'sin nombre';
   @Input() ejemplo: string = 'sin nombre';  
-  @Input() value: string = '';
+  @Input() value: String = '';
   //se envia 
   @Output() onChange = new EventEmitter<string>(); 
   @Output() KeyUp = new EventEmitter<string>();    

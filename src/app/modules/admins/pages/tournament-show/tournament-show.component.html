@@ -1,27 +1,26 @@
-<div class="header-container">
-    <div class="header-page">
-      <h1>Torneos</h1>
-      <div class="Button">
-        <app-button [clase]="'button fill'" [title]="'Nuevo Torneo'" (onClick)="tournamentCreate()"></app-button>
-      </div>
+<div class="page-container">
+    <div class="header-container">
+
+        <div class="title-container">
+          <h1>Torneos</h1>
+          <app-button [clase]="'button fill'" [title]="'Nuevo Torneo'" (onClick)="tournamentCreate()"></app-button>
+        </div>
+
+        <div class="select-container">
+          <app-input-simple [nombre]="'Buscar Torneo'" [ejemplo]="'Champions League'" (KeyUp)="onKeyUpFilter($event)"></app-input-simple>
+            <div class="select-filter">
+                <app-select-simple [nombre]="'Filtrar Por'"></app-select-simple>
+                <app-select-simple [nombre]="'Ordenar Por'"></app-select-simple>
+            </div>
+        </div>
     </div>
-    
 
-  <div class="med-page">
-    <app-input-simple [nombre]="'Buscar Torneo'" [ejemplo]="'Champions League'" (KeyUp)="onKeyUpFilter($event)"></app-input-simple>
-
-    <div class="selec-filter">
-      <app-select-simple [nombre]="'Filtrar Por'" [items]="Order" (onChange)="onChangeFiltro($event)"></app-select-simple>
-      <app-select-simple [nombre]="'Ordenar Por'" [items]="Filter" (onChange)="onChangeOrden($event)"></app-select-simple>
-    </div>
-  </div>
-</div>
-
-<table align="cengter">
-  <tbody>
-    <app-tournament-table-row *ngFor="let element of dataSource" [id]="element.id" [name]="element.name" [type]="element.type" [category]="element.category" [place]="element.place" [date]="element.date" [status]="element.status" (onClick)="tournamentDetail($event)"> </app-tournament-table-row>
+    <div class="team-table-container">
+      <table class="table">
+        <app-tournament-table-row *ngFor="let element of dataSource" [id]="element.id" [name]="element.name" [type]="element.type" [category]="element.category" [place]="element.place" [date]="element.date" [status]="element.status" (onClick)="tournamentDetail($event)"> </app-tournament-table-row>
         <!--
             <app-tournament-table-row *ngFor="let element of data" [_id]="element._id" [name]="element.name" [type]="element.type.name" [category]="element.category.name" [place]="element.places_detail[0].name" [date]="element.dates" [status]="element.statuses.name" (onClick)="detail($event)"></app-tournament-table-row>
         -->
-  </tbody>
-</table>
+      </table>
+    </div>
+</div>

@@ -8,22 +8,22 @@ import { tupla } from './type'
 @Injectable({
   providedIn: 'root'
 })
-
 export class ServiceService {
 
   constructor(private http: HttpClient) { }
 
-  url = 'https://c176-177-228-144-56.ngrok.io/admin/tournaments/';
+  url = 'https://deportivos-football-uas-api.herokuapp.com';
 
   //metodo para obtener datos a mostrar en selects
   ObtenerData(): Observable<any> {
-    return this.http.get(`${this.url}getNew`);
+    return this.http.get(`${this.url}admin/tournament/fieldset-data/all`);
   }
+
 
   //metodo para introducir un nuevo torneo
   createTournamet(dato: tupla):Observable<any>{
     //console.log(dato);
-    return this.http.put(`${this.url}create`,dato);
+    return this.http.put(`${this.url}create`,dato);    
   }
 
   //Función para recibir los detalles del torneo
@@ -31,10 +31,12 @@ export class ServiceService {
     return this.http.get(`${this.url}searchid/${id}`);
   }
 
+
+  
   //Función para recibir los detalles del torneo
   getTournamentData(id: any): Observable<TournamentDetail> {
     //return this.http.get<TournamentDetail>(this.url+id);
-    return this.http.get<TournamentDetail>(this.url+id);
+    return this.http.get<TournamentDetail>(this.url+'/admin/tournament/'+ id);
   }
 
   activeTournament(id: any){

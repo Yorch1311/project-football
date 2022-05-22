@@ -20,32 +20,32 @@ export class TournamentEditComponent implements OnInit {
    nombreSend: string ="";
    datesend: string ="";
    timeSend: string = "";
-   categoriSend: number = 0;  
-   typeSend:number = 0;
-   citySend: number = 0;
-   placeSend: number = 0;
-   branchsSend: number [] = [];
+   categoriSend: String = "";  
+   typeSend: String = "";
+   citySend: String = "";
+   placeSend: String = "";
+   branchsSend: String [] = [];
  
    //daros para llenar y crear torneo
-   name: string | null = null;
+   name: String | null = null;
    categori: number | any;  
-   branches: number [] = [];  
+   branches: String [] = [];  
    typeTournamet: number | any;
    city: number | any;  
    place: number | any;  
  
    date: string | null = null;
-   time: string | null = null;
+   time: String | null = null;
 
    //para buscar 
-   brancheshid:number[] = [];
-   adminsid:number [] = [];
-   admins: string[] = [];  
-   arbitersid :number [] = [];
-   arbiters: string[] = [];    
-   coachsid :number[] = [];
-   coachs: string[] = [];    
-   placeid: number [] = [];
+   brancheshid:String[] = [];
+   adminsid:String [] = [];
+   admins: String[] = [];  
+   arbitersid :String [] = [];
+   arbiters: String[] = [];    
+   coachsid : String[] = [];
+   coachs: String[] = [];    
+   placeid: String [] = [];
   
   //para almacenar datos  y mostrarlos en select's
    itemsCategory: Item[] = [];    
@@ -76,16 +76,16 @@ export class TournamentEditComponent implements OnInit {
 
   //obtener admins  
   onChangeAdmin(admin: Item){    
-    this.adminsid.push(admin.id);
+    this.adminsid.push(admin._id);
     this.admins.push(admin.name);
     // para borrar  y que ya no aparesca sino aparesca abajo en el group-show
-    this.itemsAdmin = this.itemsAdmin.filter((adm) => adm.id !== admin.id )            
+    this.itemsAdmin = this.itemsAdmin.filter((adm) => adm._id !== admin._id )            
   }  
 
   //Eliminar Admnis
-  DeleteAdmin(admin:  string){        
+  DeleteAdmin(admin:  String){        
     this.pos = this.admins.indexOf(admin);    
-    this.itemsAdmin.push( {id:this.adminsid[this.pos], name: this.admins[this.pos] });
+    this.itemsAdmin.push( {_id:this.adminsid[this.pos], name: this.admins[this.pos] });
     //eliminar el string
     this.admins.splice(this.pos, 1);    
     //eliminar el id
@@ -94,16 +94,16 @@ export class TournamentEditComponent implements OnInit {
 
   //obtener arbiter
   onChangeArbiter(arbiter: Item){    
-    this.arbitersid.push(arbiter.id);    
+    this.arbitersid.push(arbiter._id);    
     this.arbiters.push(arbiter.name);    
-    this.itemsreferee = this.itemsreferee.filter((adm) => adm.id !== arbiter.id )        
+    this.itemsreferee = this.itemsreferee.filter((adm) => adm._id !== arbiter._id )        
   }  
 
   //delete arbiter
   DeleteArbiter(arbiter: string){    
     //alert(valac);
     this.pos = this.arbiters.indexOf(arbiter);    
-    this.itemsreferee.push( {id:this.arbitersid[this.pos], name: this.arbiters[this.pos] });
+    this.itemsreferee.push( {_id:this.arbitersid[this.pos], name: this.arbiters[this.pos] });
     this.arbitersid.splice(this.pos, 1);    
     this.arbiters.splice(this.pos, 1);        
 
@@ -111,9 +111,9 @@ export class TournamentEditComponent implements OnInit {
   
  //obtener coach
   onChangeCoach(coach: Item){
-    this.coachsid.push(coach.id);
+    this.coachsid.push(coach._id);
     this.coachs.push(coach.name);    
-    this.itemsTrainers = this.itemsTrainers.filter((adm) => adm.id !== coach.id )        
+    this.itemsTrainers = this.itemsTrainers.filter((adm) => adm._id !== coach._id )        
     //console.log(coach.id);
   }  
 
@@ -121,19 +121,19 @@ export class TournamentEditComponent implements OnInit {
   DeleteCoach(coach: string){    
     //alert(valac);
     this.pos = this.coachs.indexOf(coach);    
-    this.itemsTrainers.push( {id:this.coachsid[this.pos], name: this.coachs[this.pos]});
+    this.itemsTrainers.push( {_id:this.coachsid[this.pos], name: this.coachs[this.pos]});
     this.coachsid.splice(this.pos, 1);    
     this.coachs.splice(this.pos, 1);            
   }
 
   //nombre del torneo
-  onChangeNameTournament(data: string){
+  onChangeNameTournament(data:String){
     this.name = data;
     //alert(this.name)
   }
 
   //obtener ramas
-  getGenders(data: number[]){
+  getGenders(data: String[]){
     this.branches = data;        
     //console.table(data);
     //alert(this.branches);
@@ -141,13 +141,13 @@ export class TournamentEditComponent implements OnInit {
 
   
   //obtener categoria
-  onChangeCategori(data: number){        
+  onChangeCategori(data: String){        
     this.categori = data;   
     //alert(data);
   }  
 
   //obtener tipo de torneo
-  onChangetypetournament(data: number){
+  onChangetypetournament(data: String){
     this.typeTournamet = data;
   }
 
@@ -155,7 +155,7 @@ export class TournamentEditComponent implements OnInit {
 
   //itemsplacedata: place[] = []
   //obtener ciudad
-  onChangecity(data: number){
+  onChangecity(data: String){
     this.city = data;        
     
     /*
@@ -178,7 +178,7 @@ export class TournamentEditComponent implements OnInit {
   }
 
   //obtener lugar
-  onChangeplace(data: number){
+  onChangeplace(data: String){
     this.place = data;
   }
 
@@ -188,7 +188,7 @@ export class TournamentEditComponent implements OnInit {
   }
 
   //horario 
-  onChangeTime(data: string){
+  onChangeTime(data: String){
     this.time = data;
   }
 
@@ -243,7 +243,7 @@ export class TournamentEditComponent implements OnInit {
         if(this.id != null){         
 
           const datasend : tupla = {
-            id_tournament: parseInt(this.id),
+            id_tournament: this.id,
             name: this.name,
             category: this.categori,
             branch: this.brancheshid,

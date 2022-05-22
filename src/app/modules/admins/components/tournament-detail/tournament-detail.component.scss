@@ -1,6 +1,6 @@
 .grid {
+  max-width: 1304px;
   width: 100%;
-  max-width: 1304;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -26,7 +26,6 @@
   border-radius: 4px;
 }
 
-//contenedor de las 3 columnas de organizadores
 .orgContainer {
   display: flex;
   justify-content: center;
@@ -34,11 +33,10 @@
 
 .column {
   display: block;
-  width: 25%;
-  margin: 0px 10px;
+  width: calc(100% / 3);
+  margin-right: 10px;
 }
 
-//elementos individuales
 h1 {
   font-family: "Roboto";
   font-style: normal;
@@ -47,7 +45,6 @@ h1 {
   line-height: 38px;
   display: inline;
 
-  /* Dark_Gray */
   color: rgba(38, 39, 43, 0.75);
 }
 h2 {
@@ -59,11 +56,13 @@ h2 {
   color: #0a90ef;
 }
 h3 {
-  /* margin: 20px; */
   color: rgba(38, 39, 43, 0.5);
 }
+ul{
+  padding-left: 20px;
+}
 li {
-  margin-left: 30px;
+  
   margin-bottom: 10px;
   color: rgba(38, 39, 43, 0.5);
 }
@@ -80,7 +79,7 @@ li {
 }
 
 //Smartphones
-@media screen and (min-width:375px) and (max-width:428px){
+@media screen and (min-width:360px) and (max-width:428px){
 
   .one {
     grid-column: 1 / 4;
@@ -98,18 +97,13 @@ li {
     flex-direction: column;
   }
 }
+
 //ipad
-@media screen and (max-width:810px){
-  .grid{
-    grid-gap: 12px;
-  }
-  .column{
-    width: 100%;
-  }
+@media screen and (min-width:810px) and (max-width:1304px){
+  
 }
+
 //desktop
-@media screen and (max-width:1304px){
-  .grid{
-    width: calc(100% - 16px);
-  }
+@media screen and (min-width:1304px){
+
 }

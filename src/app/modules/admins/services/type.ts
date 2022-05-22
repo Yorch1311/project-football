@@ -1,35 +1,48 @@
-//Estas son para el componente tournament detail
 /*
-  id-chip
-  id-torneo
-  id-categoria
-  nombre-categoria
-  id-rama
-  nombre rama
-
+Representacion de los datos del usuario en la BD
 */
+export interface User {
+  _id: string;
+  name: string;
+  role: { _id: string, name: string }
+}
+
+/* 
+  Interfaz que ya implementa a 3 oficiales del torneo
+*/
+export interface Officials {
+  admins: User[];
+  coaches: User[];
+  referees: User[];
+}
+
+/*
+Interfaz que sirve para cualquier objeto que solo tenga (o necesites) el id 
+y el nombre
+*/
+export interface Basic{
+  _id: string;
+  name: string;
+}
+
 export interface TournamentDetail {
-    name: string;
-    category: string;
-    type: string;
-    places_detail: { name: string }[];
-    admin_detail: { name: string, apellido1: string }[];
-    referee_detail: { name: string, apellido1: string }[];
-    coach_detail: { name: string, apellido1: string }[];
-    chips: {
-      id_chip: string;
-      name_category: string;
-      name_branch: string;
-      status: string;
-    }[];
-    dates: string;
-    time: string;
+  type: { name: string };
+  dates: { init: string, final: string };
+  officials: Officials;
+  _id: string;
+  name: string;
+  category: { name: string };
+  branches: Basic[];
+  places: Basic[];
+  hours: string;
+  mixedCategories: Basic[];
+  status: string;
 }
 
 //interface para recepcion de datos
 export interface Item {
-  id: number;
-  name: string;
+  _id: String;
+  name: String;
 }
 
 export interface Filter {
@@ -38,18 +51,18 @@ export interface Filter {
 
 //interface para crear torneo
 export interface tupla {
-  id_tournament?: number | any;
-  name: string;
-  category: number;
-  branch: number[];
-  type: number;
-  town: number;
-  places: number[];
+  id_tournament?: String;
+  name: String;
+  category: String;
+  branch: String[];
+  type: String;
+  town: String;
+  places: String[];
   dates: string;
-  time: string;
-  administrators: number[];
-  referees: number[];
-  coaches: number[];
+  time: String;
+  administrators: String[];
+  referees: String[];
+  coaches: String[];
 }
 
 //interfaz para mostrar tabla torneos
@@ -57,8 +70,8 @@ export interface Tournament {
   _id: string
   name: string;
   type: { name: string };
-  category: { name : string};
-  places_detail: { name : string}[];
-  dates: string;
+  category: { name: string };
+  places_detail: { name: string }[];
+  dates: {init :string };
   status: {name : string};
 }

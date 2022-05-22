@@ -1,11 +1,10 @@
 .button{
-  //Button
   height: 48px;
   width: 100%;
+  min-width: 160px;
   max-width: 160px;
   border-radius: 8px;
 
-  //Text
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
@@ -16,7 +15,6 @@
   background-color: #0a90ef;
   border: 0px;
 
-  //Text
   color: #ffffff;
 }
 
@@ -27,7 +25,7 @@
 .outline {
   background: #ffffff;
   border: 1px solid #0a90ef;
-  //Text
+
   color: #0A90EF;
 }
 
