@@ -76,7 +76,7 @@ export interface Tournament {
   name: string;
   type: { name: string };
   category: { name: string };
-  places_detail: { name: string }[];
+  places: { name: string }[];
   dates: {init :string };
-  status: {name : string};
+  status: string;
 }

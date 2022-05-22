@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { Router } from '@angular/router';
-import { Filter, Item } from '../../services/type';
+import { Filter, Item, Tournament } from '../../services/type';
 import { ServiceService } from '../../services/service.service';
 
 export interface Torneo {
@@ -40,34 +40,29 @@ export class TournamentShowComponent implements OnInit {
   NameData : String = "";
   filtro : String = "";
   ordenar : String = "";
+  data : Tournament[] | undefined;  // Utilizar interfaz ara la api
 
-  Order: Item[] = [
+  Filter : Item[] = [
     {_id:"1", name: 'Fase de Grupos' },
     {_id:"2", name: 'Categoria' },
     {_id:"3", name: 'Lugar' },
     {_id:"4", name: 'Fecha' },
   ];
 
-  Filter: Item[] = [
+  Order : Item[] = [
     { _id:"1", name: 'Mas Reciente' },
     { _id:"2", name: 'Mas Antiguo' }
   ];
 
-  /*
-  Element: Tournament[] = [
-    {}
-  ];
-*/
-
+ 
   constructor( private router: Router, private APIcreate: ServiceService) { 
-
-
   }
 
   ngOnInit(): void {
     
     this.APIcreate.getTournaments().subscribe(result => {
       console.log(result);
+      this.data = result;
     })
   }
 

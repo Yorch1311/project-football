@@ -54,7 +54,7 @@ export class ServiceService {
   /*getTournaments(): Observable<Tournament> {
     return this.http.post<Tournament>(this.url+"getTournaments", {});
   }*/
-  getTournaments(): Observable<Tournament> {
-    return this.http.post<Tournament>(this.url, {});
+  getTournaments(): Observable<Tournament[]> {
+    return this.http.post<Tournament[]>(this.url + "/admin/tournaments", {});
   }
 }
