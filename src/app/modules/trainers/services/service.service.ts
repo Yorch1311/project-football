@@ -13,7 +13,7 @@ export class ServiceService {
   url = 'https://deportivos-football-uas-api.herokuapp.com';
 
   getTournamentCategories(id: any): Observable<TournamentCategories> {
-    return this.http.get<TournamentCategories>(this.url+'/admin/tournament/'+ id);
+    return this.http.get<TournamentCategories>(this.url+'/coach/tournament/'+ id + '/mixed-categories');
   }
 
   //Obtener todos los torneos

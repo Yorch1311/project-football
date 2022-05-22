@@ -48,6 +48,8 @@ import { DialogSaveComponent } from './shared/components/dialog-save/dialog-save
 import { TrainerTournamentDetailPageComponentComponent } from './modules/trainers/pages/trainer-tournament-detail-page-component/trainer-tournament-detail-page-component.component';
 import { TournamentTreeComponent } from './modules/admins/pages/tournament-tree/tournament-tree.component';
 import { TournamentRivalsComponent } from './modules/referees/pages/tournament-rivals/tournament-rivals.component';
+import { TournamentCategoriesRefereeComponent } from './modules/referees/pages/tournament-categories-referee/tournament-categories-referee.component';
+import { MatchHistoryComponent } from './modules/referees/pages/match-history/match-history.component';
 
 
 @NgModule({
@@ -76,7 +78,9 @@ import { TournamentRivalsComponent } from './modules/referees/pages/tournament-r
     DialogSaveComponent,
     TrainerTournamentDetailPageComponentComponent,
     TournamentTreeComponent,
-    TournamentRivalsComponent
+    TournamentRivalsComponent,
+    TournamentCategoriesRefereeComponent,
+    MatchHistoryComponent
   ],
   imports: [
     BrowserModule,
