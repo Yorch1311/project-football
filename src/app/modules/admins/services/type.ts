@@ -1,19 +1,42 @@
+/*
+Representacion de los datos del usuario en la BD
+*/
+export interface User {
+  _id: string;
+  name: string;
+  role: { _id: string, name: string }
+}
+
+/* 
+  Interfaz que ya implementa a 3 oficiales del torneo
+*/
+export interface Officials {
+  admins: User[];
+  coaches: User[];
+  referees: User[];
+}
+
+/*
+Interfaz que sirve para cualquier objeto que solo tenga (o necesites) el id 
+y el nombre
+*/
+export interface Basic{
+  _id: string;
+  name: string;
+}
+
 export interface TournamentDetail {
-    name: string;
-    category: string;
-    type: string;
-    places_detail: { name: string }[];
-    admin_detail: { name: string, apellido1: string }[];
-    referee_detail: { name: string, apellido1: string }[];
-    coach_detail: { name: string, apellido1: string }[];
-    chips: {
-      id_chip: string;
-      name_category: string;
-      name_branch: string;
-      status: string;
-    }[];
-    dates: string;
-    time: string;
+  type: { name: string };
+  dates: { init: string, final: string };
+  officials: Officials;
+  _id: string;
+  name: string;
+  category: { name: string };
+  branches: Basic[];
+  places: Basic[];
+  hours: string;
+  mixedCategories: Basic[];
+  status: string;
 }
 
 //interface para recepcion de datos
@@ -47,8 +70,8 @@ export interface Tournament {
   id_tournament: string
   name: string;
   type: { name: string };
-  category: { name : string};
-  places_detail: { name : string}[];
+  category: { name: string };
+  places_detail: { name: string }[];
   dates: string;
-  statuses: {name : string};
+  statuses: { name: string };
 }
