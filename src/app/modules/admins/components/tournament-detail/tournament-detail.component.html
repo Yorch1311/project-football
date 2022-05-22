@@ -64,7 +64,7 @@
     <h2>Partidos...</h2>
 
     <mat-chip-list class="chip-list" aria-label="Fish selection">
-      <app-chip (onClick)="goto($event)" [class]="'true'" [texto]="item.name" [id]="item._id" *ngFor="let item of data?.mixedCategories">></app-chip>
+      <app-chip (onClick)="goto($event)" [class]="item.status" [texto]="item.name" [id]="item._id" *ngFor="let item of data?.mixedCategories">></app-chip>
     </mat-chip-list>
 
     <div class="boton" *ngIf="status=='in-process'">

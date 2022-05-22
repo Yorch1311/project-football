@@ -1,15 +1,9 @@
-/*
-Representacion de los datos del usuario en la BD
-*/
 export interface User {
   _id: string;
   name: string;
   role: { _id: string, name: string }
 }
 
-/* 
-  Interfaz que ya implementa a 3 oficiales del torneo
-*/
 export interface Officials {
   admins: User[];
   coaches: User[];
@@ -35,7 +29,7 @@ export interface TournamentDetail {
   branches: Basic[];
   places: Basic[];
   hours: string;
-  mixedCategories: Basic[];
+  mixedCategories: { _id: string, name: string, status: string }[];
   status: string;
 }
 
