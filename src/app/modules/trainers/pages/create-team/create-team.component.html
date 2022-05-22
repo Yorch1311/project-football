@@ -13,21 +13,19 @@
                         <p>Informacion base del equipo</p>
                     </div>
                     <div class="first-grid">
-                        <app-input-simple [nombre]="'Nombre del equipo'"></app-input-simple>
-                        <input type="image" src="../../../../../assets/image/trainer/imageTeam.png">
+                        <app-input-simple [nombre]="'Nombre del equipo'" [ejemplo]="'Testigos de yovani'" (onChange)="onChangeNameTeam($event)"></app-input-simple>
+                        <input type="image" src="../../../../../assets/image/trainer/imageTeam.png" (click)="obtenerImage()">
                     </div>
                 </div>
 
-
-                
                 <div class="two-row">
                     <div class="subtitle">
                         <p>Únete y anota goles con el nuevo equipo estrella del torneo</p>
                     </div>
                     <div class="two-grid">
-                        <app-input-simple [nombre]="'Nombre del equipo'"></app-input-simple>
-                        <app-input-simple [nombre]="'INE'"></app-input-simple>
-                        <app-input-simple [nombre]="'Campo'"></app-input-simple>
+                        <app-input-simple [nombre]="'Nombre del jugador'" (onChange)="onChangeNamePlayer($event)"></app-input-simple>
+                        <app-input-simple [nombre]="'Curp'" (onChange)="onChangeINE($event)" ></app-input-simple>
+                        <app-input-number [nombre]="'Numero de jugador'" maxlength="2" min="1" (onChange)="onChangeNumberPlayer($event)"></app-input-number>
                     </div>
                        
                 </div>
@@ -35,8 +33,8 @@
                 <div class="three-row">
                     <div class="add-player">
                         <p id="add-player">Agregar jugador</p>
+                        
                         <img src="../../../../assets/image/admin/IconAdd.jpeg" alt="x"/>  
-
                     </div>
                 </div>
                 
@@ -45,9 +43,7 @@
                     <app-group-show class="group" ></app-group-show>    
                     <app-group-show class="group" ></app-group-show>
                 </div>
-                
-                
-
+                                
                 <div class="button-container">
                     <div><app-button [clase]="'button fill'" [title]="'Registrar'" (onClick)="register()"></app-button></div>
                 </div>
