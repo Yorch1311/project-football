@@ -73,10 +73,32 @@ tr{
     border-left: 8px solid #26272B;
 }
 
-.td-column {
-    width: 100%;
+.td-column{
+    max-width: 124px;
+    width: 124px;
+}
+
+.td-column-name {
+   max-width: 350px;
+   width: 400px;
+   
 }
 
 .boton{
     align-items: center;
+}
+
+.td-column-name > p{
+    
+    margin: 0px;
+}
+
+.td-column > .p2{
+    max-width: 124px;
+}
+
+#name, .td-column > .p2{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

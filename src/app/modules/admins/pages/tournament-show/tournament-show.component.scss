@@ -1,21 +1,13 @@
 h1 { 
-    font-family: 'Roboto';
-    font-style: normal;
     font-weight: 700;
     font-size: 32px;
 }
 
-.page-container{
-    max-width: 90%;
-    margin: 0 auto;
-}
-.header-container{
-    width:100%;
-}
 
 .page-container{
     max-width: 1304px;
     margin: 0 auto;
+    padding: 60px 0px 0px 0px;
 }
 
 .select-container, .select-filter, .title-container{
