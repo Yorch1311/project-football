@@ -32,7 +32,12 @@ export class ServiceService {
 
   //Función para recibir los detalles del torneo
   Searchid(id: any):Observable<any> {
-    return this.http.get(`${this.url}searchid/${id}`);
+    return this.http.get(`${this.url}/admin/tournament/${id}`);
+  }
+
+  updateTournament(dato: tupla):Observable<any>{
+    //console.log(dato);
+    return this.http.put(`${this.url}/admin/tournament/`,dato);    
   }
 
 

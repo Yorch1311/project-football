@@ -191,18 +191,7 @@ export class TournamentCreateComponent implements OnInit {
   onChangeTime(data: String){
     this.time = data;
   }
-
-/*
-  if(this.id != null){
-    //mandar a la pagina de detallles
-
-    //this.router.navigate(["football/tournament-detail/" + this.id]);
-  }else{
-    //mandar a la pagina del cristian
-    //this.router.navigate(["football/tournaments"]);
-  }
-*/
-
+  
   Cancel() {
     const dialogRef = this.dialog.open(DialogCancelComponent, {
 
@@ -262,7 +251,7 @@ export class TournamentCreateComponent implements OnInit {
         };
 
 
-        console.log(datasend)
+       // console.log(datasend)
         //console.table(datasend);
 
       

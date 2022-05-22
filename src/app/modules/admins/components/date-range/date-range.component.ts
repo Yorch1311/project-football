@@ -10,14 +10,15 @@ import { date_crate_edit } from '../../services/type';
 export class DateRangeComponent implements OnInit {
   
   @Input() nombre: string = 'sin nombre';
-  @Input() value: String = "";
-  @Input() valuef: String = "";
+  @Input() value: string = "";
+  @Input() valuef: string = "";
 
   //se envia 
   @Output() onChange = new EventEmitter<date_crate_edit>();        
 
-  valstart : Date =  new Date(this.value+"");
-  valend: Date =  new Date(""+this.valuef);
+  
+  valstart : Date =  new Date(this.value);
+  valend: Date =  new Date(this.valuef);
 
   constructor() { }
 
@@ -30,6 +31,10 @@ export class DateRangeComponent implements OnInit {
  }
 
   ngOnInit(): void {
+    //console.log(this.value +"-"+ this.valuef);
+    this.valstart = new Date(this.value);
+    this. valend=  new Date(this.valuef);
+  
   }
 
 }
