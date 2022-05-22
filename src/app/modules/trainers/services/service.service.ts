@@ -10,11 +10,10 @@ export class ServiceService {
 
   constructor(private http: HttpClient) { }
 
-  url = 'https://api-deportivo-uas.herokuapp.com/api/tournament/';
+  url = 'https://deportivos-football-uas-api.herokuapp.com';
 
-  //Función para recibir los detalles del torneo
-  getTournamentData(id: any): Observable<TournamentCategories> {
-    return this.http.get<TournamentCategories>(this.url+id);
+  getTournamentCategories(id: any): Observable<TournamentCategories> {
+    return this.http.get<TournamentCategories>(this.url+'/admin/tournament/'+ id);
   }
 
   //Obtener todos los torneos

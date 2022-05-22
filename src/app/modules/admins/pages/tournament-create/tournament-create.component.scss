@@ -60,7 +60,11 @@ p, .subtitle{
     grid-column: 1 / 4;
 }
 
-.button-container {
+.button-container{
     display: flex;
     gap: 12px;
+}
+
+.button-container:only-child{
+    justify-content: end;
 }
