@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { TournamentDetail } from './type';
+import { Tournament, TournamentDetail } from './type';
 import { tupla } from './type'
 
 
@@ -11,7 +11,7 @@ import { tupla } from './type'
 export class ServiceService {
 
   constructor(private http: HttpClient) { }
-  
+
   url = 'https://deportivos-football-uas-api.herokuapp.com';
 
   
@@ -51,8 +51,10 @@ export class ServiceService {
   }
 
   //Obtener todos los torneos
-  getTournaments(): Observable<any> {
-    return this.http.post<any>(this.url+"getTournaments", {});
+  /*getTournaments(): Observable<Tournament> {
+    return this.http.post<Tournament>(this.url+"getTournaments", {});
+  }*/
+  getTournaments(): Observable<Tournament> {
+    return this.http.post<Tournament>(this.url, {});
   }
-
 }

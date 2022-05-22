@@ -72,11 +72,11 @@ export interface tupla {
 
 //interfaz para mostrar tabla torneos
 export interface Tournament {
-  id_tournament: string
+  _id: string
   name: string;
   type: { name: string };
   category: { name: string };
   places_detail: { name: string }[];
-  dates: string;
-  statuses: { name: string };
+  dates: {init :string };
+  status: {name : string};
 }

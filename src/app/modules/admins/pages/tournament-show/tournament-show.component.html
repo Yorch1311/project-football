@@ -7,7 +7,7 @@
         </div>
 
         <div class="select-container">
-            <app-input-simple [nombre]="'Buscar Torneo'" [ejemplo]="'Champions League'"></app-input-simple>
+          <app-input-simple [nombre]="'Buscar Torneo'" [ejemplo]="'Champions League'" (KeyUp)="onKeyUpFilter($event)"></app-input-simple>
             <div class="select-filter">
                 <app-select-simple [nombre]="'Filtrar Por'"></app-select-simple>
                 <app-select-simple [nombre]="'Ordenar Por'"></app-select-simple>
@@ -18,6 +18,9 @@
     <div class="team-table-container">
       <table class="table">
         <app-tournament-table-row *ngFor="let element of dataSource" [id]="element.id" [name]="element.name" [type]="element.type" [category]="element.category" [place]="element.place" [date]="element.date" [status]="element.status" (onClick)="tournamentDetail($event)"> </app-tournament-table-row>
+        <!--
+            <app-tournament-table-row *ngFor="let element of data" [_id]="element._id" [name]="element.name" [type]="element.type.name" [category]="element.category.name" [place]="element.places_detail[0].name" [date]="element.dates" [status]="element.statuses.name" (onClick)="detail($event)"></app-tournament-table-row>
+        -->
       </table>
     </div>
 </div>
