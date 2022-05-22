@@ -340,8 +340,8 @@ export class TournamentEditComponent implements OnInit {
 
           console.log(this.name);
           
-          const datasend : tupla = {
-            _id: this.id,
+          //_id: this.id,
+          const datasend : tupla = {            
             name: this.name,          
             type: this.typeTournamet,
             //branches: this.branches,
@@ -358,8 +358,8 @@ export class TournamentEditComponent implements OnInit {
           console.table(datasend);
 
         
-        this.APIcreate.updateTournament(datasend).subscribe(result =>{
-            console.log(result);
+        this.APIcreate.updateTournament(datasend, this.id).subscribe(result =>{
+            //console.log(result);
         })        
 
         //mostrar snavbar

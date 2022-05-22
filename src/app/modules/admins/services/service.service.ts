@@ -37,9 +37,9 @@ export class ServiceService {
     return this.http.get(`${this.url}/admin/tournament/${id}`);
   }
 
-  updateTournament(dato: tupla):Observable<any>{
+  updateTournament(dato: tupla, _id: string):Observable<any>{
     //console.log(dato);
-    return this.http.put(`${this.url}/admin/tournament/`,dato);    
+    return this.http.put(`${this.url}/admin/tournament/${_id}`,dato);    
   }
 
 
