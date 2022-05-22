@@ -16,51 +16,6 @@ export class TournamentDetailComponent implements OnInit {
   activeCount: number = 0;
   clase: string = ''; 
   estado: boolean = false;
-/*
-  dataTest: TournamentDetail = {
-    name: 'UASITOS',
-    category: 'Juvenil',
-    type: 'Fase de grupos',
-    places_detail: [{ name: 'FIM' }, { name: 'Deportiva' }],
-    admin_detail: [
-      {
-        name: 'Profesor Herman',
-        apellido1: '',
-      },
-    ],
-    referee_detail: [
-      {
-        name: 'Profesor Herman',
-        apellido1: '',
-      },
-    ],
-    coach_detail: [
-      {
-        name: 'Profesor Herman',
-        apellido1: '',
-      },
-      {
-        name: 'Profesor Francisco',
-        apellido1: '',
-      },
-    ],
-    chips: [
-      {
-        id_chip: '1',
-        name_category: 'Juvenil',
-        name_branch: 'Varonil',
-        status: 'false',
-      },
-      {
-        id_chip: '2',
-        name_category: 'Juvenil',
-        name_branch: 'Femenil',
-        status: 'false',
-      },
-    ],
-    dates: '18/05/2022 - 25/05/022',
-    time: '14:00 - 18:00',
-  };*/
 
   constructor(private router: Router, private service: ServiceService) {}
 
@@ -68,12 +23,6 @@ export class TournamentDetailComponent implements OnInit {
     if (this.id != null) {
       //Uso del servicio para comunicarse con la API.
       this.service.getTournamentData(this.id).subscribe( data => this.data = data );
-
-      //this.data = this.dataTest;
-      
-     /* this.activeCount = this.data?.mixedCategories.filter(
-        (c: { status: string }) => c.status == 'true'
-      ).length;*/
 
       //if (this.activeCount > 0 && this.status == 'in-process') {
       if (this.status == 'in-process') {
