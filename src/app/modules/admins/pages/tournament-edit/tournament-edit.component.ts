@@ -359,16 +359,19 @@ export class TournamentEditComponent implements OnInit {
 
         
         this.APIcreate.updateTournament(datasend, this.id).subscribe(result =>{
-            //console.log(result);
-        })        
+          //console.log(result);
 
-        //mostrar snavbar
-        this._snackBar.open('Torneo Editado exitosamente', 'X', {
-          horizontalPosition: this.horizontalPosition,
-          verticalPosition: this.verticalPosition, 
-          panelClass: ['green-snackbar'],
-          //panelClass: ['red-snackbar'],                   
-        });
+          //mostrar snavbar
+          this._snackBar.open('Torneo Editado exitosamente', 'X', {
+            horizontalPosition: this.horizontalPosition,
+            verticalPosition: this.verticalPosition, 
+            panelClass: ['green-snackbar'],
+            //panelClass: ['red-snackbar'],                   
+          });
+
+          this.router.navigate(["admin/tournament/detail/" + this.id + "/status/"+this.status]);      
+          
+        })        
 
         /*
         if(this.status == ""){
@@ -379,12 +382,9 @@ export class TournamentEditComponent implements OnInit {
             panelClass: ['red-snackbar'],                   
           });
         }
-        */
-
-        //Crear la tupla y regresar al jorge                
-          this.router.navigate(["admin/tournament/detail/" + this.id + "/status/"+this.status]);      
-        }                                      
-        
+        */             
+                                                
+      }
    }
       
 
