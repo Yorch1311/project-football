@@ -21,10 +21,7 @@ export class CreateTeamComponent implements OnInit {
   }
 
   register(){
-
-    alert("Event");
-
-
+    
     this._snackBar.open('Equipo registrado exitosamente', 'X', {
       horizontalPosition: 'right',
       verticalPosition: 'top',          
