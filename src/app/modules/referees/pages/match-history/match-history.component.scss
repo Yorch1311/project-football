@@ -1,0 +1,58 @@
+.page-container{
+    max-width:1304px;
+    width:100%;
+    padding: 8px;
+}
+.header-container{
+    
+    h1{
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 38px;
+
+        /* identical to box height */
+
+        /* Dark_Gray */
+        color: rgba(38, 39, 43, 0.75);
+
+        padding-bottom: 40px;
+    }
+
+    h2{
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 23px;
+
+        /* Primary_Blue */
+        color: #0A90EF;
+        padding-bottom: 24px;
+    }
+}
+
+.match-container{
+    width: calc(100% - 16px);
+    background: #FFFFFF;
+    box-shadow: 0px 4px 12px rgba(38, 39, 43, 0.25);
+    border-radius: 4px;
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 0px;
+
+    :last-child{
+        padding-bottom: 0px;
+    }
+}
+
+.rivals{
+    width: 688px;
+    display: flex;
+    align-items: center;
+    gap: 51px;
+    padding-bottom: 40px;
+}

@@ -2,6 +2,6 @@
     <img >
     <div class="teams-data">
         <p>{{ teamName }}</p>
-        <p>{{ opponent && "vs"}} {{ opponent }}</p>
+        <p *ngIf="opponent != ''">{{ opponent && "vs"}} {{ opponent }}</p>
     </div>
 </div>
