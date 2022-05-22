@@ -1,0 +1,10 @@
+<div class="pagina">
+    <div class="title">
+      <h1>Categorias del torneo: {{data?.name}}</h1>
+      <section class="basic">
+        <mat-chip-list class="chip-list" aria-label="Fish selection">
+          <app-chip (onClick)="goto($event)" *ngFor="let item of data?.mixedCategories" [id]="item._id" [class]="'true'" [texto]="item.name"></app-chip>
+        </mat-chip-list>
+      </section>
+    </div>
+  </div>
