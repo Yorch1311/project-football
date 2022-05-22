@@ -42,7 +42,7 @@ export class ServiceService {
   //Función para recibir los detalles del torneo
   getTournamentData(id: any): Observable<TournamentDetail> {
     //return this.http.get<TournamentDetail>(this.url+id);
-    return this.http.get<TournamentDetail>(this.url+'admin/tournament/'+ id);
+    return this.http.get<TournamentDetail>(this.url+'/admin/tournament/'+ id);
   }
 
   activeTournament(id: any){
