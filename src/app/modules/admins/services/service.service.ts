@@ -16,7 +16,7 @@ export class ServiceService {
 
   //metodo para obtener datos a mostrar en selects
   ObtenerData(): Observable<any> {
-    return this.http.get(`${this.url}`);
+    return this.http.get(`${this.url}admin/tournament/fieldset-data/all`);
   }
 
 
