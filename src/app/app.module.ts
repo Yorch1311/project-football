@@ -50,7 +50,7 @@ import { TournamentTreeComponent } from './modules/admins/pages/tournament-tree/
 import { TournamentRivalsComponent } from './modules/referees/pages/tournament-rivals/tournament-rivals.component';
 import { TournamentCategoriesRefereeComponent } from './modules/referees/pages/tournament-categories-referee/tournament-categories-referee.component';
 import { MatchHistoryComponent } from './modules/referees/pages/match-history/match-history.component';
-
+import {MatTooltipModule} from '@angular/material/tooltip'; 
 
 @NgModule({
   declarations: [
@@ -99,6 +99,7 @@ import { MatchHistoryComponent } from './modules/referees/pages/match-history/ma
     MatNativeDateModule,
     DragDropModule,
     HttpClientModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

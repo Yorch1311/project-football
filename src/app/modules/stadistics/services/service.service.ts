@@ -9,6 +9,6 @@ export class ServiceService {
 
   constructor(private http: HttpClient) { }
 
-  url = 'https://api-deportivo-uas.herokuapp.com/api/tournament/';
+  url = 'https://deportivos-football-uas-api.herokuapp.com/';
 
 }
