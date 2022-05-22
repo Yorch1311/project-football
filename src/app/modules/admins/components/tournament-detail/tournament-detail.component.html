@@ -9,7 +9,7 @@
         {{data?.category?.name}}
       </li>
     </ul>
-    <h3>Torneo por {{ data?.type }}</h3>
+    <h3>Torneo por {{ data?.type?.name }}</h3>
   </section>
 
   <section class="basic two">
@@ -67,7 +67,7 @@
       <app-chip (onClick)="goto($event)" [class]="item.status" [texto]="item.name" [id]="item._id" *ngFor="let item of data?.mixedCategories">></app-chip>
     </mat-chip-list>
 
-    <div class="boton" *ngIf="status=='in-process'">
+    <div class="boton" *ngIf="status=='in-progress'">
       <app-button [clase]="clase" [disable]="estado" [title]="'Iniciar Torneo'" (onClick)="activeTournament()"></app-button>
     </div>
   </section>
