@@ -242,7 +242,7 @@ h1 {
     color: rgba(38, 39, 43, 0.75);
 }
 
-p {
+p, .subtitle{
     font-weight: 500;
     font-size: 20px;
     color: rgba(38, 39, 43, 0.5);
@@ -299,10 +299,7 @@ p {
     grid-column: 1 / 4;
 }
 
-//------------------------------------------------------------------------------------------------------
-.order-buttons {
-    justify-content: flex-end;
-    //display: flex;
-    margin-left: 65.5%;
+.button-container {
+    display: flex;
     gap: 12px;
 }

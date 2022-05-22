@@ -3,7 +3,7 @@
     <div class="content-container">
         <div class="grid-container">
             <div class="first-row-grid">
-                <p>Conócelo como...</p>
+                <p class="subtitle">Conócelo como...</p>
                 <app-input-simple [nombre]="'Nombre del Torneo'" [ejemplo]="'Ej.champions'" [value]="nombreSend" (onChange)="onChangeNameTournament($event)"></app-input-simple>
             </div>
 
@@ -44,8 +44,10 @@
                 </div>
             </div>
 
-
-
+            <div class="button-container" >
+                <app-button [clase]="'button outline'" [title]="'Cancel'" (onClick)="Cancel()"></app-button>                                                                   
+                <app-button [clase]="'button fill'"    [title]="'Crear'" (onClick)="CrearTou()"></app-button>
+            </div>
         </div>
     </div>
 </div>
