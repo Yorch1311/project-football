@@ -227,10 +227,15 @@ export class TournamentCreateComponent implements OnInit {
     if( (this.name == null) || (this.time == null) || (this.date == null) || (this.categori == null) || (this.branches[0] == null) || (this.typeTournamet == null) || (this.city == null)  || (this.place == null) ||
       (this.adminsid[0] == null) || (this.arbitersid[0] == null) || (this.coachsid[0] == null)
     ){
-      alert("Error faltan datos");
+      
+      this._snackBar.open('Error faltan datos', 'X', {
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,          
+        //panelClass: ['green-snackbar'],
+        panelClass: ['red-snackbar'],
+      });      
 
     }else{
-
 
         //obtener id de lugares en arreglo
         console.log(this.place)
@@ -263,9 +268,9 @@ export class TournamentCreateComponent implements OnInit {
       
         
         this.APIcreate.createTournamet(datasend).subscribe(result =>{
-            console.log(result);
-
+            //console.log(result);
         })        
+        
 
         //mostrar snavbar
         this._snackBar.open('Torneo creado exitosamente', 'X', {
