@@ -25,7 +25,7 @@ export class CreateTeamComponent implements OnInit {
   nplayer: String | null = null;
 
   value:string ="";
-  valuenum: number = 1;
+  valuenum: number | any;
 
   //arrego a mostrar el group 
   ArrayPlayers:String []= [];
@@ -35,16 +35,16 @@ export class CreateTeamComponent implements OnInit {
 
 //nombre del equipo
   onChangeNameTeam(data: String){
-  this.name = data;
+    this.name = data;  
   }
 
   onChangeNamePlayer(data: String){
     this.player = data;  
   }
 
-  onChangeINE(data: String){
+  onChangeCurp(data: String){
     if(data.length !== 18 ){      
-      this._snackBar.open('Error la Ine debe de tener 18 caracteres', '', {
+      this._snackBar.open('Error la Curp debe de tener 18 caracteres', '', {
         horizontalPosition: 'center',
         verticalPosition: 'top',         
         //panelClass: ['green-snackbar'],
@@ -58,7 +58,7 @@ export class CreateTeamComponent implements OnInit {
   }
 
   onChangeNumberPlayer(data: string){
-    if(data.length > 2 || parseInt(data) < 1 ){                        
+    if(data.length > 2 || parseInt(data) < 1 || data == null ){                        
       this._snackBar.open('Error numero invalido', '', {
         horizontalPosition: 'center',
         verticalPosition: 'top',         
@@ -71,16 +71,21 @@ export class CreateTeamComponent implements OnInit {
       console.log(this.nplayer)      
     }     
   }
+
+  obtenerImage(img: string){
+    console.log(img);
+  }
   
   AddPlayer(){
-    if(this.player == "" || this.nplayer == "" || this.Curp == "" || this.Curp == null || this.Curp.length !== 18 ){
+    if(this.player == "" || this.nplayer == "" || this.nplayer == null || this.Curp == "" || this.Curp == null || this.Curp.length !== 18 ){
         
-      this._snackBar.open('Error datos Incorrectos', '', {
+      this._snackBar.open('Error Faltan datos verifique!!', '', {
         horizontalPosition: 'center',
         verticalPosition: 'top',         
         //panelClass: ['green-snackbar'],
         panelClass: ['red-snackbar'],
-        duration: 3000,                   
+        duration: 3000,         
+
       });
 
     }else{      

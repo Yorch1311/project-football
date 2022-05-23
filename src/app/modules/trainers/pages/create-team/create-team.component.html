@@ -13,8 +13,8 @@
                         <p>Informacion base del equipo</p>
                     </div>
                     <div class="first-grid">
-                        <app-input-simple [nombre]="'Nombre del equipo'" [ejemplo]="'Testigos de yovani'" (onChange)="onChangeNameTeam($event)"></app-input-simple>
-                        <input type="file" accept="image/*" #imageInput src="../../../../../assets/image/trainer/imageTeam.png">                                                   
+                        <app-input-simple [nombre]="'Nombre del equipo'" [ejemplo]="'chivas'" (onChange)="onChangeNameTeam($event)"></app-input-simple>
+                        <input type="file" accept="image/*" #imageInput src="../../../../../assets/image/trainer/imageTeam.png" #img (click)="obtenerImage(img.value)">                                                   
                     </div>
                 </div>
 
@@ -24,8 +24,8 @@
                     </div>
                     <div class="two-grid">
                         <app-input-simple [nombre]="'Nombre del jugador'" [value]="value" (onChange)="onChangeNamePlayer($event)"></app-input-simple>
-                        <app-input-simple [nombre]="'Curp'"  [value]="value" (onChange)="onChangeINE($event)" ></app-input-simple>
-                        <app-input-number [nombre]="'Numero de jugador'"   maxlength="2" min="1" (onChange)="onChangeNumberPlayer($event)"></app-input-number>
+                        <app-input-simple [nombre]="'Curp'"  [value]="value" (onChange)="onChangeCurp($event)" ></app-input-simple>
+                        <app-input-number [nombre]="'Numero de jugador'" [ejemplo]="'1,2,3'"  maxlength="2" min="1" (onChange)="onChangeNumberPlayer($event)"></app-input-number>
                     </div>
                        
                 </div>
