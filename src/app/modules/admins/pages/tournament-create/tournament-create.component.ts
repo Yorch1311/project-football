@@ -265,7 +265,7 @@ export class TournamentCreateComponent implements OnInit {
           });
 
           //Crear la tupla y regresar al chrisyian
-          this.router.navigate(["admin/tournament/show"]);
+          this.router.navigate(["admin/tournament/list"]);
         })        
 
       }
