@@ -295,7 +295,8 @@ export class TournamentEditComponent implements OnInit {
             
     const dialogRef = this.dialog.open(DialogCancelComponent, {
       width: '420px',
-      height: '200px',                
+      height: '200px',   
+      data: { name: 'Los Cambios aplicados se perderan,', subname: '¿Deseas Continuar?'},             
     });   
     
     dialogRef.afterClosed().subscribe(result => {
@@ -352,7 +353,7 @@ export class TournamentEditComponent implements OnInit {
                 //console.log(result);
       
                 //mostrar snavbar
-                this._snackBar.open('Torneo Editado exitosamente', 'X', {
+                this._snackBar.open('Torneo Editado Exitosamente', 'X', {
                   horizontalPosition: this.horizontalPosition,
                   verticalPosition: this.verticalPosition, 
                   panelClass: ['green-snackbar'],

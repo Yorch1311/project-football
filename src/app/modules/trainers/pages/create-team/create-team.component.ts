@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { Item } from 'src/app/modules/admins/services/type';
+import {MatDialog} from '@angular/material/dialog';
+import { DialogCancelComponent } from '../../../../shared/components/dialog-cancel/dialog-cancel.component';
 
 @Component({
   selector: 'app-create-team',
@@ -13,7 +15,7 @@ export class CreateTeamComponent implements OnInit {
   id_tournament: string | null;    
   id_branch: string | null;    
 
-  constructor(private router: Router, private _snackBar: MatSnackBar, private _router: ActivatedRoute) {
+  constructor(public dialog: MatDialog, private router: Router, private _snackBar: MatSnackBar, private _router: ActivatedRoute) {
     this.id_tournament = this._router.snapshot.paramMap.get("tournament");
     this.id_branch = this._router.snapshot.paramMap.get("id");
    }
@@ -105,13 +107,25 @@ export class CreateTeamComponent implements OnInit {
 
 
   register(){
-    this._snackBar.open('Equipo registrado exitosamente', 'X', {
-      horizontalPosition: 'right',
-      verticalPosition: 'top',          
-      panelClass: ['green-snackbar'],
+
+    const dialogRef = this.dialog.open(DialogCancelComponent, {
+      width: '420px',
+      height: '200px',
+      data: { name: 'Registrando equipo y jugadores,', subname: '¿Deseas Continuar?'},
     });
 
-    this.router.navigate(["trainer/tournament/"+this.id_tournament+"/categories"]);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+        if ( result == true){
+          this._snackBar.open('Equipo registrado exitosamente', 'X', {
+            horizontalPosition: 'right',
+            verticalPosition: 'top',          
+            panelClass: ['green-snackbar'],
+          });      
+          this.router.navigate(["trainer/tournament/"+this.id_tournament+"/categories"]);                        
+        }
+    });
+    
   }
 
 }

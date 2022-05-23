@@ -195,6 +195,7 @@ export class TournamentCreateComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogCancelComponent, {
       width: '420px',
       height: '200px',
+      data: { name: 'Los Cambios aplicados se perderan,', subname: '¿Deseas Continuar?'},
     });
 
     dialogRef.afterClosed().subscribe(result => {
