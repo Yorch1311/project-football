@@ -14,7 +14,10 @@
                     </div>
                     <div class="first-grid">
                         <app-input-simple [nombre]="'Nombre del equipo'" [ejemplo]="'chivas'" (onChange)="onChangeNameTeam($event)"></app-input-simple>
-                        <input type="file" accept="image/*" #imageInput src="../../../../../assets/image/trainer/imageTeam.png"  (change)="obtenerImage($event)">                                                   
+                        <div class="subtitle">
+                            <p>Imagen de Equipo:</p>
+                            <input type="file" accept="image/*" #imageInput src="../../../../../assets/image/trainer/imageTeam.png"  (change)="obtenerImage($event)">                                                   
+                        </div>                        
                     </div>
                 </div>
 

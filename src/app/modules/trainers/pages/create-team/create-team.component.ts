@@ -173,7 +173,7 @@ export class CreateTeamComponent implements OnInit {
 
   register(){
 
-    if(this.name == null || this.name.trim() == "" || this.id_cat_branch == null || this.id_tournament == null || this.Arrplayers.length < 5){            
+    if(this.imgeSend == "" ||this.name == null || this.name.trim() == "" || this.id_cat_branch == null || this.id_tournament == null || this.Arrplayers.length < 5){            
       this.showSnackbar('Error Faltan Datos',1);            
     }else{
       
@@ -185,7 +185,7 @@ export class CreateTeamComponent implements OnInit {
           players: this.Arrplayers,
           image: this.imgeSend,
         };
-  
+          
         //console.table(datasend);
         console.log(datasend);
   
