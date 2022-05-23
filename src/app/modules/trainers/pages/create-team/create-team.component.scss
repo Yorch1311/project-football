@@ -1,86 +1,83 @@
-.page-container{
+.page-container {
     max-width: 1304px;
-    margin: 0 auto;    
+    margin: 0 auto;
 }
 
-h1{
+h1 {
     font-weight: 700;
     color: #26272B;
     opacity: 0.75;
-    
 }
 
-.caption{
+.caption {
     color: #0A90EF;
     font-weight: 500;
 }
 
-.body-tournament-data{
+.body-tournament-data {
     display: flex;
     gap: 24px;
 }
 
-.team-detail-container{
+.team-detail-container {
     width: calc(100% - 324px);
     min-height: 772px;
     box-shadow: 0px 4px 12px rgba(38, 39, 43, 0.25);
     border-radius: 4px;
 }
 
-.team-detail{
+.team-detail {
     margin-top: 40px;
     margin-left: 48px;
 }
 
-
-p{
+p {
     font-size: 20px;
     font-weight: 500;
 }
 
-.subtitle > p{
+.subtitle>p {
     color: rgba(38, 39, 43, 0.5);
 }
 
-.two-row{
+.two-row {
     grid-column: 1 / 3;
     padding: 44px 0px;
 }
 
-.first-grid{
+.first-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
 }
 
-.two-grid{
+.two-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 32px 24px;
 }
 
-.three-row{
+.three-row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 32px 24px;
 }
 
-.add-player{
+.add-player {
     display: flex;
     grid-column: 2 / 2;
 }
 
-#add-player{
+#add-player {
     font-weight: 500;
     font-size: 16px;
     color: #0A90EF;
 }
 
-.button-container{
+.button-container {
     display: flex;
     justify-content: center;
 }
-
 
 .size-button {
     //align-items: center;
@@ -93,8 +90,26 @@ p{
     height: 32px !important;
 }
 
-.group-show{
+.group-show {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    
+}
+
+div#div_img {
+    position: relative;
+    background-image: url("../../../../../assets/image/trainer/imageTeam.png");
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+}
+
+input#btn_img {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
 }

@@ -3,7 +3,8 @@ h1 {
     color: rgba(38, 39, 43, 0.75);
 }
 
-p, .subtitle{
+p,
+.subtitle {
     font-weight: 500;
     font-size: 20px;
     color: rgba(38, 39, 43, 0.5);
@@ -11,8 +12,8 @@ p, .subtitle{
 
 .page-container {
     max-width: 1304px;
-    margin:0 auto;
-    width:100%;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .content-container {
@@ -25,7 +26,7 @@ p, .subtitle{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px 124px;
-    width:100%
+    width: 100%
 }
 
 .first-child-three-row {
@@ -62,11 +63,76 @@ p, .subtitle{
     grid-column: 1 / 4;
 }
 
-.button-container{
-    max-width:1304px;
+.button-container {
+    max-width: 1304px;
     display: flex;
     width: 100%;
     gap: 12px;
     justify-content: flex-end;
     padding-top: 81px;
+}
+
+//telefono
+@media screen and (min-width: 360px) and (max-width: 809px) {
+    h1 {
+        font-weight: 700;
+        color: rgba(38, 39, 43, 0.75);
+    }
+    p,
+    .subtitle {
+        font-weight: 500;
+        font-size: 20px;
+        color: rgba(38, 39, 43, 0.5);
+    }
+    .page-container {
+        max-width: 1304px;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .content-container {
+        padding: 0px 48px;
+        width: calc(100% - 96px);
+    }
+    .grid-container {
+        height: 600px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px 124px;
+        width: 100%
+    }
+    .first-child-three-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px 124px;
+    }
+    .grid-two-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px 124px;
+    }
+    .four-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px 124px;
+    }
+    .first-row-grid {
+        grid-column: 1 / 4;
+    }
+    .two-row-grid {
+        grid-column: 1 / 4;
+    }
+    .three-row-grid {
+        grid-column: 1 / 4;
+    }
+    .four-row-grid {
+        grid-column: 1 / 4;
+    }
+    .button-container {
+        max-width: 1304px;
+        display: flex;
+        width: 100%;
+        gap: 12px;
+        justify-content: flex-end;
+        padding-top: 81px;
+    }
 }
