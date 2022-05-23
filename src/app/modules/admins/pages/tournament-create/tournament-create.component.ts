@@ -191,8 +191,8 @@ export class TournamentCreateComponent implements OnInit {
   }
   
   Cancel() {
+    
     const dialogRef = this.dialog.open(DialogCancelComponent, {
-
       width: '420px',
       height: '200px',
     });
@@ -201,9 +201,10 @@ export class TournamentCreateComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
         if ( result == true){
             //mandar a la pagina del cristian
-            this.router.navigate(["admin/tournament/show"]);
+            this.router.navigate(["admin/tournament/list"]);
         }
     });
+
   }
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
