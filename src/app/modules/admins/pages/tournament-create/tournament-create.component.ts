@@ -36,8 +36,6 @@ export class TournamentCreateComponent implements OnInit {
   date: date_crate_edit= {init:"", final:""};
   time: String | null = null;
 
-
-
   //para buscar
   brancheshid:String[] = [];
   adminsid: String [] = [];  
@@ -193,19 +191,21 @@ export class TournamentCreateComponent implements OnInit {
   }
   
   Cancel() {
+    
     const dialogRef = this.dialog.open(DialogCancelComponent, {
-
       width: '420px',
       height: '200px',
+      data: { name: 'Los Cambios aplicados se perderan,', subname: '¿Deseas Continuar?'},
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
         if ( result == true){
             //mandar a la pagina del cristian
-            this.router.navigate(["admin/tournament/show"]);
+            this.router.navigate(["admin/tournament/list"]);
         }
     });
+
   }
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';

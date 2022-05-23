@@ -1,0 +1,32 @@
+.page {
+    width: 100%;
+    padding-top: 80px;
+    padding-left: 80px;
+}
+
+.router {
+    width: 0px;
+}
+
+@media screen and (min-width:375px) and (max-width:428px) {
+    
+    .page {
+        width:calc(100% - 16px);
+        padding-left: 8px;
+        padding-top: 160px;
+        padding-right: 8px;
+    } 
+}
+
+//ipad
+@media screen and (min-width:810px) and (max-width:1304px) {
+    .page {
+        width:calc(100% - 16px);
+        padding-left: 8px;
+        padding-top: 160px;
+        padding-right: 8px;
+    } 
+}
+
+//desktop
+@media screen and (mix-width:1304px) {}

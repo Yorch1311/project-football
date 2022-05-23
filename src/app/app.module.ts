@@ -52,6 +52,9 @@ import { TournamentCategoriesRefereeComponent } from './modules/referees/pages/t
 import { MatchHistoryComponent } from './modules/referees/pages/match-history/match-history.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { RefereeTournamentDetailComponent } from './modules/referees/pages/referee-tournament-detail/referee-tournament-detail.component';
+import { SidebarComponent } from './core/components/sidebar/sidebar.component';
+import { MainLayoutComponent } from './core/layouts/main-layout/main-layout.component';
+import { HeaderComponent } from './core/components/header/header.component';
 
 
 @NgModule({
@@ -83,7 +86,10 @@ import { RefereeTournamentDetailComponent } from './modules/referees/pages/refer
     InputNumberComponent,
     TournamentCategoriesRefereeComponent,
     MatchHistoryComponent,
-    RefereeTournamentDetailComponent
+    RefereeTournamentDetailComponent,
+    SidebarComponent,
+    MainLayoutComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

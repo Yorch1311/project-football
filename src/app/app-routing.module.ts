@@ -16,7 +16,7 @@ import { TrainerTournamentDetailPageComponentComponent } from './modules/trainer
 const routes: Routes = [    
   { path: 'admin', children: [
       { path: 'tournament', children: [
-          { path: 'show', component: TournamentShowComponent },
+          { path: 'list', component: TournamentShowComponent },
           { path: 'create', component: TournamentCreateComponent },
           { path: 'edit/:id', component: TournamentEditComponent },
           { path: 'detail/:id/status/:status', component: TournamentDetailPageComponent },
@@ -27,7 +27,7 @@ const routes: Routes = [
   },
   { path: 'trainer', children: [
       { path: 'tournament', children:[
-        { path: 'show', component: TrainerTournamentDetailPageComponentComponent },
+        { path: 'list', component: TrainerTournamentDetailPageComponentComponent },
         { path: ':id/categories', component: TournamentCategoriesComponent },
         { path: ':tournament/categories/:id/create-team', component: CreateTeamComponent },
       ]},
@@ -35,7 +35,7 @@ const routes: Routes = [
   },
   { path: 'referee', children: [
     { path: 'tournament', children:[
-      { path: 'show', component: RefereeTournamentDetailComponent },
+      { path: 'list', component: RefereeTournamentDetailComponent },
       { path: ':id/categories', component: TournamentCategoriesRefereeComponent },
       { path: ':id/rivals', component: MatchHistoryComponent },
     ]},

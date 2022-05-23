@@ -97,100 +97,84 @@ export class TournamentEditComponent implements OnInit {
         this.itemscyty = datos['cities'];
         this.itemsAdmin = datos['admins'];
         this.itemsreferee = datos['referees'];
-        this.itemsTrainers = datos['coaches'];      
+        this.itemsTrainers = datos['coaches'];
+                
+        if(this.id !== null){            
+          this.APIcreate.Searchid(this.id).subscribe(result =>{        
+            //console.log(result);
+            //ontener nombre
+            this.nombreSend = result['name'];
+            this.name = this.nombreSend;
+                
+            //obtener categoria
+            this.objectItem= result['category'];
+            this.categoriSend = this.objectItem._id;
+            console.log(this.categoriSend);
+            //this.onChangeCategori(this.categoriSend);        
+    
+            //obtrener ramas
+            this.objetoItemArray = result['branches'];            
+            //
+            this.objetoItemArray.forEach( brabches => {
+              //console.log(admin);
+              this.branchsSend.push(brabches._id);
+              //this.onChangeAdmin(admin);
+            });
+                       
+            //obtener tipo de torneo 
+            this.objectItem = result['type'];
+            this.typeSend = this.objectItem._id;
+            this.onChangetypetournament(this.typeSend);
+    
+            //obtener ciudad
+            this.objectItem = result['city'];
+            this.citySend = this.objectItem._id;
+            this.onChangecity(this.citySend);
+    
+            //obtener Fecha
+            this.datesend = result['dates'];
+            this.onChangeDate(this.datesend);
+          
+    
+            //obtener place
+            this.objetoItemArray = result['places'];
+            this.placeSend = this.objetoItemArray[0]._id;
+            this.onChangeplace(this.placeSend);
+    
+              //obtener dmins, couches and referees
+              this.objectOficial.push(result['officials']);                
+              this.objectOficial[0].admins.forEach( admin => {
+                //console.log(admin);
+                this.onChangeAdmin(admin);
+              });
+      
+              this.objectOficial[0].coaches.forEach( coach => {
+                //console.log(coach);
+                this.onChangeCoach(coach);
+              });
+      
+              this.objectOficial[0].referees.forEach( referee => {
+                //console.log(referee);
+                this.onChangeArbiter(referee);
+              });                        
+        
+            //obtener status
+              this.status = result['status'];
+
+            //obtener hours
+            this.timeSend = result['hours'];
+            this.onChangeTime(this.timeSend);                  
+
+          })                  
+    
+        }
+
       })  
 
       //para buscar por id
       //6289c2d577b219739d358763        
     //obtener ps datos por id de la bd
-
-    if(this.id !== null){            
-      this.APIcreate.Searchid(this.id).subscribe(result =>{        
-        //console.log(result);
-        //ontener nombre
-        this.nombreSend = result['name'];
-        this.name = this.nombreSend;
-
-        
-        //obtener categoria
-        this.objectItem= result['category'];
-        this.categoriSend = this.objectItem._id;
-        console.log(this.categoriSend);
-        //this.onChangeCategori(this.categoriSend);        
-
-        //obtrener ramas
-        this.objetoItemArray = result['branches'];            
-        //
-        this.objetoItemArray.forEach( brabches => {
-          //console.log(admin);
-          this.branchsSend.push(brabches._id);
-          //this.onChangeAdmin(admin);
-        });
-                   
-        //obtener tipo de torneo 
-        this.objectItem = result['type'];
-        this.typeSend = this.objectItem._id;
-        this.onChangetypetournament(this.typeSend);
-
-        //obtener ciudad
-        this.objectItem = result['city'];
-        this.citySend = this.objectItem._id;
-        this.onChangecity(this.citySend);
-
-        //obtener Fecha
-        this.datesend = result['dates'];
-        this.onChangeDate(this.datesend);
-      
-
-        //obtener place
-        this.objetoItemArray = result['places'];
-        this.placeSend = this.objetoItemArray[0]._id;
-        this.onChangeplace(this.placeSend);
-
-          //obtener dmins, couches and referees
-          this.objectOficial.push(result['officials']);                
-          this.objectOficial[0].admins.forEach( admin => {
-            //console.log(admin);
-            this.onChangeAdmin(admin);
-          });
-  
-          this.objectOficial[0].coaches.forEach( coach => {
-            //console.log(coach);
-            this.onChangeCoach(coach);
-          });
-  
-          this.objectOficial[0].referees.forEach( referee => {
-            //console.log(referee);
-            this.onChangeArbiter(referee);
-          });                        
-
-
-        //obtener status
-          this.status = result['status'];
-          
-        //obtener hours
-        this.timeSend = result['hours'];
-        this.onChangeTime(this.timeSend);      
-        
-        
-      })
-              
-
-    }else{               
-
-       //mostrar snavbar
-       this._snackBar.open('Error no se encontro id', 'X', {
-        horizontalPosition: this.horizontalPosition,
-        verticalPosition: this.verticalPosition,                    
-        //panelClass: ['green-snackbar'],
-        panelClass: ['red-snackbar'],
-      });
-      
-        this.router.navigate(["admin/tournament/detail/" + this.id + "/status/ in-process"]);    
-      //mandar a la pagina del cristian
-      //this.router.navigate(["football/tournaments"]);
-
-    }    
+   
   }
 
   //variable pos para arbiter, coach    
@@ -311,7 +295,8 @@ export class TournamentEditComponent implements OnInit {
             
     const dialogRef = this.dialog.open(DialogCancelComponent, {
       width: '420px',
-      height: '200px',                
+      height: '200px',   
+      data: { name: 'Los Cambios aplicados se perderan,', subname: '¿Deseas Continuar?'},             
     });   
     
     dialogRef.afterClosed().subscribe(result => {
@@ -368,7 +353,7 @@ export class TournamentEditComponent implements OnInit {
                 //console.log(result);
       
                 //mostrar snavbar
-                this._snackBar.open('Torneo Editado exitosamente', 'X', {
+                this._snackBar.open('Torneo Editado Exitosamente', 'X', {
                   horizontalPosition: this.horizontalPosition,
                   verticalPosition: this.verticalPosition, 
                   panelClass: ['green-snackbar'],
