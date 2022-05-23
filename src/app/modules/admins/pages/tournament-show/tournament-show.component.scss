@@ -7,6 +7,7 @@ h1 {
 .page-container{
     max-width: 1304px;
     margin: 0 auto;
+    padding: 60px 0px 0px 0px;
 }
 
 .select-container, .select-filter, .title-container{
@@ -29,6 +30,8 @@ h1 {
 
 .team-table-container{
     max-width: 1304px;
+    height: 572px;
+    overflow: auto;
 }
 
 .team-table-container::-webkit-scrollbar{
@@ -42,7 +45,7 @@ h1 {
 //Smartphones
 @media screen and (min-width:360px) and (max-width:475px){
     .team-table-container{
-        width: calc(100% - 16px);
+        width: calc(100%);
         overflow-x:scroll;
     }
     .table{

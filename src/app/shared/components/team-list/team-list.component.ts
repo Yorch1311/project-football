@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 @Component({
@@ -8,14 +8,18 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/dra
 })
 export class TeamListComponent implements OnInit {
 
-  availableTeams: {teamName: string}[] = [{teamName: 'America'},{teamName: 'Chivas'},{teamName: 'Rayados'},{teamName: 'Tigres'}]
-  teamsToPlay: {teamName: string}[] = [];
 
-  constructor() { }
+  @Input()teamList: { id: string; name: string; }[] = [];
+  
+  teamsToPlay: { id: string, name: string }[] = [];
+
+  constructor() {}
 
   ngOnInit(): void {
+    console.log(this.teamList)
   }
-  onDropped(event: CdkDragDrop<{teamName: string}[]>) {
+
+  onDropped(event: CdkDragDrop<{id: string, name: string}[]>) {
 
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -42,9 +46,9 @@ export class TeamListComponent implements OnInit {
       return "Esperando oponente..."
     }
     if(!isEven){
-      return this.teamsToPlay[id-1].teamName
+      return this.teamsToPlay[id-1].name
     }
-    return this.teamsToPlay[id+1].teamName
+    return this.teamsToPlay[id+1].name
 
   }
 }
