@@ -14,7 +14,7 @@
                     </div>
                     <div class="first-grid">
                         <app-input-simple [nombre]="'Nombre del equipo'" [ejemplo]="'Testigos de yovani'" (onChange)="onChangeNameTeam($event)"></app-input-simple>
-                        <input type="file" accept="image/*" #imageInput src="../../../../../assets/image/trainer/imageTeam.png" (click)="obtenerImage()">                                                   
+                        <input type="file" accept="image/*" #imageInput src="../../../../../assets/image/trainer/imageTeam.png">                                                   
                     </div>
                 </div>
 
@@ -38,16 +38,18 @@
                         </button>                        
                     </div>
                 </div>
-                
-                <div class="group-show">                    
+
+                <div class="group-show">          
                     <app-group-show class="group" [items]="ArrayPlayers" (onChange)="DeletePlayer($event)"></app-group-show>                       
-                </div>
-                                
+                    
+                </div>  
+                    
                 <div class="button-container">
-                    <div><app-button [clase]="'button fill'" [title]="'Registrar'" (onClick)="register()"></app-button></div>
+                    <app-button [clase]="'button fill'" [title]="'Registrar'" (onClick)="register()"></app-button>
                 </div>
-                 
+
             </div>
+           
         </div>
     </div>
 </div>

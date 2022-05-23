@@ -36,12 +36,10 @@ export class CreateTeamComponent implements OnInit {
 //nombre del equipo
   onChangeNameTeam(data: String){
   this.name = data;
-  alert(this.name)
   }
 
   onChangeNamePlayer(data: String){
-    this.player = data;
-    console.log(this.player)    
+    this.player = data;  
   }
 
   onChangeINE(data: String){
@@ -72,10 +70,6 @@ export class CreateTeamComponent implements OnInit {
       this.nplayer = data
       console.log(this.nplayer)      
     }     
-  }
-
-  obtenerImage(){
-    alert("mostrar para cargar la imagen");
   }
   
   AddPlayer(){
