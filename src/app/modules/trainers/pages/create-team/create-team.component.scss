@@ -1,13 +1,13 @@
 .page-container{
     max-width: 1304px;
-    margin: 0 auto;    
+    margin: 0 auto;
 }
 
 h1{
     font-weight: 700;
     color: #26272B;
     opacity: 0.75;
-    
+
 }
 
 .caption{
@@ -96,5 +96,11 @@ p{
 .group-show{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    
+
+}
+
+#imageInput{
+  color: red;
+  background-color:#0A90EF;
+  padding: 15px;
 }
