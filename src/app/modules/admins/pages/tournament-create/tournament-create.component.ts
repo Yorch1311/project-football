@@ -36,8 +36,6 @@ export class TournamentCreateComponent implements OnInit {
   date: date_crate_edit= {init:"", final:""};
   time: String | null = null;
 
-
-
   //para buscar
   brancheshid:String[] = [];
   adminsid: String [] = [];  

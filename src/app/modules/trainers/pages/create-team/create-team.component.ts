@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
+import { Item } from 'src/app/modules/admins/services/type';
 
 @Component({
   selector: 'app-create-team',
@@ -22,6 +23,12 @@ export class CreateTeamComponent implements OnInit {
   player: String | null = null;
   Curp: String | null = null;
   nplayer: String | null = null;
+
+  value:string ="";
+  valuenum: number = 1;
+
+  //arrego a mostrar el group 
+  ArrayPlayers:String []= [];
 
   ngOnInit(): void {    
   }  
@@ -67,12 +74,35 @@ export class CreateTeamComponent implements OnInit {
     }     
   }
 
-
   obtenerImage(){
-    alert("mostrar ");
+    alert("mostrar para cargar la imagen");
   }
   
+  AddPlayer(){
+    if(this.player == "" || this.nplayer == "" || this.Curp == "" || this.Curp == null || this.Curp.length !== 18 ){
+        
+      this._snackBar.open('Error datos Incorrectos', '', {
+        horizontalPosition: 'center',
+        verticalPosition: 'top',         
+        //panelClass: ['green-snackbar'],
+        panelClass: ['red-snackbar'],
+        duration: 3000,                   
+      });
 
+    }else{      
+      this.ArrayPlayers.push(this.player+"-"+this.nplayer);
+      this.player= "";
+      this.nplayer = "";
+      this.Curp = "";
+      this.value= " ";
+    }
+  }
+
+  pos : number = 0;
+  DeletePlayer(data: string){    
+    this.pos = this.ArrayPlayers.indexOf(data);        
+    this.ArrayPlayers.splice(this.pos, 1);    
+  }
 
 
   register(){
