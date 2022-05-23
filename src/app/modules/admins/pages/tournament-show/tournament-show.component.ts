@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Filter, Item, Tournament } from '../../services/type';
 import { ServiceService } from '../../services/service.service';
 
@@ -38,7 +38,7 @@ export class TournamentShowComponent implements OnInit {
   ];
 
  
-  constructor( private router: Router, private APIcreate: ServiceService) { 
+  constructor( private router: Router, private APIcreate: ServiceService, private activeRoute: ActivatedRoute) { 
   }
 
   ngOnInit(): void {
@@ -53,6 +53,7 @@ export class TournamentShowComponent implements OnInit {
       this.Filter = datos['types'];
     })
 
+    console.log(this.router.url.includes('admin'));
     
   }
 

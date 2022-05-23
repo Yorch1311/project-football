@@ -1,10 +1,10 @@
 .pagina {
   max-width: 1304px;
-  width: 100%;
-  //Borrar despues
+  width: calc(100% - 16px);
+
   background-color: #FFFFFF;
-  height: 1000px;
   padding: 8px;
+  margin: 0 auto;
 }
 
 .title{

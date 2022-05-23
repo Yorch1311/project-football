@@ -21,7 +21,10 @@ tr{
     height: 80px;
 
     align-items: center;
+}
 
+tr:hover{
+    cursor: pointer;
 }
 
 .tr-active { 
