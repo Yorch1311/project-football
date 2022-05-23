@@ -10,7 +10,7 @@ export class InputNumberComponent implements OnInit {
   
   @Input() nombre: string = 'sin nombre';
   @Input() ejemplo: string = 'sin nombre';  
-  @Input() value: number = 1;
+  //@Input() value: number = 1;
   //se envia 
   @Output() onChange = new EventEmitter<string>(); 
 
