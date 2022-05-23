@@ -1,20 +1,18 @@
-@media screen and (min-width:360px) and (max-width:600px) {
-
+@media screen and (min-width:360px) and (max-width:809px) {
   .page {
-      width:calc(100% - 16px);
-      padding-left: 8px;
+      width:calc(100%);
       padding-top: 160px;
-      padding-right: 8px;
+      overflow-y: auto;
   }
 }
 
 //ipad
-@media screen and (min-width:600px) and (max-width:1304px) {
+@media screen and (min-width:810px) and (max-width:1304px) {
   .page {
-      width:calc(100% - 16px);
-      padding-left: 8px;
-      padding-top: 160px;
-      padding-right: 8px;
+      width:calc(100% - 48px);
+      margin-left: 48px;
+      padding-top: 80px;
+      overflow-y: auto;
   }
 }
 
@@ -23,6 +21,6 @@
   .page {
     width: calc(100% - 80px);
     padding-top: 80px;
-    padding-left: 80px;
+    margin-left: 80px;
   }
 }

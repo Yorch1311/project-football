@@ -1,9 +1,9 @@
 .pagina {
   max-width: 1304px;
   width: 100%;
-  //Borrar despues
-  padding: 8px;
+
   margin: 0 auto;
+  padding: 8px;
 }
 
 .title h1{
@@ -13,9 +13,6 @@
   font-size: 32px;
   line-height: 38px;
 
-  /* identical to box height */
-
-  /* Dark_Gray */
   color: rgba(38, 39, 43, 0.75);
 }
 
@@ -26,13 +23,13 @@
   border-radius: 4px;
 }
 //Smartphones
-@media screen and (min-width:360px) and (max-width:700px){
+@media screen and (min-width:360px) and (max-width:809px){
   .pagina{
     width: calc(100% - 16px);
   }
 }
 //ipad
-@media screen and (min-width:700px) and (max-width:1304px){
+@media screen and (min-width:810px) and (max-width:1304px){
   .pagina{
     width: calc(100% - 16px);
   }

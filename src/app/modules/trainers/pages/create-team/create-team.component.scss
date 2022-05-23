@@ -7,6 +7,7 @@ h1 {
     font-weight: 700;
     color: #26272B;
     opacity: 0.75;
+    <<<<<<< HEAD=======>>>>>>>cbc4ee3919975ba3f50edd98f5a7ea989ab92a4b
 }
 
 .caption {
@@ -95,21 +96,8 @@ p {
     grid-template-columns: repeat(2, 1fr);
 }
 
-div#div_img {
-    position: relative;
-    background-image: url("../../../../../assets/image/trainer/imageTeam.png");
-    width: 30px;
-    height: 30px;
-    padding: 10px;
-}
-
-input#btn_img {
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    right: 0%;
-    bottom: 0%;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
+#imageInput {
+    color: red;
+    background-color: #0A90EF;
+    padding: 15px;
 }

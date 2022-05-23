@@ -3,11 +3,11 @@ h1 {
     font-size: 32px;
 }
 
-
 .page-container{
     max-width: 1304px;
+    width: calc(100% - 16px);
     margin: 0 auto;
-}
+  }
 
 .select-container, .select-filter, .title-container{
     display: flex;
@@ -15,7 +15,7 @@ h1 {
 
 .header-container{
     max-width: 1304px;
-    padding: 30px 0px 0px 0px;
+    padding-top: 8px;
 }
 
 .select-container, .header-container, .title-container{
@@ -39,9 +39,9 @@ h1 {
 }
 
 //Smartphones
-@media screen and (min-width:360px) and (max-width:700px){
+@media screen and (min-width:360px) and (max-width:809px){
     .team-table-container{
-        width: calc(100%);
+        width: 100%;
         overflow-x:scroll;
     }
     .table{
@@ -60,14 +60,15 @@ h1 {
 }
 
 //ipad
-@media screen and (min-width:700px) and (max-width:1304px){
-    .team-table-container{
-        width: 100%;
-        overflow-x:scroll;
-    }
-    .table{
-        width: 1304px;
-    }
+@media screen and (min-width:810px) and (max-width:1304px){
+
+  .team-table-container{
+      width: 100%;
+      overflow-x:scroll;
+  }
+  .table{
+      width: 1304px;
+  }
 }
 
 //desktop
