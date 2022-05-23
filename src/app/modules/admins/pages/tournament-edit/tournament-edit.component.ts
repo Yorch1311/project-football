@@ -361,17 +361,7 @@ export class TournamentEditComponent implements OnInit {
                 });
               
                 this.router.navigate(["admin/tournament/detail/" + this.id + "/status/"+this.status]);      
-              })               
-              /*
-              if(this.status == ""){
-                this._snackBar.open('Error no se encontro el status', 'X', {
-                  horizontalPosition: this.horizontalPosition,
-                  verticalPosition: this.verticalPosition, 
-                  //panelClass: ['green-snackbar'],
-                  panelClass: ['red-snackbar'],                   
-                });
-              }
-              */                    
+              })                                      
               }                                                    
     }
    }      

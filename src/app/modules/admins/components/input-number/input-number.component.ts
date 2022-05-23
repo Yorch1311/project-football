@@ -12,13 +12,13 @@ export class InputNumberComponent implements OnInit {
   @Input() ejemplo: string = 'sin nombre';  
   //@Input() value: number = 1;
   //se envia 
-  @Output() onChange = new EventEmitter<string>(); 
+  @Output() onChange = new EventEmitter<number>(); 
 
   constructor() { }
 
   obtenerdato( data: string){         
     //console.log(data); 
-    this.onChange.emit(data);        
+    this.onChange.emit(parseInt(data));        
   }
 
   ngOnInit(): void {

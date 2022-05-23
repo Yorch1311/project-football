@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TournamentCategories } from './type';
 import { Tournament,  } from './type';
+import { team } from './type';
 
 @Injectable({
   providedIn: 'root'
@@ -42,6 +43,11 @@ export class ServiceService {
     return this.http.post<Tournament[]>(this.url + "coach/tournaments", {"name":name});
   }
 
+  //agregar un equipo  
+  createTeam(dato: team, id_t: string ):Observable<any>{
+    //console.log(dato);
+    return this.http.post(`${this.url}coach/tournament/${id_t}/team `,dato);    
+  }
 
 }
 

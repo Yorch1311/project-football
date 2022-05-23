@@ -62,3 +62,16 @@ export interface Tournament {
   dates: {init :string };
   status: string;
 }
+
+export interface player {
+  name: string;
+  curp: string;
+  playerNumber: number;
+}
+
+export interface team {  
+  name: string;
+  categoryId: string;
+  players: player [];
+  image: string;
+}
