@@ -55,6 +55,7 @@ import { RefereeTournamentDetailComponent } from './modules/referees/pages/refer
 import { SidebarComponent } from './core/components/sidebar/sidebar.component';
 import { MainLayoutComponent } from './core/layouts/main-layout/main-layout.component';
 import { HeaderComponent } from './core/components/header/header.component';
+import { MatRippleModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -108,7 +109,8 @@ import { HeaderComponent } from './core/components/header/header.component';
     MatNativeDateModule,
     DragDropModule,
     HttpClientModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatRippleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
