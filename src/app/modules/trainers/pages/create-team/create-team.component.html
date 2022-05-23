@@ -15,10 +15,12 @@
                     <div class="first-grid">
                         <app-input-simple [nombre]="'Nombre del equipo'" [ejemplo]="'chivas'" (onChange)="onChangeNameTeam($event)"></app-input-simple>
                         <div class="subtitle">
-                            <p>Imagen de Equipo:</p>
-                            <input type="file" accept="image/*" #imageInput src="../../../../../assets/image/trainer/imageTeam.png"  (change)="obtenerImage($event)">                                                   
-                        </div>                        
-                    </div>
+                            <label for="file-input">
+                              <img src="../../../../../assets/image/trainer/imageTeam.png"/>
+                            </label>
+                          
+                            <input id="file-input" type="file" />
+                        </div>
                 </div>
 
                 <div class="two-row">
@@ -52,6 +54,7 @@
                 </div>
 
             </div>
+            
            
         </div>
     </div>
