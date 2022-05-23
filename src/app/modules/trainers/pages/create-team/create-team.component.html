@@ -14,7 +14,7 @@
                     </div>
                     <div class="first-grid">
                         <app-input-simple [nombre]="'Nombre del equipo'" [ejemplo]="'Testigos de yovani'" (onChange)="onChangeNameTeam($event)"></app-input-simple>
-                        <input type="image" src="../../../../../assets/image/trainer/imageTeam.png" (click)="obtenerImage()">
+                        <input type="file" accept="image/*" #imageInput src="../../../../../assets/image/trainer/imageTeam.png" (click)="obtenerImage()">                                                   
                     </div>
                 </div>
 
@@ -23,23 +23,24 @@
                         <p>Únete y anota goles con el nuevo equipo estrella del torneo</p>
                     </div>
                     <div class="two-grid">
-                        <app-input-simple [nombre]="'Nombre del jugador'" (onChange)="onChangeNamePlayer($event)"></app-input-simple>
-                        <app-input-simple [nombre]="'Curp'" (onChange)="onChangeINE($event)" ></app-input-simple>
-                        <app-input-number [nombre]="'Numero de jugador'" maxlength="2" min="1" (onChange)="onChangeNumberPlayer($event)"></app-input-number>
+                        <app-input-simple [nombre]="'Nombre del jugador'" [value]="value" (onChange)="onChangeNamePlayer($event)"></app-input-simple>
+                        <app-input-simple [nombre]="'Curp'"  [value]="value" (onChange)="onChangeINE($event)" ></app-input-simple>
+                        <app-input-number [nombre]="'Numero de jugador'"   maxlength="2" min="1" (onChange)="onChangeNumberPlayer($event)"></app-input-number>
                     </div>
                        
                 </div>
 
                 <div class="three-row">
                     <div class="add-player">
-                        <p id="add-player">Agregar jugador</p>
-                        
-                        <img src="../../../../assets/image/admin/IconAdd.jpeg" alt="x"/>  
+                        <p id="add-player">Agregar jugador</p>                        
+                        <button class="size-button" (click)="AddPlayer()">
+                            <img src="../../../../assets/image/admin/IconAdd.jpeg" alt="x"/>
+                        </button>                        
                     </div>
                 </div>
                 
-                <div class="group-show">
-                    <app-group-show class="group" ></app-group-show>
+                <div class="group-show">                    
+                    <app-group-show class="group" [items]="ArrayPlayers" (onChange)="DeletePlayer($event)"></app-group-show>                       
                 </div>
                                 
                 <div class="button-container">
