@@ -1,7 +1,7 @@
 <div class="page-container">
     <h1>Arma tu torneo</h1>
-    <div class="content-container">
-        <div class="grid-container" *ngIf=' timeSend  !== ""'>
+    <div class="content-container">    
+    <div class="grid-container" *ngIf=' timeSend !== ""'>
             <div class="first-row-grid">
                 <p class="subtitle">Conócelo como...</p>
                 <app-input-simple [nombre]="'Nombre del Torneo'" [ejemplo]="'Ej.champions'" [value]="nombreSend" (onChange)="onChangeNameTournament($event)"></app-input-simple>

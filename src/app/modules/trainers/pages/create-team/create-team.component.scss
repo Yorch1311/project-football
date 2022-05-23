@@ -22,13 +22,14 @@ h1{
 
 .team-detail-container{
     width: calc(100% - 324px);
-    height: 772px;
+    min-height: 772px;
     box-shadow: 0px 4px 12px rgba(38, 39, 43, 0.25);
     border-radius: 4px;
 }
 
 .team-detail{
-    padding: 40px 48px;
+    margin-top: 40px;
+    margin-left: 48px;
 }
 
 
@@ -80,6 +81,20 @@ p{
     justify-content: center;
 }
 
+
+.size-button {
+    //align-items: center;
+    border: 0;
+    background-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    margin-left: 5px;
+    //margin-bottom: 10px;
+    width: 32px !important;
+    height: 32px !important;
+}
+
 .group-show{
-    padding: 44px 0px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
 }

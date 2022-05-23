@@ -1,10 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-interface Item {
-  id: number;
-  name: string;  
-}
-
 @Component({
   selector: 'app-group-show',
   templateUrl: './group-show.component.html',

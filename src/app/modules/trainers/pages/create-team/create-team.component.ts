@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
+import { Item } from 'src/app/modules/admins/services/type';
 
 @Component({
   selector: 'app-create-team',
@@ -23,23 +24,27 @@ export class CreateTeamComponent implements OnInit {
   Curp: String | null = null;
   nplayer: String | null = null;
 
+  value:string ="";
+  valuenum: number | any;
+
+  //arrego a mostrar el group 
+  ArrayPlayers:String []= [];
+
   ngOnInit(): void {    
   }  
 
 //nombre del equipo
   onChangeNameTeam(data: String){
-  this.name = data;
-  alert(this.name)
+    this.name = data;  
   }
 
   onChangeNamePlayer(data: String){
-    this.player = data;
-    console.log(this.player)    
+    this.player = data;  
   }
 
-  onChangeINE(data: String){
+  onChangeCurp(data: String){
     if(data.length !== 18 ){      
-      this._snackBar.open('Error la Ine debe de tener 18 caracteres', '', {
+      this._snackBar.open('Error la Curp debe de tener 18 caracteres', '', {
         horizontalPosition: 'center',
         verticalPosition: 'top',         
         //panelClass: ['green-snackbar'],
@@ -53,7 +58,7 @@ export class CreateTeamComponent implements OnInit {
   }
 
   onChangeNumberPlayer(data: string){
-    if(data.length > 2 || parseInt(data) < 1 ){                        
+    if(data.length > 2 || parseInt(data) < 1 || data == null ){                        
       this._snackBar.open('Error numero invalido', '', {
         horizontalPosition: 'center',
         verticalPosition: 'top',         
@@ -67,12 +72,36 @@ export class CreateTeamComponent implements OnInit {
     }     
   }
 
-
-  obtenerImage(){
-    alert("mostrar ");
+  obtenerImage(img: string){
+    console.log(img);
   }
   
+  AddPlayer(){
+    if(this.player == "" || this.nplayer == "" || this.nplayer == null || this.Curp == "" || this.Curp == null || this.Curp.length !== 18 ){
+        
+      this._snackBar.open('Error Faltan datos verifique!!', '', {
+        horizontalPosition: 'center',
+        verticalPosition: 'top',         
+        //panelClass: ['green-snackbar'],
+        panelClass: ['red-snackbar'],
+        duration: 3000,         
 
+      });
+
+    }else{      
+      this.ArrayPlayers.push(this.player+"-"+this.nplayer);
+      this.player= "";
+      this.nplayer = "";
+      this.Curp = "";
+      this.value= " ";
+    }
+  }
+
+  pos : number = 0;
+  DeletePlayer(data: string){    
+    this.pos = this.ArrayPlayers.indexOf(data);        
+    this.ArrayPlayers.splice(this.pos, 1);    
+  }
 
 
   register(){
