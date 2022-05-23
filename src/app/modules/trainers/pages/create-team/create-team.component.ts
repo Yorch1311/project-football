@@ -71,9 +71,6 @@ export class CreateTeamComponent implements OnInit {
   obtenerImage(){
     alert("mostrar ");
   }
-  
-
-
 
   register(){
     this._snackBar.open('Equipo registrado exitosamente', 'X', {
