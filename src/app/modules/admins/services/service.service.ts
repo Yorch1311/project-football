@@ -20,6 +20,9 @@ export class ServiceService {
     return this.http.get(`${this.url}admin/tournament/fieldset-data/all`);
   }
 
+  getTeam(): Observable<any>{
+    return this.http.get<any>(`${this.url}coach/tournament/:id/category/:mixedCategoryId/teams`)
+  }
 
 
   ObtenerPlaces(id_city: String):Observable<any>{
