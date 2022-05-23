@@ -10,6 +10,7 @@ export class CardComponent implements OnInit {
   @Input() teamName: string = "";
   @Input() opponent: string = "";
   @Input() id: string = "";
+  @Input() path: String = "";
   
   constructor() { }
 

@@ -4,7 +4,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import { Item } from 'src/app/modules/admins/services/type';
 import {MatDialog} from '@angular/material/dialog';
 import { DialogCancelComponent } from '../../../../shared/components/dialog-cancel/dialog-cancel.component';
-import { team } from '../../services/type';
+import { team, teamList } from '../../services/type';
 import { player } from '../../services/type';
 import { ServiceService } from '../../services/service.service';
 import { Observable, Subscriber } from 'rxjs';
@@ -18,10 +18,15 @@ export class CreateTeamComponent implements OnInit {
 
   id_tournament: string | null;    
   id_cat_branch: string | null;    
+  teamList: teamList[] = [];
 
   constructor(public dialog: MatDialog, private router: Router, private _snackBar: MatSnackBar, private _router: ActivatedRoute, private APIcreate: ServiceService) {
     this.id_tournament = this._router.snapshot.paramMap.get("tournament");
     this.id_cat_branch = this._router.snapshot.paramMap.get("id");
+
+    this.APIcreate.getTeams(String(this.id_tournament), String(this.id_cat_branch)).subscribe(data => {
+        this.teamList = data;
+    })
    }
 
   name: string | null = null;

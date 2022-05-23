@@ -75,3 +75,9 @@ export interface team {
   players: player [];
   image: string;
 }
+
+export interface teamList{
+  _id: string;
+  name: string;
+  teamLogo: string;
+}

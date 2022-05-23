@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-trainer-team-list',
@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrainerTeamListComponent implements OnInit {
 
-  availableTeams: {teamName: string}[] = [{teamName: 'America'},{teamName: 'Chivas'},{teamName: 'Rayados'},{teamName: 'Tigres'}]
+  @Input() teamList: {
+    _id: string,
+    name: string,
+    teamLogo: string
+  }[] = [];
+
+  availableTeams: { teamName: string }[] = [{ teamName: 'America' }, { teamName: 'Chivas' }, { teamName: 'Rayados' }, { teamName: 'Tigres' }]
   constructor() { }
 
   ngOnInit(): void {

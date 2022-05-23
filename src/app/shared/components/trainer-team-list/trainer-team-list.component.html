@@ -1,7 +1,7 @@
 <div class="list-container">
     <div class="team-list-container">
         <div class="card-position" id="availableTeams" >
-            <app-card *ngFor="let item of availableTeams" [teamName]="item.teamName"></app-card>
+            <app-card *ngFor="let item of teamList" [teamName]="item.name" [path]="item.teamLogo"></app-card>
         </div>
     </div>
 </div>

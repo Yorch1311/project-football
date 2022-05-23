@@ -20,7 +20,7 @@ const routes: Routes = [
           { path: 'create', component: TournamentCreateComponent },
           { path: 'edit/:id', component: TournamentEditComponent },
           { path: 'detail/:id/status/:status', component: TournamentDetailPageComponent },
-          { path: 'manage-teams/:id', component: TournamentTreeComponent },
+          { path: ':tournament/manage-teams/:id', component: TournamentTreeComponent },
         ],
       },
     ],

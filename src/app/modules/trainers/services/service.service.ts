@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { TournamentCategories } from './type';
+import { teamList, TournamentCategories } from './type';
 import { Tournament,  } from './type';
 import { team } from './type';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -49,5 +50,8 @@ export class ServiceService {
     return this.http.post(`${this.url}coach/tournament/${id_t}/team `,dato);    
   }
 
+  getTeams(idTournament: string, idCategory: string): Observable<teamList[]>{
+    return this.http.get<teamList[]>(environment.apiUrl+'coach/tournament/'+idTournament+'/category/'+idCategory+'/teams')
+  }
 }
 

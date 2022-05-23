@@ -9,9 +9,9 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/dra
 export class TeamListComponent implements OnInit {
 
 
-  @Input()teamList: { id: string; name: string; }[] = [];
+  @Input()teamList: { _id: string, name: string, teamLogo: string }[] = [];
   
-  teamsToPlay: { id: string, name: string }[] = [];
+  teamsToPlay: {  _id: string, name: string, teamLogo: string }[] = [];
 
   constructor() {}
 
@@ -19,7 +19,7 @@ export class TeamListComponent implements OnInit {
     console.log(this.teamList)
   }
 
-  onDropped(event: CdkDragDrop<{id: string, name: string}[]>) {
+  onDropped(event: CdkDragDrop<{ _id: string, name: string, teamLogo: string}[]>) {
 
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);

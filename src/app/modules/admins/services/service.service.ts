@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Tournament, TournamentDetail } from './type';
+import { teamList, Tournament, TournamentDetail } from './type';
 import { tupla } from './type'
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -20,8 +21,8 @@ export class ServiceService {
     return this.http.get(`${this.url}admin/tournament/fieldset-data/all`);
   }
 
-  getTeam(): Observable<any>{
-    return this.http.get<any>(`${this.url}coach/tournament/:id/category/:mixedCategoryId/teams`)
+  getTeams(idTournament: String, idCategory: String): Observable<teamList[]> {
+    return this.http.get<teamList[]>(environment.apiUrl+'coach/tournament/'+idTournament+'/category/'+idCategory+'/teams')
   }
 
 

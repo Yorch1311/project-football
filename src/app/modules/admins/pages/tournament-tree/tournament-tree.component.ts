@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { DialogSaveComponent } from 'src/app/shared/components/dialog-save/dialog-save.component';
 import { ServiceService } from '../../services/service.service';
+import { teamList } from '../../services/type';
 
 
 @Component({
@@ -10,12 +12,19 @@ import { ServiceService } from '../../services/service.service';
 })
 export class TournamentTreeComponent implements OnInit {
 
-  data:  {id: string, name: string }[] =  [{id:"123", name:"Chivas"},{id:"123", name:"Chivas"},{id:"123", name:"Chivas"},{id:"123", name:"Chivas"}] ;
+  data:  teamList[] =  [];
+  idTournament: String | null = "";
+  idCategory: String | null = "";
 
-  constructor(/*private service: ServiceService*/) {
-    /*this.service.getTeam().subscribe(team =>{
+  constructor(private service: ServiceService, private _router: ActivatedRoute) {
+
+    this.idTournament = this._router.snapshot.paramMap.get("tournament");
+    this.idCategory = this._router.snapshot.paramMap.get("id");
+
+
+    this.service.getTeams( String(this.idTournament), String(this.idCategory)).subscribe(team =>{
       this.data = team;
-    })*/
+    })
   }
 
   ngOnInit(): void {

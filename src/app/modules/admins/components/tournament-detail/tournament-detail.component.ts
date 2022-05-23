@@ -35,7 +35,7 @@ export class TournamentDetailComponent implements OnInit {
   }
 
   goto(id: string) {
-    this.router.navigate(['admin/tournament/manage-teams/' + id]);
+    this.router.navigate(['admin/tournament/'+this.id+'/manage-teams/' + id]);
   }
 
 
