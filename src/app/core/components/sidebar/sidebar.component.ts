@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
@@ -13,22 +12,22 @@ export class SidebarComponent implements OnInit {
   referee: string | undefined;
   coach: string | undefined;
 
-  constructor(private _router: Router, private location: Location) { 
+  constructor(private location: Location) { 
 
     if(this.location.path().includes("admin")){
       this.admin = "assets/image/icons/icons8-trofeo-48 2.png";
-      this.coach = "assets/image/icons/icons8-el-entrenador-lleno-48 2.png";
+      this.coach = "assets/image/icons/icons8-el-entrenador-lleno-48 1.png";
       this.referee = "assets/image/icons/icons8-árbitro-48 1.png";
 
     }else if(this.location.path().includes("trainer")){
-      this.admin = "assets/image/icons/icons8-trofeo-48 2.png";
+      this.admin = "assets/image/icons/icons8-trofeo-48 1.png";
       this.coach = "assets/image/icons/icons8-el-entrenador-lleno-48 2.png";
       this.referee = "assets/image/icons/icons8-árbitro-48 1.png";
 
 
     }else if(this.location.path().includes("referee")){
-      this.admin = "assets/image/icons/icons8-trofeo-48 2.png";
-      this.coach = "assets/image/icons/icons8-el-entrenador-lleno-48 2.png";
+      this.admin = "assets/image/icons/icons8-trofeo-48 1.png";
+      this.coach = "assets/image/icons/icons8-el-entrenador-lleno-48 1.png";
       this.referee = "assets/image/icons/icons8-árbitro-48 1.png";
 
     }
