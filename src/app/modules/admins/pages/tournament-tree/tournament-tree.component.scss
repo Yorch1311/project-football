@@ -6,7 +6,7 @@
 h2{
     color: #26272B;
     opacity: 0.75;
-    
+
 }
 
 p{
@@ -22,21 +22,21 @@ p{
 .save{
     width: 148px;
     height: 48px;
-    
+
     font-size: 16px;
-    background-color: #0A90EF;    
-    color: white;    
+    background-color: #0A90EF;
+    color: white;
 
     border-radius: 8px ;
     border: none;
 
     cursor: pointer;
-    
+
 }
 
 
 
-@media screen and (min-width:375px) and (max-width:428px) {
+@media screen and (min-width:360px) and (max-width:700px) {
     .body-build-tournament{
         width: calc(100% - 16px);
         overflow-x:scroll;
@@ -48,11 +48,11 @@ p{
         padding: 0px 8px;
         margin: 0 auto;
     }
-    
+
 }
 
 //ipad
-@media screen and (min-width:810px) and (max-width:1304px) {
+@media screen and (min-width:700px) and (max-width:1304px) {
 
     .body-build-tournament{
         width: calc(100% - 16px);
@@ -65,4 +65,20 @@ p{
         padding: 0px 8px;
         margin: 0 auto;
     }
+}
+
+//ipad
+@media screen and (min-width:1304px) {
+
+  .body-build-tournament{
+      width: calc(100% - 16px);
+      overflow-x:scroll;
+  }
+  .team-list{
+      width: 1304px;
+  }
+  .page-container{
+      padding: 0px 64px;
+      margin: 0 auto;
+  }
 }

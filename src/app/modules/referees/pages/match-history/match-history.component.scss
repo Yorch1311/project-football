@@ -5,7 +5,7 @@
     margin: 0 auto;
 }
 .header-container{
-    
+
     h1{
         font-family: 'Roboto';
         font-style: normal;
@@ -51,14 +51,14 @@
 }
 
 .rivals{
-    
+
     display: flex;
     align-items: center;
     gap: 51px;
     padding-bottom: 40px;
 }
 
-@media screen and (min-width: 360px) and (max-width:428px) {
+@media screen and (min-width: 360px) and (max-width:700px) {
     .rivals{
         width: 100%;
         flex-direction: column;

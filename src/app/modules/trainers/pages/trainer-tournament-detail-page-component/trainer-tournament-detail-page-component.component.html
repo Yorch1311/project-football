@@ -34,7 +34,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="team-table-container">
         <div class="table">
             <app-tournament-table-row *ngFor="let element of data" [id]="element._id" [name]="element.name" [type]="element.type.name" [category]="element.category.name" [place]="element.places[0].name" [date]="element.dates.init" [status]="element.status" (onClick)="tournamentDetail($event)"> </app-tournament-table-row>
