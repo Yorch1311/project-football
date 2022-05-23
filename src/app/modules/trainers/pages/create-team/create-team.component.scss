@@ -100,3 +100,22 @@ p {
     background-color: #0A90EF;
     padding: 15px;
 }
+
+div#div_img {
+    position: relative;
+    background-image: url('../../../../../assets/image/trainer/imageTeam.png');
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+input#btn_img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
