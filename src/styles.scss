@@ -38,6 +38,18 @@ body {
     color: white !important;
 }
 
+.mat-focused .mat-form-field-label {
+    color: #0A90EF !important;
+}
+  
+.mat-form-field-underline {
+    background-color: #0A90EF !important;
+} 
+
+.mat-form-field-ripple {
+    background-color: #0A90EF !important;
+}
+
 .green-snackbar {
     background: #10B981 !important;
     color: white !important;
