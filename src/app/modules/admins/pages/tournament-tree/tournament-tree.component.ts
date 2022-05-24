@@ -29,4 +29,5 @@ export class TournamentTreeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
 }

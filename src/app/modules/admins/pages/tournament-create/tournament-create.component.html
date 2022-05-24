@@ -1,8 +1,9 @@
 <div class="page-container">
-    <h1>Arma tu torneo</h1>
+    <h1 class="option">Arma tu torneo</h1>
     <div class="content-container">
 
         <div class="grid-container">
+
             <div class="first-row-grid">
                 <p class="subtitle">Conócelo como...</p>
                 <app-input-simple [nombre]="'Nombre del Torneo'" [ejemplo]="'Ej.champions'" [value]="nombreSend" (onChange)="onChangeNameTournament($event)"></app-input-simple>
@@ -18,8 +19,10 @@
             </div>
 
             <div class="three-row-grid">
-                <p>Realización en</p>
-                <app-select-simple [nombre]="'Ciudad'" [items]="itemscyty" [valuenum]="citySend" (onChange)="onChangecity($event)"></app-select-simple>
+                <p>Realización en</p>     
+                <div class="tamcity">                
+                    <app-select-simple [nombre]="'Ciudad'" [items]="itemscyty" [valuenum]="citySend" (onChange)="onChangecity($event)"></app-select-simple>                
+                </div>           
                 <div class="first-child-three-row">
                     <app-select-simple [nombre]="'Lugares'" [items]="itemsplace" [valuenum]="placeSend" (onChange)="onChangeplace($event)"></app-select-simple>
                     <app-date-range [nombre]="'Fechas'" [value]="'hola'" (onChange)="onChangeDate($event)"></app-date-range>
@@ -42,15 +45,12 @@
                         <app-select-button [nombre]="'Entrenadores'" [items]="itemsTrainers" (onChange)="onChangeCoach($event)"></app-select-button>
                         <app-group-show class="group" [items]="coachs" (onChange)="DeleteCoach($event)"></app-group-show>
                     </div>
+                </div>                
+                <div class="button-container">
+                    <app-button [clase]="'button outline'" [title]="'Cancel'" (onClick)="Cancel()"></app-button>
+                    <app-button [clase]="'button fill'" [title]="'Crear'" (onClick)="CrearTou()"></app-button>
                 </div>
             </div>
-
-            
-        </div>
-        
-        <div class="button-container">
-            <app-button [clase]="'button outline'" [title]="'Cancel'" (onClick)="Cancel()"></app-button>                                                                   
-            <app-button [clase]="'button fill'"    [title]="'Crear'" (onClick)="CrearTou()"></app-button>
         </div>
     </div>
 </div>

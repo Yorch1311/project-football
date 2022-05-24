@@ -4,7 +4,7 @@
     <div class="page-content-container">
         <p>Asignar equipos</p>
         <div class="save-change">
-            <p>Existen cambios nuevos</p>
+            <p>Datos asignados</p>
             <button class="save">Guardar</button>
         </div>
     </div>
@@ -12,6 +12,22 @@
     <div class="body-build-tournament">
         <div class="team-list">
             <app-team-list [teamList]="data"></app-team-list>
+            
+            <div class="rivals-container">
+                
+                <div class="body-rivals">
+                    <div class="rivals">
+                        <p>HOLA</p>
+                    </div>
+                    <div class="rivals">
+                        <p>HOLA</p>
+                    </div>
+                    <div class="rivals">
+                </div>
+
+                <app-button class="button" [clase]="'fill button'" [title]="'Ver partidos'"></app-button>
+                
+            </div>
         </div>
     </div>
 </div>
