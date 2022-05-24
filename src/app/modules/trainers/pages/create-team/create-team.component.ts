@@ -225,6 +225,7 @@ export class CreateTeamComponent implements OnInit {
         horizontalPosition: 'right',
         verticalPosition: 'top',                  
         panelClass: ['green-snackbar'],        
+        duration: 3000,        
       });      
 
     }    
