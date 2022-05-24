@@ -1,0 +1,45 @@
+<div class="page-container">
+    <h1>Gestión de resultados: Champions League</h1>
+    <div class="content-container">
+        <div class="goles-to-card">
+            <div class="grid-card">
+
+                <div class="card-with-goles">
+                    <app-card></app-card>
+                    <div class="score">
+                        <p class="gol">Anotar gol</p>
+                        <button class="size-button">
+                            <img src="../../../../assets/image/admin/IconAdd.jpeg" alt="x"/>
+                        </button>
+                        <p class="goles">0</p>
+                    </div>
+                </div>
+
+                <div class="card-with-goles">
+                    <app-card></app-card>
+                    <div class="score">
+                        <p class="gol">Anotar gol</p>
+                        <button class="size-button">
+                            <img src="../../../../assets/image/admin/IconAdd.jpeg" alt="x"/>
+                        </button>
+                        <p class="goles">0</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <app-button [clase]="'fill button'" [title]="'Guardar goles'"></app-button>
+        </div>
+
+        <div class="separador"></div>
+
+        <div class="finish-game-container">
+            <div class="finish-game-content-container">
+                <p class="parrafo">Para dar clausura a este partido, debe revisar minuciosamente el marcador. Una vez registrado y terminado el partido será imposible cambiar el resultado.</p>
+                <p>Para continuar, de click en el botón "Finalizar".</p>
+            </div>
+            
+            <app-button class="finalizar" [clase]="'fill button'" [title]="'Finalizar'"></app-button>
+        </div>
+    </div>
+</div>

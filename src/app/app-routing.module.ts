@@ -8,6 +8,7 @@ import { TournamentShowComponent } from './modules/admins/pages/tournament-show/
 import { TournamentTreeComponent } from './modules/admins/pages/tournament-tree/tournament-tree.component';
 import { MatchHistoryComponent } from './modules/referees/pages/match-history/match-history.component';
 import { RefereeTournamentDetailComponent } from './modules/referees/pages/referee-tournament-detail/referee-tournament-detail.component';
+import { TeamScoreComponent } from './modules/referees/pages/team-score/team-score.component';
 import { TournamentCategoriesRefereeComponent } from './modules/referees/pages/tournament-categories-referee/tournament-categories-referee.component';
 import { CreateTeamComponent } from './modules/trainers/pages/create-team/create-team.component';
 import { TournamentCategoriesComponent } from './modules/trainers/pages/tournament-categories/tournament-categories.component';
@@ -39,6 +40,7 @@ const routes: Routes = [
       { path: ':id/categories', component: TournamentCategoriesRefereeComponent },
       { path: ':id/rivals/:id_category', component: MatchHistoryComponent },
       { path: ':id/categories/:id_category/data/:match_id', component: CreateTeamComponent },
+      { path: 'team-score', component: TeamScoreComponent}
     ]},
   ],
 }

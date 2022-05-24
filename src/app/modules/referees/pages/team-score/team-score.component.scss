@@ -1,0 +1,92 @@
+.page-container{
+    max-width: 1304px;
+    margin: 0 auto;
+}
+
+.grid-card{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.card-with-goles{
+    display: flex;
+    gap: 40px;
+}
+
+.score{
+    display: flex;
+    align-items: center;
+}
+
+.gol {
+    
+
+    margin: 0;
+}
+
+.gol, p{
+
+    font-weight: 500;
+    font-size: 16px;
+    color: #0A90EF;
+}
+
+.parrafo{
+    color: rgb(76, 76, 76);
+}
+
+.size-button{
+    border: 0;
+    background-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    
+    width: 32px !important;
+    height: 32px !important;
+}
+
+.goles-to-card{
+    display: flex;
+    margin: 48px 0px;
+
+    gap: 97px;
+
+    align-items: center;
+}
+
+.goles{
+    font-weight: 500;
+    font-size: 20px;
+    color: rgba(76, 76, 76, 0.626);
+   
+
+    margin: 0;
+    margin-left: 24px ;
+}
+
+.separador{
+    
+    width: 100%;
+    min-height: 8px;
+    background: rgba(38, 39, 43, 0.75);
+}
+
+.finish-game-container{
+    padding: 40px 48px;
+
+}
+
+.finalizar{
+    display: flex;
+    justify-content: center;
+
+    padding: 48px 0px;
+}
+
+h1{
+    font-weight: 700;
+    font-size: 32px;
+
+    color: rgba(38, 39, 43, 0.75);
+}

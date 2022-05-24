@@ -57,6 +57,7 @@ import { MainLayoutComponent } from './core/layouts/main-layout/main-layout.comp
 import { HeaderComponent } from './core/components/header/header.component';
 import { MatRippleModule } from '@angular/material/core';
 import { TeamImageComponent } from './modules/admins/components/team-image/team-image.component';
+import { TeamScoreComponent } from './modules/referees/pages/team-score/team-score.component';
 
 
 @NgModule({
@@ -92,7 +93,8 @@ import { TeamImageComponent } from './modules/admins/components/team-image/team-
     SidebarComponent,
     MainLayoutComponent,
     HeaderComponent,
-    TeamImageComponent
+    TeamImageComponent,
+    TeamScoreComponent
   ],
   imports: [
     BrowserModule,
