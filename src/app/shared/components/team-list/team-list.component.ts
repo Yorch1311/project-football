@@ -19,6 +19,13 @@ export class TeamListComponent implements OnInit {
     console.log(this.teamList)
   }
 
+  saveTeams(){
+    const lengthteamsToPlay = this.teamsToPlay.length;
+  
+  }
+
+  
+
   onDropped(event: CdkDragDrop<{ _id: string, name: string, teamLogo: string}[]>) {
 
     if (event.previousContainer === event.container) {

@@ -25,6 +25,14 @@ export class ServiceService {
     return this.http.get<teamList[]>(environment.apiUrl+'coach/tournament/'+idTournament+'/category/'+idCategory+'/teams')
   }
 
+  sendTeams(idTournament: String, idCategory: String, teamsToPlay:{}){
+    let dato = {
+      _id: idTournament,
+      idCategory: idCategory,
+      teamsToPlay: teamsToPlay
+    }
+    return this.http.post(`${this.url}admin/tournament/teamsToPlay/`,dato)
+  }
 
   ObtenerPlaces(id_city: String):Observable<any>{
     return this.http.get(`${this.url}admin/tournament/fieldset-data/places/${id_city}`);
