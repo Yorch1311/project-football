@@ -5,30 +5,30 @@
             <div class="grid-card">
 
                 <div class="card-with-goles">
-                    <app-card></app-card>
+                    <app-card [teamName]="name1" [path]="path1"></app-card>
                     <div class="score">
                         <p class="gol">Anotar gol</p>
-                        <button class="size-button">
+                        <button class="size-button" (click)="anotarGol(1)">
                             <img src="../../../../assets/image/admin/IconAdd.jpeg" alt="x"/>
                         </button>
-                        <p class="goles">0</p>
+                        <p class="goles">{{team1gol}}</p>
                     </div>
                 </div>
 
                 <div class="card-with-goles">
-                    <app-card></app-card>
+                    <app-card [teamName]="name2" [path]="path2"></app-card>
                     <div class="score">
                         <p class="gol">Anotar gol</p>
-                        <button class="size-button">
+                        <button class="size-button" (click)="anotarGol(2)">
                             <img src="../../../../assets/image/admin/IconAdd.jpeg" alt="x"/>
                         </button>
-                        <p class="goles">0</p>
+                        <p class="goles">{{team2gol}}</p>
                     </div>
                 </div>
 
             </div>
 
-            <app-button [clase]="'fill button'" [title]="'Guardar goles'"></app-button>
+            <app-button [clase]="'fill button'" [title]="'Guardar goles'" (onClick)="Register()"></app-button>
         </div>
 
         <div class="separador"></div>

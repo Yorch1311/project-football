@@ -40,7 +40,7 @@ const routes: Routes = [
       { path: ':id/categories', component: TournamentCategoriesRefereeComponent },
       { path: ':id/rivals/:id_category', component: MatchHistoryComponent },
       { path: ':id/categories/:id_category/data/:match_id', component: CreateTeamComponent },
-      { path: 'team-score', component: TeamScoreComponent}
+      { path: 'team-score/:id/:id_category/:id_partido', component: TeamScoreComponent}
     ]},
   ],
 }

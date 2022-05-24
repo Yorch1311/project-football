@@ -9,6 +9,7 @@ import { MatchHistory } from '../../services/type';
   styleUrls: ['./match-history.component.scss'],
 })
 export class MatchHistoryComponent implements OnInit {
+  
   history: MatchHistory | undefined;
   category: String | null;
   tournament: String | null;
@@ -113,8 +114,13 @@ export class MatchHistoryComponent implements OnInit {
   ngOnInit(): void {}
 
   goto(match_id: string, actual_phase: string | undefined){
-    if(actual_phase == this.history?.actual_phase){
-      this.router.navigate(['referee/tournament/'+this.tournament+'/categories/'+this.category+'/data/'+match_id]);
+    console.log(match_id);
+    console.log(actual_phase)
+
+    if(actual_phase == this.history?.actual_phase){      
+      //+this.tournament+'/categories/'+this.category+'/data/'+match_id
+      //id de enfrentamiento 
+      this.router.navigate(['referee/tournament/team-score/'+this.tournament+'/'+this.category+'/'+match_id]);
     }
   }
 }

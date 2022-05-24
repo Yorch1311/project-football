@@ -80,3 +80,17 @@ export interface MatchHistory{
 
   }[]
 }
+
+//para recibir en storage de referres
+export interface team{
+  _id: string;
+  name: string;
+  teamLogo: string;
+}
+
+export interface partido {
+  _id: string;
+  id_category: string;
+  team1:  team;
+  team2: team;
+}
