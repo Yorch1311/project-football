@@ -1,5 +1,5 @@
 <div class="page-container">
-    <h1>Arma tu torneo</h1>
+    <h1 class="option">Arma tu torneo</h1>
     <div class="content-container">    
     <div class="grid-container" *ngIf=' timeSend !== ""'>
             <div class="first-row-grid">
@@ -18,7 +18,9 @@
 
             <div class="three-row-grid">
                 <p>Realización en</p>
-                <app-select-simple [nombre]="'Ciudad'" [items]="itemscyty" [valuenum]="citySend" (onChange)="onChangecity($event)"></app-select-simple>
+                <div class="tamcity">                
+                    <app-select-simple [nombre]="'Ciudad'" [items]="itemscyty" [valuenum]="citySend" (onChange)="onChangecity($event)"></app-select-simple>
+                </div>
                 <div class="first-child-three-row">
                     <app-select-simple [nombre]="'Lugares'" [items]="itemsplace" [valuenum]="placeSend" (onChange)="onChangeplace($event)"></app-select-simple>
                     <app-date-range [nombre]="'Fechas'" [value]="datesend.init" [valuef]="datesend.final" (onChange)="onChangeDate($event)"></app-date-range>
@@ -42,12 +44,11 @@
                         <app-group-show class="group" [items]="coachs" (onChange)="DeleteCoach($event)"></app-group-show>
                     </div>
                 </div>
-            </div>
-
-            <div class="button-container">
-                <app-button [clase]="'button outline'" [title]="'Cancel'" (onClick)="Cancel()"></app-button>                                                                   
-                <app-button [clase]="'button fill'"    [title]="'Actualizar'" (onClick)="CrearTou()"></app-button>
-            </div>
+                <div class="button-container">
+                    <app-button [clase]="'button outline'" [title]="'Cancel'" (onClick)="Cancel()"></app-button>                                                                   
+                    <app-button [clase]="'button fill'"    [title]="'Actualizar'" (onClick)="CrearTou()"></app-button>
+                </div>
+            </div>      
         </div>
     </div>
 </div>

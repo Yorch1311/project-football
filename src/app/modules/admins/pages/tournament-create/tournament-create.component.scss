@@ -75,13 +75,18 @@ p,
 
 //telefono-----------------------------------------
 @media screen and (min-width: 360px) and (max-width: 809px) {
+    
+    .option{        
+        text-align: center;
+    }
+    
     .grid-container {
-        gap: 40px 0px;
+        gap: 20px 0px;
     }
     .grid-two-row {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        gap: 40px;
+        gap: 5px;
     }
     .three-row-grid {
         grid-column: 1 / 1;
@@ -89,7 +94,7 @@ p,
     .first-child-three-row {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        gap: 40px;
+        gap: 10px;
     }
     .four-row-grid {
         grid-column: 1 / 1;
@@ -97,7 +102,7 @@ p,
     .four-row {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        gap: 10px;
+        gap: 20px;
     }
     .button-container {
         grid-column: 1 / 1;
@@ -115,30 +120,41 @@ p,
 }
 
 //ipad-------------------------------
-@media screen and (min-width: 810px) and (max-width: 1023px) {
+@media screen and (min-width: 765px) and (max-width: 1023px) {
+    
+    
+    .option{        
+        text-align: center;
+    }
+
     .grid-container {
-        gap: 40px 60px;
+        gap: 40px 20px;
+
     }
     .grid-two-row {
         display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        gap: 40px 60px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px 30px;
+    }
+
+    .tamcity{
+        width: 200px;
     }
     .three-row-grid {
-        grid-column: 1 / 1;
+        grid-column:  1 / 1;
     }
     .first-child-three-row {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px 60px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px 28px;
     }
     .four-row-grid {
-        grid-column: 1 / 1;
+        grid-column: 1 / 2;
     }
     .four-row {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        gap: 20px 60px;
     }
     .button-container {
         grid-column: 1 / 1;
@@ -148,9 +164,14 @@ p,
         justify-content: flex-end;
     }
     .content-container {
-        padding: 0px;
+        padding: 0px;    
     }
     .grid-container {
         padding: 0px 20px;
+    }
+    .page-container {
+        max-width: 1024px;                
+        margin-top: 0%;
+        width: 100%;
     }
 }

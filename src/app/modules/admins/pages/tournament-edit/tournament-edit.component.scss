@@ -59,11 +59,116 @@ p, .subtitle{
     grid-column: 1 / 4;
 }
 
-.button-container{
+
+.button-container {
+    grid-column: 3 / 4;
+    max-width: 1304px;
     display: flex;
+    width: 100%;
     gap: 12px;
+    justify-content: flex-end;
+    padding-top: 40px;
 }
 
-.button-container:only-child{
-    justify-content: end;
+//telefono-----------------------------------------
+@media screen and (min-width: 360px) and (max-width: 809px) {
+    
+    .option{        
+        text-align: center;
+    }
+    
+    .grid-container {
+        gap: 20px 0px;
+    }
+    .grid-two-row {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 5px;
+    }
+    .three-row-grid {
+        grid-column: 1 / 1;
+    }
+    .first-child-three-row {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+    .four-row-grid {
+        grid-column: 1 / 1;
+    }
+    .four-row {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+    .button-container {
+        grid-column: 1 / 1;
+        display: flex;
+        width: 100%;
+        gap: 12px;
+        justify-content: flex-end;
+    }
+    .content-container {
+        padding: 0px;
+    }
+    .grid-container {
+        padding: 0px 20px;
+    }
+}
+
+//ipad-------------------------------
+@media screen and (min-width: 765px) and (max-width: 1023px) {
+    
+    
+    .option{        
+        text-align: center;
+    }
+
+    .grid-container {
+        gap: 40px 20px;
+
+    }
+    .grid-two-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px 30px;
+    }
+
+    .tamcity{
+        width: 200px;
+    }
+    .three-row-grid {
+        grid-column:  1 / 1;
+    }
+    .first-child-three-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px 28px;
+    }
+    .four-row-grid {
+        grid-column: 1 / 2;
+    }
+    .four-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 60px;
+    }
+    .button-container {
+        grid-column: 1 / 1;
+        display: flex;
+        width: 100%;
+        gap: 12px;
+        justify-content: flex-end;
+    }
+    .content-container {
+        padding: 0px;    
+    }
+    .grid-container {
+        padding: 0px 20px;
+    }
+    .page-container {
+        max-width: 1024px;                
+        margin-top: 0%;
+        width: 100%;
+    }
 }
