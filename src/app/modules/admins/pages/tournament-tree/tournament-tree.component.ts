@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DialogSaveComponent } from 'src/app/shared/components/dialog-save/dialog-save.component';
 import { ServiceService } from '../../services/service.service';
-import { teamList } from '../../services/type';
+import { Team, TeamsToPlay } from '../../services/type';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { teamList } from '../../services/type';
 })
 export class TournamentTreeComponent implements OnInit {
 
-  data:  teamList[] =  [];
+  data: Team[] = [];
   idTournament: String | null = "";
   idCategory: String | null = "";
 
@@ -28,6 +28,7 @@ export class TournamentTreeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.data)
   }
   
 }
