@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { MatchHistory, TournamentCategories } from './type';
+import { matchHistory, TournamentCategories } from './type';
 import { Tournament,  } from './type';
 
 @Injectable({
@@ -43,8 +43,8 @@ export class ServiceService {
   }
 
 
-  getMatchHistory(idTournament: string, idCategoria:string): Observable<MatchHistory>{
-    return this.http.get<MatchHistory>(this.url);
+  getMatchHistory(idTournament: string, idCategoria:string): Observable<matchHistory>{
+    return this.http.get<matchHistory>(this.url+"admin/tournament/"+idTournament+"/category/"+idCategoria+"/matches");
   }
 }
 
