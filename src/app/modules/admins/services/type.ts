@@ -21,9 +21,12 @@ export interface Team{
 }
 
 export interface MatchTournament{
-  semifinal: {
+  semiFinal: {
     matches: [
       [
+        {
+          teamLogo: string
+        },
         {
           teamLogo: string
         }
@@ -32,7 +35,7 @@ export interface MatchTournament{
   }
 }
 
-/* export interface TournamentMatch{
+export interface TournamentMatch{
   _id: string;
   tournamentId: string;
   categoryId: string;
@@ -56,7 +59,7 @@ export interface Match{
   players: Player[];
   goals: number;
   status: string;
-}*/
+}
 export interface Player{
   _id: string;
   name: string;
@@ -137,16 +140,10 @@ export interface Tournament {
   status: string;
 }
 
-export interface player {
-  name: string;
-  curp: string;
-  playerNumber: string;
-}
-
 export interface team {
   name: string;
   categoryId: string;
-  players: player [];
+  players: Player[];
   image: string;
 }
 

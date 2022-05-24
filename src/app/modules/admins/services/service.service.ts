@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Team, Tournament, TournamentDetail, MatchTournament } from './type';
+import { Team, Tournament, TournamentDetail, MatchTournament, TournamentMatch } from './type';
 import { tupla } from './type'
 import { environment } from 'src/environments/environment';
 
@@ -28,8 +28,8 @@ export class ServiceService {
     return this.http.post(`${this.url}admin/tournament/${idTournament}/category/${idCategory}/matches`,{ teamsIds: teamsIds})
   }
 
-  getMatch(idTournament: string, idCategory: string): Observable<MatchTournament>{
-    return this.http.get<MatchTournament>(`${this.url}admin/tournament/${idTournament}/category/${idCategory}/matches`)
+  getMatch(idTournament: string, idCategory: string): Observable<TournamentMatch>{
+    return this.http.get<TournamentMatch>(`${this.url}admin/tournament/${idTournament}/category/${idCategory}/matches`)
   }
 
   ObtenerPlaces(id_city: String):Observable<any>{

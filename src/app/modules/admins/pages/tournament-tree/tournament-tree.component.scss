@@ -59,7 +59,7 @@ p{
     max-width: 280px;
     width: 100%;
     min-height: 496px;
-    
+
     position: relative;
 }
 
@@ -81,7 +81,24 @@ p{
 
 .body-rivals:hover > .button{
     opacity: 1;
-    
+
+}
+
+img{
+  width: 40px;
+  height: 40px;
+}
+
+.rivals{
+  padding-top: 32px;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.rivals > p{
+  margin: 0;
 }
 
 @media screen and (min-width:360px) and (max-width:700px) {

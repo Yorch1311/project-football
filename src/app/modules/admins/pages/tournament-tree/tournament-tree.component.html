@@ -11,15 +11,15 @@
 
   <div class="body-build-tournament">
     <div class="team-list">
-      <app-team-list [teamList]="data" (sendTeamList)="getList($event)"></app-team-list>
+      <app-team-list [teamList]="data" (sendTeamList)="getList($event)" *ngIf="showButton"></app-team-list>
 
       <div class="rivals-container">
 
-        <div class="body-rivals">
-          <div class="rivals">
-            <!-- <app-card [path]="teamToPlay.semifinal.matches[0][0].teamLogo"></app-card>
+        <div class="body-rivals" *ngIf="teamToPlay != undefined">
+          <div class="rivals" *ngFor="let item of teamToPlay.semiFinal.matches">
+            <img src="{{item[0].teamLogo}}">
             <p>VS</p>
-            <app-card [path]="teamToPlay.semifinal.matches[0][0].teamLogo"></app-card> -->
+            <img src="{{item[1].teamLogo}}">
         </div>
           <app-button class="button" [clase]="'fill button'" [title]="'Ver partidos'"></app-button>
 

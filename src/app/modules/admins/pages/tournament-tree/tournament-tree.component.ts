@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DialogSaveComponent } from 'src/app/shared/components/dialog-save/dialog-save.component';
 import { ServiceService } from '../../services/service.service';
-import { MatchTournament, Team } from '../../services/type';
+import { MatchTournament, Team, TournamentMatch } from '../../services/type';
 
 
 @Component({
@@ -14,19 +14,12 @@ export class TournamentTreeComponent implements OnInit {
 
   data: Team[] = [];
   teamList: Team[] = [];
-  /* teamToPlay: MatchTournament = {
-    semifinal: {
-      matches: [
-        [
-          { teamLogo: ""}
-        ]
-      ]
-    }
-  }; */
+  teamToPlay: TournamentMatch | undefined;
+  currentPhase: string = "";
+
   idTournament: string | null = "";
   idCategory: string | null = "";
   showButton: boolean = true;
-
 
   constructor(private service: ServiceService, private _router: ActivatedRoute) {
 
@@ -39,7 +32,13 @@ export class TournamentTreeComponent implements OnInit {
     })
 
     this.service.getMatch(String(this.idTournament), String(this.idCategory)).subscribe(match =>{
-      //this.teamToPlay = match;
+      this.teamToPlay = match;
+
+      if(this.teamToPlay != undefined){
+        this.showButton = false;
+      }else{
+        this.showButton = true;
+      }
     })
   }
 
