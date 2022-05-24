@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { teamList, Tournament, TournamentDetail } from './type';
+import { Team, Tournament, TournamentDetail } from './type';
 import { tupla } from './type'
 import { environment } from 'src/environments/environment';
 
@@ -21,17 +21,12 @@ export class ServiceService {
     return this.http.get(`${this.url}admin/tournament/fieldset-data/all`);
   }
 
-  getTeams(idTournament: String, idCategory: String): Observable<teamList[]> {
-    return this.http.get<teamList[]>(environment.apiUrl+'coach/tournament/'+idTournament+'/category/'+idCategory+'/teams')
+  getTeams(idTournament: String, idCategory: String): Observable<Team[]> {
+    return this.http.get<Team[]>(environment.apiUrl+'coach/tournament/'+idTournament+'/category/'+idCategory+'/teams')
   }
 
   sendTeams(idTournament: String, idCategory: String, teamsToPlay:{}){
-    let dato = {
-      _id: idTournament,
-      idCategory: idCategory,
-      teamsToPlay: teamsToPlay
-    }
-    return this.http.post(`${this.url}admin/tournament/teamsToPlay/`,dato)
+    return this.http.post(`${this.url}admin/tournament/${idTournament}/category/${idCategory}/matches/`,teamsToPlay)
   }
 
   ObtenerPlaces(id_city: String):Observable<any>{

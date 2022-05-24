@@ -10,6 +10,51 @@ export interface Officials {
   referees: User[];
 }
 
+
+export interface Team{
+  _id: string;
+  name: string;
+  teamLogo: string;
+  tournamentId: string;
+  categoryId: string;
+  Player: Player[];
+}
+
+
+
+export interface TeamsToPlay{
+  _id: string;
+  tournamentId: string;
+  categoryId: string;
+  initialStage: string;
+  currentStage: string;
+  semiFinal: TournamentStage;
+}
+
+export interface TournamentStage{
+  status: string;
+  matches: Match[][];
+  _id: string;
+}
+
+export interface Match{
+  _id: string;
+  name: string;
+  teamLogo: string;
+  tournamentId: string;
+  categoryId: string;
+  players: Player[];
+  goals: number;
+  status: string;
+}
+
+export interface Player{
+  _id: string;
+  name: string;
+  curp: string;
+  playerNumber: number;
+}
+
 /*
 Interfaz que sirve para cualquier objeto que solo tenga (o necesites) el id 
 y el nombre
