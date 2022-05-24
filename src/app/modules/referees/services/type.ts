@@ -1,5 +1,5 @@
 /*
-Interfaz que sirve para cualquier objeto que solo tenga (o necesites) el id 
+Interfaz que sirve para cualquier objeto que solo tenga (o necesites) el id
 y el nombre
 */
 export interface mixedCategories{
@@ -32,7 +32,7 @@ export interface date_crate_edit {
 export interface oficial {
   admins: Item[];
   coaches: Item[];
-  referees: Item[];  
+  referees: Item[];
 }
 
 
@@ -43,13 +43,13 @@ export interface tupla {
   type: String;
   branches?: String[];
   category?: String;
-  dates: date_crate_edit;  
+  dates: date_crate_edit;
   city: String;
-  places: String[];  
+  places: String[];
   hours: String;
   admins: String[];
   coaches: String[];
-  referees: String[];  
+  referees: String[];
 }
 
 //interfaz para mostrar tabla torneos
@@ -61,4 +61,22 @@ export interface Tournament {
   places: { name: string }[];
   dates: {init :string };
   status: string;
+}
+
+export interface MatchHistory{
+  _id: string;
+  _id_category: string;
+  name: string;
+  actual_phase: string;
+  phases: {
+    name: string;
+    _id: string
+    matchList:
+      {
+        _id: string;
+        team1: { _id: string, name: string, teamLogo: string};
+        team2: { _id: string, name: string, teamLogo: string};
+      }[]
+
+  }[]
 }

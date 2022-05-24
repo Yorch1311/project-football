@@ -1,6 +1,6 @@
 <div class="page-container">
     <h1>Arma tu torneo</h1>
-    <div class="content-container">    
+    <div class="content-container">
     <div class="grid-container" *ngIf=' timeSend !== ""'>
             <div class="first-row-grid">
                 <p class="subtitle">Conócelo como...</p>
@@ -45,7 +45,7 @@
             </div>
 
             <div class="button-container">
-                <app-button [clase]="'button outline'" [title]="'Cancel'" (onClick)="Cancel()"></app-button>                                                                   
+                <app-button [clase]="'button outline'" [title]="'Cancel'" (onClick)="Cancel()"></app-button>
                 <app-button [clase]="'button fill'"    [title]="'Actualizar'" (onClick)="CrearTou()"></app-button>
             </div>
         </div>

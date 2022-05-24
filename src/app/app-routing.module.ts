@@ -13,7 +13,7 @@ import { CreateTeamComponent } from './modules/trainers/pages/create-team/create
 import { TournamentCategoriesComponent } from './modules/trainers/pages/tournament-categories/tournament-categories.component';
 import { TrainerTournamentDetailPageComponentComponent } from './modules/trainers/pages/trainer-tournament-detail-page-component/trainer-tournament-detail-page-component.component';
 
-const routes: Routes = [    
+const routes: Routes = [
   { path: 'admin', children: [
       { path: 'tournament', children: [
           { path: 'list', component: TournamentShowComponent },
@@ -37,7 +37,8 @@ const routes: Routes = [
     { path: 'tournament', children:[
       { path: 'list', component: RefereeTournamentDetailComponent },
       { path: ':id/categories', component: TournamentCategoriesRefereeComponent },
-      { path: ':id/rivals', component: MatchHistoryComponent },
+      { path: ':id/rivals/:id_category', component: MatchHistoryComponent },
+      { path: ':id/categories/:id_category/data/:match_id', component: CreateTeamComponent },
     ]},
   ],
 }
