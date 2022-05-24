@@ -1,33 +1,30 @@
 <div class="page-container">
-    <h2>Partidos de la categoria: Juvenil 1 - Femenil</h2>
+  <h2>Partidos de la categoria: Juvenil 1 - Femenil</h2>
 
-    <div class="page-content-container">
-        <p>Asignar equipos</p>
-        <div class="save-change">
-            <p>Datos asignados</p>
-            <button class="save">Guardar</button>
-        </div>
+  <div class="page-content-container">
+    <p>Asignar equipos</p>
+    <div class="save-change">
+      <p>Datos asignados</p>
+      <app-button [clase]="'button fill'" [title]="'Guardar'" (onClick)="sendTeam()" *ngIf="showButton"></app-button>
     </div>
+  </div>
 
-    <div class="body-build-tournament">
-        <div class="team-list">
-            <app-team-list [teamList]="data"></app-team-list>
-            
-            <div class="rivals-container">
-                
-                <div class="body-rivals">
-                    <div class="rivals">
-                        <p>HOLA</p>
-                    </div>
-                    <div class="rivals">
-                        <p>HOLA</p>
-                    </div>
-                    <div class="rivals">
-                </div>
+  <div class="body-build-tournament">
+    <div class="team-list">
+      <app-team-list [teamList]="data" (sendTeamList)="getList($event)"></app-team-list>
 
-                <app-button class="button" [clase]="'fill button'" [title]="'Ver partidos'"></app-button>
-                
-            </div>
+      <div class="rivals-container">
+
+        <div class="body-rivals">
+          <div class="rivals">
+            <!-- <app-card [path]="teamToPlay.semifinal.matches[0][0].teamLogo"></app-card>
+            <p>VS</p>
+            <app-card [path]="teamToPlay.semifinal.matches[0][0].teamLogo"></app-card> -->
         </div>
+          <app-button class="button" [clase]="'fill button'" [title]="'Ver partidos'"></app-button>
+
+        </div>
+      </div>
     </div>
+  </div>
 </div>

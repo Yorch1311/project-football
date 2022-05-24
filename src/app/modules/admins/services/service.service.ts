@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Team, Tournament, TournamentDetail } from './type';
+import { Team, Tournament, TournamentDetail, MatchTournament } from './type';
 import { tupla } from './type'
 import { environment } from 'src/environments/environment';
-
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +14,7 @@ export class ServiceService {
 
   url = 'https://deportivos-football-uas-api.herokuapp.com/';
 
-  
+
   //metodo para obtener datos a mostrar en selects
   ObtenerData(): Observable<any> {
     return this.http.get(`${this.url}admin/tournament/fieldset-data/all`);
@@ -25,8 +24,12 @@ export class ServiceService {
     return this.http.get<Team[]>(environment.apiUrl+'coach/tournament/'+idTournament+'/category/'+idCategory+'/teams')
   }
 
-  sendTeams(idTournament: String, idCategory: String, teamsToPlay:{}){
-    return this.http.post(`${this.url}admin/tournament/${idTournament}/category/${idCategory}/matches/`,teamsToPlay)
+  sendTeams(idTournament: String, idCategory: String, teamsIds: string[]){
+    return this.http.post(`${this.url}admin/tournament/${idTournament}/category/${idCategory}/matches`,{ teamsIds: teamsIds})
+  }
+
+  getMatch(idTournament: string, idCategory: string): Observable<MatchTournament>{
+    return this.http.get<MatchTournament>(`${this.url}admin/tournament/${idTournament}/category/${idCategory}/matches`)
   }
 
   ObtenerPlaces(id_city: String):Observable<any>{
@@ -36,7 +39,7 @@ export class ServiceService {
   //metodo para introducir un nuevo torneo
   createTournament(dato: tupla):Observable<any>{
     //console.log(dato);
-    return this.http.post(`${this.url}admin/tournament`,dato);    
+    return this.http.post(`${this.url}admin/tournament`,dato);
   }
 
   //Función para recibir los detalles del torneo
@@ -46,11 +49,11 @@ export class ServiceService {
 
   updateTournament(dato: tupla, _id: string):Observable<any>{
     //console.log(dato);
-    return this.http.put(`${this.url}admin/tournament/${_id}`,dato);    
+    return this.http.put(`${this.url}admin/tournament/${_id}`,dato);
   }
 
 
-  
+
   //Función para recibir los detalles del torneo
   getTournamentData(id: any): Observable<TournamentDetail> {
     //return this.http.get<TournamentDetail>(this.url+id);
@@ -70,17 +73,17 @@ export class ServiceService {
   }
 
   //Obtener Filtro de torneos por Tipos
-  filterTournamentsByType(id : String): Observable<Tournament[]> { 
+  filterTournamentsByType(id : String): Observable<Tournament[]> {
     return this.http.post<Tournament[]>(this.url + "admin/tournaments", {"_id":id});
   }
 
   //Obter Filtro de Torneos por Fecha
-  orderTournamentsByDate(order : String): Observable<Tournament[]> { 
+  orderTournamentsByDate(order : String): Observable<Tournament[]> {
     return this.http.post<Tournament[]>(this.url + "admin/tournaments", {"order":order});
   }
 
   //Buscar torneo por nombre
-  searchTournament( name : String): Observable<Tournament[]> { 
+  searchTournament( name : String): Observable<Tournament[]> {
     return this.http.post<Tournament[]>(this.url + "admin/tournaments", {"name":name});
   }
 

@@ -20,9 +20,19 @@ export interface Team{
   Player: Player[];
 }
 
+export interface MatchTournament{
+  semifinal: {
+    matches: [
+      [
+        {
+          teamLogo: string
+        }
+      ]
+    ]
+  }
+}
 
-
-export interface TeamsToPlay{
+/* export interface TournamentMatch{
   _id: string;
   tournamentId: string;
   categoryId: string;
@@ -46,8 +56,7 @@ export interface Match{
   players: Player[];
   goals: number;
   status: string;
-}
-
+}*/
 export interface Player{
   _id: string;
   name: string;
@@ -56,7 +65,7 @@ export interface Player{
 }
 
 /*
-Interfaz que sirve para cualquier objeto que solo tenga (o necesites) el id 
+Interfaz que sirve para cualquier objeto que solo tenga (o necesites) el id
 y el nombre
 */
 export interface Basic{
@@ -97,7 +106,7 @@ export interface date_crate_edit {
 export interface oficial {
   admins: Item[];
   coaches: Item[];
-  referees: Item[];  
+  referees: Item[];
 }
 
 
@@ -108,13 +117,13 @@ export interface tupla {
   type: String;
   branches?: String[];
   category?: String;
-  dates: date_crate_edit;  
+  dates: date_crate_edit;
   city: String;
-  places: String[];  
+  places: String[];
   hours: String;
   admins: String[];
   coaches: String[];
-  referees: String[];  
+  referees: String[];
 }
 
 //interfaz para mostrar tabla torneos
@@ -134,7 +143,7 @@ export interface player {
   playerNumber: string;
 }
 
-export interface team {  
+export interface team {
   name: string;
   categoryId: string;
   players: player [];

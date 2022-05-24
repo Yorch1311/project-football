@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DialogSaveComponent } from 'src/app/shared/components/dialog-save/dialog-save.component';
 import { ServiceService } from '../../services/service.service';
-import { Team, TeamsToPlay } from '../../services/type';
+import { MatchTournament, Team } from '../../services/type';
 
 
 @Component({
@@ -13,8 +13,20 @@ import { Team, TeamsToPlay } from '../../services/type';
 export class TournamentTreeComponent implements OnInit {
 
   data: Team[] = [];
-  idTournament: String | null = "";
-  idCategory: String | null = "";
+  teamList: Team[] = [];
+  /* teamToPlay: MatchTournament = {
+    semifinal: {
+      matches: [
+        [
+          { teamLogo: ""}
+        ]
+      ]
+    }
+  }; */
+  idTournament: string | null = "";
+  idCategory: string | null = "";
+  showButton: boolean = true;
+
 
   constructor(private service: ServiceService, private _router: ActivatedRoute) {
 
@@ -25,10 +37,28 @@ export class TournamentTreeComponent implements OnInit {
     this.service.getTeams( String(this.idTournament), String(this.idCategory)).subscribe(team =>{
       this.data = team;
     })
+
+    this.service.getMatch(String(this.idTournament), String(this.idCategory)).subscribe(match =>{
+      //this.teamToPlay = match;
+    })
+  }
+
+  getList(data: Team[]){
+    this.teamList = data
+
+    //console.log(this.data)
+  }
+
+  sendTeam(){
+    const teamIds: string[] = this.teamList.map((item) => item._id);
+    //console.log({ teamsIds: teamIds})
+    this.service.sendTeams( String(this.idTournament), String(this.idCategory), teamIds).subscribe(team =>{
+      this.showButton = false
+    })
   }
 
   ngOnInit(): void {
     console.log(this.data)
   }
-  
+
 }
