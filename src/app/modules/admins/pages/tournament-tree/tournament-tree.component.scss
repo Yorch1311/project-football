@@ -31,6 +31,23 @@ p{
     border: none;
 
     cursor: pointer;
+}
+
+.rivals-container{
+    border: 2px dashed #0A90EF;
+
+    max-width: 100%;
+    width: 280px;
+    height: 496px;
+}
+
+.team-list{
+    display: flex;
+    gap:8px;
+}
+
+.body-build-tournament{
+    margin-top: 40px;
 
 }
 
