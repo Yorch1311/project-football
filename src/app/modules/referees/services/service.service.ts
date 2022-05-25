@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { matchHistory, TournamentCategories } from './type';
+import { Match, matchHistory, TournamentCategories, TournamentMatch } from './type';
 import { Tournament,  } from './type';
 
 @Injectable({
@@ -43,8 +43,18 @@ export class ServiceService {
   }
 
 
-  getMatchHistory(idTournament: string, idCategoria:string): Observable<matchHistory>{
-    return this.http.get<matchHistory>(this.url+"admin/tournament/"+idTournament+"/category/"+idCategoria+"/matches");
+  getMatchHistory(idTournament: string, idCategoria:string): Observable<TournamentMatch>{
+    return this.http.get<TournamentMatch>(this.url+"admin/tournament/"+idTournament+"/category/"+idCategoria+"/matches");
+  }
+
+  getMatch(idTournament: string, idCategory: string, idMatch: string): Observable<TournamentMatch>{
+    //return this.http.get<Match>(this.url+'referee/tournament/'+idTournament+'/category/'+idCategory+'/match/'+idMatch);
+    return this.http.get<TournamentMatch>(this.url+"admin/tournament/"+idTournament+"/category/"+idCategory+"/matches");
+
+  }
+
+  saveGoals(goles: {}, idTournament: string, idCategory: string, idMatch: string): Observable<any>{
+    return  this.http.post(this.url + "referee/tournament/goals", goles);
   }
 }
 

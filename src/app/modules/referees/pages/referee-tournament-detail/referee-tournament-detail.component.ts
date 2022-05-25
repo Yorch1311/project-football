@@ -26,22 +26,22 @@ export class RefereeTournamentDetailComponent implements OnInit {
     { _id:"2", name: 'Mas Antiguo' }
   ];
 
-  constructor( private router: Router, private APIcreate: ServiceService) { 
+  constructor( private router: Router, private APIcreate: ServiceService) {
   }
 
   ngOnInit(): void {
-    
+
     this.APIcreate.getTournaments().subscribe(result => {
       console.log(result);
       this.data = result;
     })
 
-    
+
     this.APIcreate.ObtenerData().subscribe(datos =>{
       this.Filter = datos['types'];
     })
 
-    
+
   }
 
   tournamentDetail(detail: { id: string, status: string }) {
@@ -73,7 +73,7 @@ export class RefereeTournamentDetailComponent implements OnInit {
     }else{
       typeOrder = "DESC";
     }
-   
+
     /*
     this.APIcreate.orderTournamentsByDate(typeOrder).subscribe(result => {
       console.log(result);
@@ -84,7 +84,7 @@ export class RefereeTournamentDetailComponent implements OnInit {
   onKeyUpFilter(data: String){
     this.NameData = data;
     console.log(data);
-  
+
     /*
     this.APIcreate.searchTournament(this.NameData).subscribe(result => {
       console.log(result);

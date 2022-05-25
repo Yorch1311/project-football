@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServiceService } from '../../services/service.service';
-import { partido } from '../../services/type';
+import { Match, TournamentMatch } from '../../services/type';
 
 @Component({
   selector: 'app-team-score',
@@ -11,18 +11,14 @@ import { partido } from '../../services/type';
 export class TeamScoreComponent implements OnInit {
 
   tournament: string | null;
-  category: string | null;  
+  category: string | null;
   id_partido: string | null;
 
-  partido: partido | undefined;
+  partido: TournamentMatch | undefined;
+  idTeams: string[] = [];
+  partido_name: string = "";
 
-  //variables para mostrar 
-  name1: string = "";
-  name2: string = "";
-  path1: string = "";
-  path2: string = "";
-
-  //goles  
+  //goles
   team1gol: number = 0;
   team2gol: number = 0;
 
@@ -31,33 +27,41 @@ export class TeamScoreComponent implements OnInit {
     this.category = this._router.snapshot.paramMap.get('id_category');
     this.id_partido = this._router.snapshot.paramMap.get('id_partido');
 
-    if(this.tournament !== null && this.category !== null){
-      this.partido = {
-        _id: this.tournament,
-        id_category: this.category,
-        team1: {
-          _id: "string",
-          name: "Testigos de yobani",
-          teamLogo: "string",
-        },
-        team2: {
-          _id: "string",
-          name: "Reprobados mañana",
-          teamLogo: "string",
-        },
-       }   
-    }    
-   }
-      
-  ngOnInit(): void {    
-    if(this.partido !== undefined){
-      this.name1 = this.partido.team1.name;
-      this.name2 = this.partido.team2.name;
-      this.path1 = this.partido.team1.teamLogo;
-      this.path2 = this.partido.team2.teamLogo;
+    this.service.getMatch(String(this.tournament), String(this.category), String(this.id_partido)).subscribe(match => {
+      this.partido = match;
+      this.partido_name = this.partido._id;
+
+      const current = this.partido.currentStage;
+
+      if(current == 'top16'){
+        const pair = this.partido.top16.matches.filter(match => match[0]._id == this.idTeams[0] && match[1]._id == this.idTeams[1])
+        this.team1gol = pair[0][0].goals
+        this.team2gol = pair[0][1].goals
+
+      }else if(current == 'quarterFinal'){
+        const pair = this.partido.quarterFinal.matches.filter(match => match[0]._id == this.idTeams[0] && match[1]._id == this.idTeams[1])
+        this.team1gol = pair[0][0].goals
+        this.team2gol = pair[0][1].goals
+
+      }else if(current == 'semiFinal'){
+        const pair = this.partido.semiFinal.matches.filter(match => match[0]._id == this.idTeams[0] && match[1]._id == this.idTeams[1])
+        this.team1gol = pair[0][0].goals
+        this.team2gol = pair[0][1].goals
+
+      }else if(current == 'final'){
+        const pair = this.partido.final.matches.filter(match => match[0]._id == this.idTeams[0] && match[1]._id == this.idTeams[1])
+        this.team1gol = pair[0][0].goals
+        this.team2gol = pair[0][1].goals
+
+      }
+    })
+
+    if(this.tournament !== null && this.category !== null && this.id_partido != null){
+      this.idTeams = this.id_partido?.split('-');
     }
-    //Obtener  los dos partidos por su id
-    //id, nombre e imagen nadamas     
+   }
+
+  ngOnInit(): void {
   }
 
 
@@ -69,8 +73,24 @@ export class TeamScoreComponent implements OnInit {
     }
   }
 
-  Register(){
-    //registrar los goles 
+  register(){
+    const goles = {
+      tournamentId: this.tournament,
+      categoryId: this.category,
+      teams: [
+        {
+          _id: this.idTeams[0],
+          goals: this.team1gol
+        },
+        {
+          _id: this.idTeams[1],
+          goals: this.team2gol
+        }
+      ]
+    }
+    this.service.saveGoals(goles, String(this.tournament), String(this.category), String(this.id_partido)).subscribe(resul => {
+
+    })
   }
 
 }

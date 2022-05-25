@@ -81,7 +81,7 @@ export interface MatchHistory{
   }[]
 }
 
-// interfaces para recibir match-history 
+// interfaces para recibir match-history
 export interface Player{
   _id: string;
   name: string;
@@ -101,14 +101,14 @@ export interface matches{
 }
 
 export interface semifinal{
-  status: string;  
+  status: string;
   matches: matches [];
   _id: string;
 }
 
 
 export interface final{
-  status: string;  
+  status: string;
   matches: matches [];
   _id: string;
 }
@@ -121,7 +121,7 @@ export interface matchHistory{
   currentStage:string;
   semiFinal?: semifinal;
   __v?:number;
-  final?: final;  
+  final?: final;
 }
 
 //para recibir en storage de referres
@@ -138,4 +138,47 @@ export interface partido {
   team2: team;
 }
 
+export interface Team{
+  _id: string;
+  name: string;
+  teamLogo: string;
+  tournamentId: string;
+  categoryId: string;
+  Player: Player[];
+}
+
+export interface TournamentMatch{
+  _id: string;
+  tournamentId: string;
+  categoryId: string;
+  initialStage: string;
+  currentStage: string;
+  final: TournamentStage;
+  semiFinal: TournamentStage;
+  quarterFinal: TournamentStage;
+  top16: TournamentStage;
+}
+
+export interface TournamentStage{
+  status: string;
+  matches: Match[][];
+  _id: string;
+}
+
+export interface Match{
+  _id: string;
+  name: string;
+  teamLogo: string;
+  tournamentId: string;
+  categoryId: string;
+  players: Player[];
+  goals: number;
+  status: string;
+}
+export interface Player{
+  _id: string;
+  name: string;
+  curp: string;
+  playerNumber: number;
+}
 

@@ -39,8 +39,8 @@ const routes: Routes = [
       { path: 'list', component: RefereeTournamentDetailComponent },
       { path: ':id/categories', component: TournamentCategoriesRefereeComponent },
       { path: ':id/rivals/:id_category', component: MatchHistoryComponent },
-      { path: ':id/categories/:id_category/data/:match_id', component: CreateTeamComponent }, //pendiente 
-      { path: 'team-score/:id/:id_category/:id_partido', component: TeamScoreComponent}
+      { path: ':id/categories/:id_category/data/:match_id', component: CreateTeamComponent }, //pendiente
+      { path: 'team-score/:id/category/:id_category/match/:id_partido', component: TeamScoreComponent}
     ]},
   ],
 }
