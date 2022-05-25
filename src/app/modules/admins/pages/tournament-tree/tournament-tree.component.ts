@@ -53,6 +53,18 @@ export class TournamentTreeComponent implements OnInit {
       this.service.sendTeams( String(this.idTournament), String(this.idCategory), teamIds).subscribe(team =>{
         this.showButton = false
       })
+
+      this.service.getMatch(String(this.idTournament), String(this.idCategory)).subscribe(match =>{
+        this.teamToPlay = match;
+
+        if(this.teamToPlay != undefined){
+          this.showButton = false;
+        }else{
+          this.showButton = true;
+        }
+
+        this.showSnackbar("Equipos agregados","green")
+      })
     }else{
       this.showSnackbar("No cumple con los equipos suficientes","red")
     }
@@ -74,7 +86,7 @@ export class TournamentTreeComponent implements OnInit {
     }else if(tipo == "green"){
 
       this._snackBar.open(nombre, 'X', {
-        horizontalPosition: 'right',
+        horizontalPosition: 'center',
         verticalPosition: 'top',
         panelClass: ['green-snackbar'],
         duration: 3000,
