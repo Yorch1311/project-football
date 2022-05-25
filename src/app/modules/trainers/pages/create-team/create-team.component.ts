@@ -29,12 +29,13 @@ export class CreateTeamComponent implements OnInit {
     })
    }
 
-  name: string | null = null;
+  name: string = "";
   player: string = "";
   Curp: string = "";
   nplayer: number | null = null;
 
   value:string ="";
+  value1: string=""
   valuenum: number | any;
 
   //arrego a mostrar el group 
@@ -51,6 +52,7 @@ export class CreateTeamComponent implements OnInit {
 
   onChangeNamePlayer(data: string){
     this.player = data;  
+    this.value = this.player
   }
 
   onChangeCurp(data: string){    
@@ -58,6 +60,7 @@ export class CreateTeamComponent implements OnInit {
       this.showSnackbar('Error la Curp debe de tener 18 caracteres',1)      
     }else{
       this.Curp = data;
+      this.value1 = this.Curp
       //console.log(this.Curp)       
     }    
   }
@@ -118,7 +121,8 @@ export class CreateTeamComponent implements OnInit {
   }
     
   AddPlayer(){    
-    if(this.player.trim() == "" || this.nplayer == null || this.Curp.trim() == "" || this.Curp == null || this.Curp.length !== 18 ){        
+
+    if(this.player.trim() == "" || this.nplayer == null || this.Curp.trim() == "" || this.Curp == null || this.Curp.trim().length !== 18 ){        
       this.showSnackbar('Error Faltan datos verifique!!',1)                  
     }else{   
       
@@ -128,7 +132,9 @@ export class CreateTeamComponent implements OnInit {
         this.ArrayPlayers.push(this.player+"-"+this.nplayer);
         this.player= "";
         this.nplayer = 0;
-        this.Curp = "";
+        this.Curp = "";        
+        this.value = "";
+        this.value1 = "";
       }else{
 
         var band: boolean = false;
@@ -146,8 +152,9 @@ export class CreateTeamComponent implements OnInit {
           this.ArrayPlayers.push(this.player+"-"+this.nplayer);
           this.player= "";
           //this.nplayer = 0;
-          this.Curp = "";
-          this.value =" ";
+          this.Curp = "";          
+          this.value = "";
+          this.value1 = "";
         }
       }
       
@@ -173,8 +180,19 @@ export class CreateTeamComponent implements OnInit {
 
   register(){
 
-    if(this.imgeSend == "" ||this.name == null || this.name.trim() == "" || this.id_cat_branch == null || this.id_tournament == null || this.Arrplayers.length < 5){            
+/*
+    console.log(this.id_tournament);    
+    console.log(this.id_cat_branch)
+    console.log(this.name)
+    console.log(this.ArrayPlayers)
+    console.log(this.imgeSend)
+*/
+
+
+    if(this.imgeSend == "" || this.name == null || this.name.trim() == "" || this.id_cat_branch == null || this.id_tournament == null || this.Arrplayers.length < 5){            
+      
       this.showSnackbar('Error Faltan Datos',1);            
+
     }else{
       
       if(this.id_cat_branch != null && this.id_tournament !== null){
@@ -198,7 +216,7 @@ export class CreateTeamComponent implements OnInit {
         dialogRef.afterClosed().subscribe(result => {
           //console.log(`Dialog result: ${result}`);
             if ( result == true){                          
-  
+              console.log("di continuar")
               //mandar a llamar y en el subcribe poner el snabar verde y regresar a categorias 
               this.APIcreate.createTeam(datasend, String(this.id_tournament)).subscribe(result =>{
                 this.showSnackbar('Equipo registrado exitosamente',2);  
