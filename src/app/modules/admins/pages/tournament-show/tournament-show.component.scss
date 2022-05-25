@@ -5,7 +5,6 @@ h1 {
 
 .page-container{
     max-width: 1304px;
-    width: calc(100% - 16px);
     margin: 0 auto;
   }
 
@@ -40,6 +39,9 @@ h1 {
 
 //Smartphones
 @media screen and (min-width:360px) and (max-width:809px){
+    .page-container{
+      width: calc(100% - 16px);
+    }
     .team-table-container{
         width: 100%;
         overflow-x:scroll;
@@ -60,7 +62,7 @@ h1 {
 }
 
 //ipad
-@media screen and (min-width:810px) and (max-width:1304px){
+@media screen and (min-width:810px) and (max-width:1023px){
 
   .team-table-container{
       width: 100%;
@@ -69,9 +71,14 @@ h1 {
   .table{
       width: 1304px;
   }
+  .page-container{
+    width: calc(100% - 48px);
+  }
 }
 
 //desktop
-@media screen and (min-width:1304px){
-
+@media screen and (min-width:1024px){
+  .page-container{
+    width: calc(100% - 80px);
+  }
 }

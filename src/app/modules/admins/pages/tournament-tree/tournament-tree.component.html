@@ -13,15 +13,50 @@
     <div class="team-list">
       <app-team-list [teamList]="data" (sendTeamList)="getList($event)" *ngIf="showButton"></app-team-list>
 
-      <div class="rivals-container">
-
-        <div class="body-rivals" *ngIf="teamToPlay != undefined">
-          <div class="rivals" *ngFor="let item of teamToPlay.semiFinal.matches">
+      <div class="rivals-container" *ngIf="teamToPlay?.top16">
+        <div class="body-rivals">
+          <div class="rivals" *ngFor="let item of teamToPlay?.top16?.matches">
             <img src="{{item[0].teamLogo}}">
             <p>VS</p>
             <img src="{{item[1].teamLogo}}">
         </div>
-          <app-button class="button" [clase]="'fill button'" [title]="'Ver partidos'"></app-button>
+          <app-button class="button" [clase]="'fill button'" [title]="'Ver partidos'" (onClick)="watchMatches('top16')"></app-button>
+
+        </div>
+      </div>
+
+      <div class="rivals-container" *ngIf="teamToPlay?.quarterFinal">
+        <div class="body-rivals">
+          <div class="rivals" *ngFor="let item of teamToPlay?.quarterFinal?.matches">
+            <img src="{{item[0].teamLogo}}">
+            <p>VS</p>
+            <img src="{{item[1].teamLogo}}">
+        </div>
+          <app-button class="button" [clase]="'fill button'" [title]="'Ver partidos'" (onClick)="watchMatches('quarterFinal')"></app-button>
+
+        </div>
+      </div>
+
+      <div class="rivals-container" *ngIf="teamToPlay?.semiFinal">
+        <div class="body-rivals">
+          <div class="rivals" *ngFor="let item of teamToPlay?.semiFinal?.matches">
+            <img src="{{item[0].teamLogo}}">
+            <p>VS</p>
+            <img src="{{item[1].teamLogo}}">
+        </div>
+          <app-button class="button" [clase]="'fill button'" [title]="'Ver partidos'" (onClick)="watchMatches('semiFinal')"></app-button>
+
+        </div>
+      </div>
+
+      <div class="rivals-container" *ngIf="teamToPlay?.final">
+        <div class="body-rivals">
+          <div class="rivals" *ngFor="let item of teamToPlay?.final?.matches">
+            <img src="{{item[0].teamLogo}}">
+            <p>VS</p>
+            <img src="{{item[1].teamLogo}}">
+        </div>
+          <app-button class="button" [clase]="'fill button'" [title]="'Ver partidos'" (onClick)="watchMatches('final')"></app-button>
 
         </div>
       </div>

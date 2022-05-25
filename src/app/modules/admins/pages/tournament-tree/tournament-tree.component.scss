@@ -101,7 +101,7 @@ img{
   margin: 0;
 }
 
-@media screen and (min-width:360px) and (max-width:700px) {
+@media screen and (min-width:360px) and (max-width:809px) {
     .body-build-tournament{
         width: calc(100% - 16px);
         overflow-x:scroll;
@@ -112,38 +112,45 @@ img{
     .page-container{
         padding: 0px 8px;
         margin: 0 auto;
+        width: calc(100% - 16px);
     }
-
+    .button{
+      opacity: 1;
+    }
 }
 
 //ipad
-@media screen and (min-width:700px) and (max-width:1304px) {
+@media screen and (min-width:810px) and (max-width:1023px) {
 
     .body-build-tournament{
         width: calc(100% - 16px);
         overflow-x:scroll;
     }
     .team-list{
-        width: 1304px;
+        width: 100%;
     }
     .page-container{
-        padding: 0px 8px;
-        margin: 0 auto;
+      width: calc(100% - 48px);
+      padding: 0px 8px;
+      margin: 0 auto;
+    }
+    .button{
+      opacity: 1;
     }
 }
 
-//ipad
-@media screen and (min-width:1304px) {
+//pc
+@media screen and (min-width:1024px) {
 
   .body-build-tournament{
       width: calc(100% - 16px);
-      overflow-x:scroll;
   }
   .team-list{
       width: 1304px;
   }
   .page-container{
-      padding: 0px 64px;
-      margin: 0 auto;
+    width: calc(100% - 80px);
+    padding: 0px 64px;
+    margin: 0 auto;
   }
 }

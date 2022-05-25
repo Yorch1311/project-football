@@ -87,5 +87,8 @@ export class ServiceService {
     return this.http.post<Tournament[]>(this.url + "admin/tournaments", {"name":name});
   }
 
+  getMatchHistory(idTournament: string, idCategoria:string): Observable<TournamentMatch>{
+    return this.http.get<TournamentMatch>(this.url+"admin/tournament/"+idTournament+"/category/"+idCategoria+"/matches");
+  }
 
 }

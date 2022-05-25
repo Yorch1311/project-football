@@ -1,0 +1,54 @@
+<div class="page-container">
+  <div class="header-container">
+    <h1>Historial de partidos: {{history?._id}}</h1>
+  </div>
+
+  <div class="phase-container" *ngIf="phase == 'top16'">
+    <h2>Octavos de final</h2>
+    <div class="match-contaier">
+        <div class="rivals" *ngFor="let match of history?.top16?.matches">
+          <app-card [id]="match[0]._id" [teamName]="match[0].name" [path]="match[0].teamLogo" (click)="goto('top16',match[0]._id+match[1]._id)"></app-card>
+          <p>VS</p>
+          <app-card [id]="match[1]._id" [teamName]="match[1].name" [path]="match[1].teamLogo" (click)="goto('top16',match[0]._id+match[1]._id)"></app-card>
+        </div>
+    </div>
+  </div>
+
+  <div class="phase-container" *ngIf="phase == 'quarterFinal'">
+    <h2>Cuartos de final</h2>
+    <div class="match-contaier">
+        <div class="rivals" *ngFor="let match of history?.quarterFinal?.matches">
+          <app-card [id]="match[0]._id" [teamName]="match[0].name" [path]="match[0].teamLogo" (click)="goto('quarterFinal',match[0]._id+match[1]._id)"></app-card>
+          <p>VS</p>
+          <app-card [id]="match[1]._id" [teamName]="match[1].name" [path]="match[1].teamLogo" (click)="goto('quarterFinal',match[0]._id+match[1]._id)"></app-card>
+        </div>
+    </div>
+  </div>
+
+  <div class="phase-container" *ngIf="phase == 'semiFinal'">
+    <h2>Semifinal</h2>
+    <div class="match-contaier">
+        <div class="rivals" *ngFor="let match of history?.semiFinal?.matches">
+          <app-card [id]="match[0]._id" [teamName]="match[0].name" [path]="match[0].teamLogo" (click)="goto('semiFinal',match[0]._id+match[1]._id)"></app-card>
+          <p>VS</p>
+          <app-card [id]="match[1]._id" [teamName]="match[1].name" [path]="match[1].teamLogo" (click)="goto('semiFinal',match[0]._id+match[1]._id)"></app-card>
+        </div>
+      </div>
+  </div>
+
+  <div class="phase-container" *ngIf="phase == 'final'">
+
+    <h2>Final</h2>
+    <div class="match-container">
+      <div class="rivals" *ngFor="let match of history?.final?.matches">
+        <app-card [id]="match[0]._id" [teamName]="match[0].name" [path]="match[0].teamLogo" (click)="goto('final',match[0]._id+match[1]._id)"></app-card>
+        <p>VS</p>
+        <app-card [id]="match[1]._id" [teamName]="match[1].name" [path]="match[1].teamLogo" (click)="goto('final',match[0]._id+match[1]._id)"></app-card>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</div>

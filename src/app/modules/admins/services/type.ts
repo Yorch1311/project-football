@@ -41,7 +41,10 @@ export interface TournamentMatch{
   categoryId: string;
   initialStage: string;
   currentStage: string;
+  final: TournamentStage;
   semiFinal: TournamentStage;
+  quarterFinal: TournamentStage;
+  top16: TournamentStage;
 }
 
 export interface TournamentStage{

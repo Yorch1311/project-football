@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { PhaseMatchComponent } from './modules/admins/pages/phase-match/phase-match.component';
 import { TournamentCreateComponent } from './modules/admins/pages/tournament-create/tournament-create.component';
 import { TournamentDetailPageComponent } from './modules/admins/pages/tournament-detail-page/tournament-detail-page.component';
 import { TournamentEditComponent } from './modules/admins/pages/tournament-edit/tournament-edit.component';
@@ -22,6 +23,8 @@ const routes: Routes = [
           { path: 'edit/:id', component: TournamentEditComponent },
           { path: 'detail/:id/status/:status', component: TournamentDetailPageComponent },
           { path: ':tournament/manage-teams/:id', component: TournamentTreeComponent },
+          { path: ':tournament/category/:category/match/:phase', component: PhaseMatchComponent },
+
         ],
       },
     ],
@@ -39,7 +42,6 @@ const routes: Routes = [
       { path: 'list', component: RefereeTournamentDetailComponent },
       { path: ':id/categories', component: TournamentCategoriesRefereeComponent },
       { path: ':id/rivals/:id_category', component: MatchHistoryComponent },
-      { path: ':id/categories/:id_category/data/:match_id', component: CreateTeamComponent }, //pendiente
       { path: 'team-score/:id/category/:id_category/match/:id_partido', component: TeamScoreComponent}
     ]},
   ],

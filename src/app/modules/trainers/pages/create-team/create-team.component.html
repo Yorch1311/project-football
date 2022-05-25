@@ -19,7 +19,7 @@
                               <img class="image" src="../../../../../assets/image/trainer/imageTeam.png"/>
                             </label>
 
-                            <input id="file-input" type="file" />
+                            <input id="file-input" type="file" (change)="obtenerImage($event)" />
                         </div>
                 </div>
 
@@ -29,7 +29,7 @@
                     </div>
                     <div class="two-grid">
                         <app-input-simple [nombre]="'Nombre del jugador'" [value]="value" (onChange)="onChangeNamePlayer($event)"></app-input-simple>
-                        <app-input-simple [nombre]="'Curp'" [value]="value" (onChange)="onChangeCurp($event)"></app-input-simple>
+                        <app-input-simple [nombre]="'Curp'" [value]="value1" (onChange)="onChangeCurp($event)"></app-input-simple>
                         <app-input-number [nombre]="'Numero de jugador'" [ejemplo]="'1,2,3'" maxlength="2" (onChange)="onChangeNumberPlayer($event)"></app-input-number>
                     </div>
 

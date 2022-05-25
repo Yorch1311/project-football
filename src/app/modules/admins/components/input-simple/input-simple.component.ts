@@ -9,7 +9,7 @@ export class InputSimpleComponent implements OnInit {
 
   @Input() nombre: string = 'sin nombre';
   @Input() ejemplo: string = 'sin nombre';  
-  @Input() value: String = '';
+  @Input() value: String = "";
   //se envia 
   @Output() onChange = new EventEmitter<string>(); 
   @Output() KeyUp = new EventEmitter<string>();    
@@ -18,7 +18,7 @@ export class InputSimpleComponent implements OnInit {
 
   obtenerdato( data: string){         
     //console.log(data); 
-    this.onChange.emit(data);        
+    this.onChange.emit(data);     
   }
 
   ObtenerTextoPress(data: string){

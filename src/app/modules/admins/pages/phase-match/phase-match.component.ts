@@ -4,28 +4,32 @@ import { ServiceService } from '../../services/service.service';
 import { TournamentMatch } from '../../services/type';
 
 @Component({
-  selector: 'app-match-history',
-  templateUrl: './match-history.component.html',
-  styleUrls: ['./match-history.component.scss'],
+  selector: 'app-phase-match',
+  templateUrl: './phase-match.component.html',
+  styleUrls: ['./phase-match.component.scss']
 })
-export class MatchHistoryComponent implements OnInit {
+export class PhaseMatchComponent implements OnInit {
+
   history: TournamentMatch | undefined;
-  category: String | null;
-  tournament: String | null;
+  category: string | null;
+  tournament: string | null;
+  phase: string | null;
+
 
   constructor(private service: ServiceService,private _router: ActivatedRoute,private router: Router) {
 
-    this.tournament = this._router.snapshot.paramMap.get('id');
-    this.category = this._router.snapshot.paramMap.get('id_category');
+    this.tournament = this._router.snapshot.paramMap.get('tournament');
+    this.category = this._router.snapshot.paramMap.get('category');
+    this.phase = this._router.snapshot.paramMap.get('phase');
 
-    console.log(this.tournament);
-    console.log(this.category);
+
+    this.service.getMatchHistory(String(this.tournament), String(this.category)).subscribe((history) => {
+      this.history = history;
+    });
   }
 
   ngOnInit(): void {
-    this.service.getMatchHistory(String(this.tournament), String(this.category)).subscribe((history) => {
-        this.history = history;
-      });
+
   }
 
   goto(phase: string, id_match: string) {
@@ -33,4 +37,5 @@ export class MatchHistoryComponent implements OnInit {
       this.router.navigate(['referee/tournament/team-score/' +this.tournament +'/category/' +this.category +'/match/'+id_match]);
     }
   }
+
 }

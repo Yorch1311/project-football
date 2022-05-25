@@ -1,76 +1,81 @@
 h1 {
-    font-weight: 700;
-    font-size: 32px;
+  font-weight: 700;
+  font-size: 32px;
 }
 
 .page-container{
   max-width: 1304px;
-  width: calc(100% - 16px);
   margin: 0 auto;
 }
 
 .select-container, .select-filter, .title-container{
-    display: flex;
+  display: flex;
 }
 
 .header-container{
-    max-width: 1304px;
-    padding-top: 8px;
+  max-width: 1304px;
+  padding-top: 8px;
 }
 
 .select-container, .header-container, .title-container{
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .select-filter{
-    gap: 24px;
+  gap: 24px;
 }
 
 .team-table-container{
-    max-width: 1304px;
+  max-width: 1304px;
 }
 
 .team-table-container::-webkit-scrollbar{
-    display: none;
+  display: none;
 }
 
 .title-container{
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 //Smartphones
-@media screen and (min-width:360px) and (max-width:700px){
-    .team-table-container{
-        width: calc(100%);
-        overflow-x:scroll;
-    }
-    .table{
-        width: 1304px;
-    }
-    .select-filter{
-        flex-direction:column;
-        gap: 0px;
-    }
-    .select-container{
-        flex-direction:column;
-    }
-    .buscar{
-        margin-bottom: 10px;
-    }
+@media screen and (min-width:360px) and (max-width:809px){
+  .team-table-container{
+      width: 100%;
+      overflow-x:scroll;
+  }
+  .table{
+      width: 1304px;
+  }
+  .select-filter{
+      flex-direction:column;
+      gap: 0px;
+  }
+  .select-container{
+      flex-direction:column;
+  }
+  .buscar{
+      margin-bottom: 10px;
+  }
 }
 
 //ipad
-@media screen and (min-width:700px) and (max-width:1304px){
-    .team-table-container{
-        width: 100%;
-        overflow-x:scroll;
-    }
-    .table{
-        width: 1304px;
-    }
+@media screen and (min-width:810px) and (max-width:1023px){
+
+.team-table-container{
+    width: 100%;
+    overflow-x:scroll;
+}
+.table{
+    width: 1304px;
+}
+.page-container{
+  width: calc(100% - 48px);
+}
 }
 
 //desktop
-@media screen and (min-width:1304px){
-
+@media screen and (min-width:1024px){
+.page-container{
+  width: calc(100% - 80px);
+}
 }
