@@ -8,17 +8,16 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class InputSimpleComponent implements OnInit {
 
   @Input() nombre: string = 'sin nombre';
-  @Input() ejemplo: string = 'sin nombre';  
+  @Input() ejemplo: string = 'sin nombre';
   @Input() value: String = "";
-  //se envia 
-  @Output() onChange = new EventEmitter<string>(); 
-  @Output() KeyUp = new EventEmitter<string>();    
+  //se envia
+  @Output() onChange = new EventEmitter<string>();
+  @Output() KeyUp = new EventEmitter<string>();
 
   constructor() { }
 
-  obtenerdato( data: string){         
-    //console.log(data); 
-    this.onChange.emit(data);     
+  obtenerdato( data: string){
+    this.onChange.emit(data);
   }
 
   ObtenerTextoPress(data: string){

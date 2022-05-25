@@ -10,22 +10,21 @@ import { Item } from '../../services/type';
 export class SelectMultipleComponent implements OnInit {
 
   @Input() nombre: string = 'sin nombre';
-  @Input() items: Item[] = []; 
-  @Input() selectedValue: String []=[];         
+  @Input() items: Item[] = [];
+  @Input() selectedValue: String []=[];
   @Input() enable: String | null = null;
-  
-  //se envia 
+
+  //se envia
   @Output() onChange = new EventEmitter<String[]>();
 
-  
+
   constructor() { }
-  
+
   obtenerdato( data: String[]){
-    //console.log(data);    
     this.onChange.emit(data);
   }
 
-  ngOnInit(): void {  
+  ngOnInit(): void {
   }
 
 }

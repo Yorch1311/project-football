@@ -18,8 +18,6 @@ export class MatchHistoryComponent implements OnInit {
     this.tournament = this._router.snapshot.paramMap.get('id');
     this.category = this._router.snapshot.paramMap.get('id_category');
 
-    console.log(this.tournament);
-    console.log(this.category);
   }
 
   ngOnInit(): void {

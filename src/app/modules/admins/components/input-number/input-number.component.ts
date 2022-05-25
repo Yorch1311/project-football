@@ -7,18 +7,17 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class InputNumberComponent implements OnInit {
 
-  
+
   @Input() nombre: string = 'sin nombre';
-  @Input() ejemplo: string = 'sin nombre';  
+  @Input() ejemplo: string = 'sin nombre';
   //@Input() value: number = 1;
-  //se envia 
-  @Output() onChange = new EventEmitter<number>(); 
+  //se envia
+  @Output() onChange = new EventEmitter<number>();
 
   constructor() { }
 
-  obtenerdato( data: string){         
-    //console.log(data); 
-    this.onChange.emit(parseInt(data));        
+  obtenerdato( data: string){
+    this.onChange.emit(parseInt(data));
   }
 
   ngOnInit(): void {

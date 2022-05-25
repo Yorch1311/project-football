@@ -45,14 +45,11 @@ export class TournamentTreeComponent implements OnInit {
 
   getList(data: Team[]){
     this.teamList = data
-
-    //console.log(this.data)
   }
 
   sendTeam(){
     if(this.teamList.length == 2 ||  this.teamList.length == 4 || this.teamList.length == 8 || this.teamList.length == 16){
       const teamIds: string[] = this.teamList.map((item) => item._id);
-      //console.log({ teamsIds: teamIds})
       this.service.sendTeams( String(this.idTournament), String(this.idCategory), teamIds).subscribe(team =>{
         this.showButton = false
       })
@@ -63,7 +60,6 @@ export class TournamentTreeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.data)
   }
 
   showSnackbar(nombre: string, tipo: string){

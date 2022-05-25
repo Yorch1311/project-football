@@ -32,7 +32,6 @@ export class RefereeTournamentDetailComponent implements OnInit {
   ngOnInit(): void {
 
     this.APIcreate.getTournaments().subscribe(result => {
-      console.log(result);
       this.data = result;
     })
 
@@ -50,12 +49,10 @@ export class RefereeTournamentDetailComponent implements OnInit {
 
   onChangeName(data: String){
     this.NameData = data;
-    console.log(data);
   }
 
   onChangeFiltro(id_filtro: String){
     this.filtro = id_filtro;
-    console.log(id_filtro);
     //alert(id_filtro);
     /*this.APIcreate.filterTournamentsByType(this.filtro).subscribe(result => {
       console.log(result);
@@ -66,7 +63,6 @@ export class RefereeTournamentDetailComponent implements OnInit {
   onChangeOrden(id_orden: String){
     var typeOrder : String;
     this.ordenar = id_orden;
-    console.log(id_orden);
 
     if( this.ordenar == "1"){
       typeOrder = "ASC";
@@ -83,8 +79,6 @@ export class RefereeTournamentDetailComponent implements OnInit {
 
   onKeyUpFilter(data: String){
     this.NameData = data;
-    console.log(data);
-
     /*
     this.APIcreate.searchTournament(this.NameData).subscribe(result => {
       console.log(result);

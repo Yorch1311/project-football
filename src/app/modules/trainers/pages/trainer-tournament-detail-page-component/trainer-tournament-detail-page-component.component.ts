@@ -26,22 +26,21 @@ export class TrainerTournamentDetailPageComponentComponent implements OnInit {
     { _id:"2", name: 'Mas Antiguo' }
   ];
 
-  constructor( private router: Router, private APIcreate: ServiceService) { 
+  constructor( private router: Router, private APIcreate: ServiceService) {
   }
 
   ngOnInit(): void {
-    
+
     this.APIcreate.getTournaments().subscribe(result => {
-      console.log(result);
       this.data = result;
     })
 
-    
+
     this.APIcreate.ObtenerData().subscribe(datos =>{
       this.Filter = datos['types'];
     })
 
-    
+
   }
 
   tournamentDetail(detail: { id: string, status: string }) {
@@ -51,12 +50,10 @@ export class TrainerTournamentDetailPageComponentComponent implements OnInit {
 
   onChangeName(data: String){
     this.NameData = data;
-    console.log(data);
   }
 
   onChangeFiltro(id_filtro: String){
     this.filtro = id_filtro;
-    console.log(id_filtro);
     //alert(id_filtro);
     /*this.APIcreate.filterTournamentsByType(this.filtro).subscribe(result => {
       console.log(result);
@@ -67,14 +64,13 @@ export class TrainerTournamentDetailPageComponentComponent implements OnInit {
   onChangeOrden(id_orden: String){
     var typeOrder : String;
     this.ordenar = id_orden;
-    console.log(id_orden);
 
     if( this.ordenar == "1"){
       typeOrder = "ASC";
     }else{
       typeOrder = "DESC";
     }
-   
+
     /*
     this.APIcreate.orderTournamentsByDate(typeOrder).subscribe(result => {
       console.log(result);
@@ -84,8 +80,7 @@ export class TrainerTournamentDetailPageComponentComponent implements OnInit {
 
   onKeyUpFilter(data: String){
     this.NameData = data;
-    console.log(data);
-  
+
     /*
     this.APIcreate.searchTournament(this.NameData).subscribe(result => {
       console.log(result);

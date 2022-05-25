@@ -38,7 +38,7 @@ export class TournamentCreateComponent implements OnInit {
 
   //para buscar
   brancheshid:String[] = [];
-  adminsid: String [] = [];  
+  adminsid: String [] = [];
   admins: String [] = [];
   arbitersid :String [] = [];
   arbiters: String[] = [];
@@ -49,29 +49,28 @@ export class TournamentCreateComponent implements OnInit {
 
  //para almacenar datos  y mostrarlos en select's
   itemsCategory: Item[] = [];
-  itemsbranch: Item[] = [];  
+  itemsbranch: Item[] = [];
   itemstype: Item[] = [];
   itemscyty: Item[] = [];
   itemsplace: Item[] = [];
   itemsAdmin: Item[] = [];
   itemsreferee: Item[] = [];
-  itemsTrainers: Item[] = [];  
-  
+  itemsTrainers: Item[] = [];
+
   //,  private APIcreate: ServiceService
-  constructor(public dialog: MatDialog, private router: Router, private APIcreate: ServiceService,  private _snackBar: MatSnackBar) {    
+  constructor(public dialog: MatDialog, private router: Router, private APIcreate: ServiceService,  private _snackBar: MatSnackBar) {
   }
 
   ngOnInit(): void {
     //extraer la info de la base de datos
     this.APIcreate.ObtenerData().subscribe(datos =>{
-      console.log(datos);
       this.itemsCategory = datos['categories'];
       this.itemsbranch = datos['branches'];
       this.itemstype = datos['types'];
       this.itemscyty = datos['cities'];
       this.itemsAdmin = datos['admins'];
       this.itemsreferee = datos['referees'];
-      this.itemsTrainers = datos['coaches'];      
+      this.itemsTrainers = datos['coaches'];
     })
   }
 
@@ -118,7 +117,6 @@ export class TournamentCreateComponent implements OnInit {
     this.coachsid.push(coach._id);
     this.coachs.push(coach.name);
     this.itemsTrainers = this.itemsTrainers.filter((adm) => adm._id !== coach._id )
-    //console.log(coach.id);
   }
 
   //Eliminar coach
@@ -130,7 +128,7 @@ export class TournamentCreateComponent implements OnInit {
     this.coachs.splice(this.pos, 1);
   }
 
-  
+
   //nombre del torneo
   onChangeNameTournament(data: String){
     this.name = data;
@@ -162,12 +160,12 @@ export class TournamentCreateComponent implements OnInit {
   //obtener ciudad
   onChangecity(data: String){
     this.city = data;
-    
+
     //limpiamos en caso de que cambie de ciudad
     this.itemsplace.splice(0, this.itemsplace.length);
 
     this.APIcreate.ObtenerPlaces(this.city).subscribe(places =>{
-      this.itemsplace = places['places'];      
+      this.itemsplace = places['places'];
       console.table(this.itemsplace);
     })
 
@@ -175,7 +173,6 @@ export class TournamentCreateComponent implements OnInit {
 
   //obtener lugar
   onChangeplace(data: String){
-    //console.log(data);
     this.place = data;
 
   }
@@ -189,9 +186,9 @@ export class TournamentCreateComponent implements OnInit {
   onChangeTime(data: String){
     this.time = data;
   }
-  
+
   Cancel() {
-    
+
     const dialogRef = this.dialog.open(DialogCancelComponent, {
       width: '420px',
       height: '200px',
@@ -199,7 +196,6 @@ export class TournamentCreateComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
         if ( result == true){
             //mandar a la pagina del cristian
             this.router.navigate(["admin/tournament/list"]);
@@ -212,61 +208,58 @@ export class TournamentCreateComponent implements OnInit {
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
   CrearTou(){
-    
+
     if( (this.name == null) || (this.time == null) || (this.date == null) || (this.categori == null) || (this.branches[0] == null) || (this.typeTournamet == null) || (this.city == null)  || (this.place == null) ||
       (this.adminsid[0] == null) || (this.arbitersid[0] == null) || (this.coachsid[0] == null)
     ){
-      
+
       this._snackBar.open('Error faltan datos', 'X', {
         horizontalPosition: this.horizontalPosition,
-        verticalPosition: this.verticalPosition,          
+        verticalPosition: this.verticalPosition,
         //panelClass: ['green-snackbar'],
         panelClass: ['red-snackbar'],
-      });      
+      });
 
     }else{
 
         //obtener id de lugares en arreglo
-        console.log(this.place)
         this.placeid.push(this.place);
 
 
         //obtener id de las ramas
         this.branches.forEach(result => {
           this.brancheshid.push(result);
-        });        
+        });
 
         const datasend : tupla = {
-          name: this.name,          
+          name: this.name,
           type: this.typeTournamet,
           branches: this.brancheshid,
-          category: this.categori,          
+          category: this.categori,
           dates: this.date,   //del tipo date_crate_edi
           city: this.city,
-          places: this.placeid,          
+          places: this.placeid,
           hours: this.time,
           admins: this.adminsid,
           coaches: this.coachsid,
-          referees: this.arbitersid,          
+          referees: this.arbitersid,
         };
 
 
-       // console.log(datasend)
         //console.table(datasend);
 
         this.APIcreate.createTournament(datasend).subscribe(result =>{
-          //console.log(result);
           //mostrar snavbar
           this._snackBar.open('Torneo creado exitosamente', 'X', {
             horizontalPosition: this.horizontalPosition,
-            verticalPosition: this.verticalPosition,          
+            verticalPosition: this.verticalPosition,
             panelClass: ['green-snackbar'],
             //panelClass: ['red-snackbar'],
           });
 
           //Crear la tupla y regresar al chrisyian
           this.router.navigate(["admin/tournament/list"]);
-        })        
+        })
 
       }
    }

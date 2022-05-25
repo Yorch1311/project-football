@@ -8,26 +8,25 @@ import { Item } from '../../services/type';
 })
 export class SelectSimpleComponent implements OnInit {
 
-  @Input() nombre: string = 'sin nombre'; 
-  @Input() items: Item[] = []; 
+  @Input() nombre: string = 'sin nombre';
+  @Input() items: Item[] = [];
   @Input() valuenum: String = '';
   @Input() enable: String | null = null;
-  
+
   valor: String='';
-  //se envia 
-  @Output() onChange = new EventEmitter<String>();    
+  //se envia
+  @Output() onChange = new EventEmitter<String>();
 
   constructor() { }
 
   obtenerdato( data: String){
-    //console.log(data);    
     this.onChange.emit(data);
   }
 
   ngOnInit(): void {
     if(this.valuenum !== ""){
       this.valor = this.valuenum;
-    }    
+    }
   }
 
 }

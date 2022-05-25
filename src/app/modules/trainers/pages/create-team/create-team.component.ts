@@ -206,7 +206,6 @@ export class CreateTeamComponent implements OnInit {
         };
 
         //console.table(datasend);
-        console.log(datasend);
 
         const dialogRef = this.dialog.open(DialogCancelComponent, {
           width: '420px',
@@ -217,7 +216,6 @@ export class CreateTeamComponent implements OnInit {
         dialogRef.afterClosed().subscribe(result => {
           //console.log(`Dialog result: ${result}`);
             if ( result == true){
-              console.log("di continuar")
               //mandar a llamar y en el subcribe poner el snabar verde y regresar a categorias
               this.APIcreate.createTeam(datasend, String(this.id_tournament)).subscribe(result =>{
                 this.showSnackbar('Equipo registrado exitosamente',2);

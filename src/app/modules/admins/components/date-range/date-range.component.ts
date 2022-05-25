@@ -8,15 +8,15 @@ import { date_crate_edit } from '../../services/type';
   styleUrls: ['./date-range.component.scss']
 })
 export class DateRangeComponent implements OnInit {
-  
+
   @Input() nombre: string = 'sin nombre';
   @Input() value: string = "";
   @Input() valuef: string = "";
 
-  //se envia 
-  @Output() onChange = new EventEmitter<date_crate_edit>();        
+  //se envia
+  @Output() onChange = new EventEmitter<date_crate_edit>();
 
-  
+
   valstart : Date =  new Date(this.value);
   valend: Date =  new Date(this.valuef);
 
@@ -25,16 +25,15 @@ export class DateRangeComponent implements OnInit {
   data: date_crate_edit= {init: "", final:""};
 
   obtenerFechas(start:string, end:string){
-    //alert(start);  
+    //alert(start);
     this.data= {init:start, final: end};
-    this.onChange.emit(this.data);   
+    this.onChange.emit(this.data);
  }
 
   ngOnInit(): void {
-    //console.log(this.value +"-"+ this.valuef);
     this.valstart = new Date(this.value);
     this. valend=  new Date(this.valuef);
-  
+
   }
 
 }

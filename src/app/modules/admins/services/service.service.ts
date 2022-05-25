@@ -38,7 +38,6 @@ export class ServiceService {
 
   //metodo para introducir un nuevo torneo
   createTournament(dato: tupla):Observable<any>{
-    //console.log(dato);
     return this.http.post(`${this.url}admin/tournament`,dato);
   }
 
@@ -48,7 +47,6 @@ export class ServiceService {
   }
 
   updateTournament(dato: tupla, _id: string):Observable<any>{
-    //console.log(dato);
     return this.http.put(`${this.url}admin/tournament/${_id}`,dato);
   }
 
