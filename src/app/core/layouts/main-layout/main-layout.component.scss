@@ -1,7 +1,7 @@
 @media screen and (min-width:360px) and (max-width:809px) {
   .page {
-      width:calc(100%);
-      padding-top: 160px;
+      width:calc(100% - 32px);
+      padding: 160px 16px 80px 16px;
       overflow-y: auto;
   }
 }
@@ -9,9 +9,9 @@
 //ipad
 @media screen and (min-width:810px) and (max-width:1304px) {
   .page {
-      width:calc(100% - 48px);
+      width:calc(100% - 112px);//32 + 32 + 48
       margin-left: 48px;
-      padding: 80px 0px;
+      padding: 80px 32px;
       overflow-y: auto;
   }
 }
@@ -19,8 +19,8 @@
 //desktop
 @media screen and (min-width:1304px) {
   .page {
-    width: calc(100% - 80px);
-    padding: 80px 0px;
+    width: calc(100% - 208px);//64 + 64 + 80
+    padding: 80px 64px;
     margin-left: 80px;
   }
 }

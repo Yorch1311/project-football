@@ -6,6 +6,7 @@ h1 {
 .page-container{
   max-width: 1304px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .select-container, .select-filter, .title-container{
@@ -13,7 +14,6 @@ h1 {
 }
 
 .header-container{
-  max-width: 1304px;
   padding-top: 8px;
 }
 
@@ -25,22 +25,14 @@ h1 {
   gap: 24px;
 }
 
-.team-table-container{
-  max-width: 1304px;
-}
-
-.team-table-container::-webkit-scrollbar{
-  display: none;
-}
-
 .title-container{
   margin-bottom: 40px;
 }
 
 //Smartphones
 @media screen and (min-width:360px) and (max-width:809px){
+
   .team-table-container{
-      width: 100%;
       overflow-x:scroll;
   }
   .table{
@@ -56,29 +48,20 @@ h1 {
   .buscar{
       margin-bottom: 10px;
   }
-  .page-container{
-    width: calc(100% - 16px);
-  }
 }
 
 //ipad
 @media screen and (min-width:810px) and (max-width:1023px){
 
-.team-table-container{
-    width: 100%;
-    overflow-x:scroll;
-}
-.table{
-    width: 1304px;
-}
-.page-container{
-  width: calc(100% - 48px);
-}
+  .team-table-container{
+      overflow-x:scroll;
+  }
+  .table{
+      width: 1304px;
+  }
 }
 
 //desktop
 @media screen and (min-width:1024px){
-.page-container{
-  width: calc(100% - 80px);
-}
+
 }

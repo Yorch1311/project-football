@@ -1,7 +1,5 @@
 .pagina {
   max-width: 1304px;
-  width: 100%;
-
   margin: 0 auto;
   padding: 8px;
 }
@@ -24,19 +22,13 @@
 }
 //Smartphones
 @media screen and (min-width:360px) and (max-width:809px){
-  .pagina{
-    width: calc(100% - 16px);
-  }
+
 }
 //ipad
 @media screen and (min-width:810px) and (max-width:1023px) {
-  .pagina {
-    width: calc(100% - 48px);
-  }
+
 }
 //desktop
 @media screen and (min-width:1024px) {
-  .pagina {
-    width: calc(100% - 80px);
-  }
+
 }

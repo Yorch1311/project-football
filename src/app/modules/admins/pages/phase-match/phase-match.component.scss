@@ -2,6 +2,7 @@
   max-width:1304px;
   margin: 0 auto;
 }
+
 .header-container > h1{
   font-family: 'Roboto';
   font-style: normal;
@@ -15,9 +16,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.phase-container{
-  margin-bottom: 80px;
-}
+
 .phase-container > h2{
   font-family: 'Roboto';
   font-style: normal;
@@ -30,20 +29,18 @@
 }
 
 .match-container{
-  width: 100%;
   background: #FFFFFF;
   box-shadow: 0px 4px 12px rgba(38, 39, 43, 0.25);
   border-radius: 4px;
-  padding: 48px 8px;
+
+  padding: 48px 0px;
 
   :last-child{
       padding-bottom: 0px;
   }
-
 }
 
 .rivals{
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content:center;
@@ -58,35 +55,22 @@
 
 @media screen and (min-width: 360px) and (max-width:809px) {
 
-  .page-container{
-    max-width: calc(100% - 16px);
-    width: 100%;
-  }
-
   .rivals{
     flex-direction: column;
     padding-bottom: 60px;
     gap: 10px;
   }
-  .match-container{
-    max-width: calc(100% - 16px);
-  }
+
 }
 
 @media screen and (min-width: 810px) and (max-width:1023px) {
-
-  .page-container{
-    width:calc(100% - 48px);
-    width: 100%;
-  }
 
   .rivals{
     gap: 20px;
   }
+
 }
 
-@media screen and (min-width: 810px) and (max-width:1023px) {
-  .page-container{
-    width:calc(100% - 80px);
-  }
+@media screen and (min-width: 1024px){
+
 }
