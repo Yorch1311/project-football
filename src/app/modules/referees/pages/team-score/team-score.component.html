@@ -2,10 +2,10 @@
   <h1>Gestión de resultados: {{partido_name}}</h1>
   <div class="content-container">
 
-    <div class="goles-to-card" *ngIf="partido?.currentStage == 'final'">
-      <div class="grid-card" *ngFor="let match of partido?.final?.matches">
+    <div class="goles-to-card">
+      <div class="grid-card" *ngFor="let match of partido">
 
-        <div class="card-with-goles" *ngIf="match[0]._id == idTeams[0]">
+        <div class="card-with-goles">
           <app-card [teamName]="match[0].name" [path]="match[0]?.teamLogo"></app-card>
           <div class="score">
             <p class="gol">Anotar gol</p>
@@ -16,38 +16,7 @@
           </div>
         </div>
 
-        <div class="card-with-goles" *ngIf="match[1]._id == idTeams[1]">
-          <app-card [teamName]="match[1].name" [path]="match[1]?.teamLogo"></app-card>
-          <div class="score">
-            <p class="gol">Anotar gol</p>
-            <button class="size-button" (click)="anotarGol(2)">
-              <img src="../../../../assets/image/admin/IconAdd.jpeg" alt="x" />
-            </button>
-            <p class="goles">{{team2gol}}</p>
-          </div>
-        </div>
-
-      </div>
-
-      <app-button [clase]="'fill button'" [title]="'Guardar goles'" (onClick)="register()"></app-button>
-    </div>
-    <!-- <div class="goles-to-card"> -->
-    <!--     <div class="goles-to-card" *ngIf="partido?.currentStage == 'semiFinal'"> -->
-      <div class="goles-to-card" *ngIf="partido?.currentStage == 'semiFinal'">
-      <div class="grid-card" *ngFor="let match of partido?.semiFinal?.matches">
-
-        <div class="card-with-goles" *ngIf="match[0]._id == idTeams[0]">
-          <app-card [teamName]="match[0].name" [path]="match[0]?.teamLogo"></app-card>
-          <div class="score">
-            <p class="gol">Anotar gol</p>
-            <button class="size-button" (click)="anotarGol(1)">
-              <img src="../../../../assets/image/admin/IconAdd.jpeg" alt="x" />
-            </button>
-            <p class="goles">{{team1gol}}</p>
-          </div>
-        </div>
-
-        <div class="card-with-goles" *ngIf="match[1]._id == idTeams[1]">
+        <div class="card-with-goles">
           <app-card [teamName]="match[1].name" [path]="match[1]?.teamLogo"></app-card>
           <div class="score">
             <p class="gol">Anotar gol</p>
@@ -63,73 +32,16 @@
       <app-button [clase]="'fill button'" [title]="'Guardar goles'" (onClick)="register()"></app-button>
     </div>
 
-    <div class="goles-to-card" *ngIf="partido?.currentStage == 'quarterFinal'">
-      <div class="grid-card" *ngFor="let match of partido?.quarterFinal?.matches">
+    <div class="separador"></div>
 
-        <div class="card-with-goles" *ngIf="match[0]._id == idTeams[0]">
-          <app-card [teamName]="match[0].name" [path]="match[0]?.teamLogo"></app-card>
-          <div class="score">
-            <p class="gol">Anotar gol</p>
-            <button class="size-button" (click)="anotarGol(1)">
-              <img src="../../../../assets/image/admin/IconAdd.jpeg" alt="x" />
-            </button>
-            <p class="goles">{{team1gol}}</p>
-          </div>
-        </div>
-
-        <div class="card-with-goles" *ngIf="match[1]._id == idTeams[1]">
-          <app-card [teamName]="match[1].name" [path]="match[1]?.teamLogo"></app-card>
-          <div class="score">
-            <p class="gol">Anotar gol</p>
-            <button class="size-button" (click)="anotarGol(2)">
-              <img src="../../../../assets/image/admin/IconAdd.jpeg" alt="x" />
-            </button>
-            <p class="goles">{{team2gol}}</p>
-          </div>
-        </div>
-
+    <div class="finish-game-container">
+      <div class="finish-game-content-container">
+        <p class="parrafo">Para dar clausura a este partido, debe revisar minuciosamente el marcador. Una vez
+          registrado y terminado el partido será imposible cambiar el resultado.</p>
+        <p>Para continuar, de click en el botón "Finalizar".</p>
       </div>
 
-     <div class="goles-to-card" *ngIf="partido?.currentStage == 'top16'">
-        <div class="grid-card" *ngFor="let match of partido?.top16?.matches">
-
-          <div class="card-with-goles" *ngIf="match[0]._id == idTeams[0]">
-            <app-card [teamName]="match[0].name" [path]="match[0]?.teamLogo"></app-card>
-            <div class="score">
-              <p class="gol">Anotar gol</p>
-              <button class="size-button" (click)="anotarGol(1)">
-                <img src="../../../../assets/image/admin/IconAdd.jpeg" alt="x" />
-              </button>
-              <p class="goles">{{team1gol}}</p>
-            </div>
-          </div>
-
-          <div class="card-with-goles" *ngIf="match[1]._id == idTeams[1]">
-            <app-card [teamName]="match[1].name" [path]="match[1]?.teamLogo"></app-card>
-            <div class="score">
-              <p class="gol">Anotar gol</p>
-              <button class="size-button" (click)="anotarGol(2)">
-                <img src="../../../../assets/image/admin/IconAdd.jpeg" alt="x" />
-              </button>
-              <p class="goles">{{team2gol}}</p>
-            </div>
-          </div>
-
-        </div>
-
-        <app-button [clase]="'fill button'" [title]="'Guardar goles'" (onClick)="register()"></app-button>
-      </div>
-
-      <div class="separador"></div>
-
-      <div class="finish-game-container">
-        <div class="finish-game-content-container">
-          <p class="parrafo">Para dar clausura a este partido, debe revisar minuciosamente el marcador. Una vez
-            registrado y terminado el partido será imposible cambiar el resultado.</p>
-          <p>Para continuar, de click en el botón "Finalizar".</p>
-        </div>
-
-        <app-button class="finalizar" [clase]="'fill button'" [title]="'Finalizar'"></app-button>
-      </div>
+      <app-button class="finalizar" [clase]="'fill button'" [title]="'Finalizar'" (onClick)="finish()"></app-button>
     </div>
   </div>
+</div>

@@ -47,22 +47,16 @@ export class ServiceService {
     return this.http.get<TournamentMatch>(this.url+"admin/tournament/"+idTournament+"/category/"+idCategory+"/matches");
   }
 
-/*   getMatch(idTournament: string, idCategory: string, idMatch: string): Observable<TournamentMatch>{
-    //return this.http.get<Match>(this.url+'referee/tournament/'+idTournament+'/category/'+idCategory+'/match/'+idMatch);
-    return this.http.get<TournamentMatch>(this.url+"admin/tournament/"+idTournament+"/category/"+idCategory+"/matches");
-
-  } */
-
-  saveGoals(goles: {}, idTournament: string, idCategory: string, idMatch: string): Observable<any>{
-    return  this.http.post(this.url + "referee/tournament/goals", goles);
+  saveGoals(goles: {}, idTournament: string, idCategory: string): Observable<any>{
+    return  this.http.put(this.url + "coach/tournament/"+idTournament+"/category/"+idCategory+"/scores", goles);
   }
 
-  getMatchData(idTournament: string, idCategory: string, teamsIds: {}): Observable<any>{
-    return this.http.get<any>(this.url+"coach/tournament/"+idTournament+"/category/"+idCategory+"/match", teamsIds)
+  getMatchData(idTournament: string, idCategory: string, teamsIds: {}): Observable<Match[][]>{
+    return this.http.post<Match[][]>(this.url+"coach/tournament/"+idTournament+"/category/"+idCategory+"/get-match", teamsIds)
   }
 
-  endMatch(idTournament: string, idCategory: string, data: {}): Observable<any>{
-    return this.http.put<any>(this.url+"coach/tournament/"+idTournament+"/category/"+idCategory+"/match-status", data)
+  endMatch(idTournament: string, idCategory: string, match: {}): Observable<any>{
+    return this.http.put<any>(this.url+"coach/tournament/"+idTournament+"/category/"+idCategory+"/match-status", match)
   }
 }
 
